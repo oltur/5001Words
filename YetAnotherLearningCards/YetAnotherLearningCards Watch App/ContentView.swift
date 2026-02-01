@@ -11,20 +11,56 @@ struct ContentView: View {
     @StateObject private var cardStore = CardStore()
     @State private var currentIndex = 0
     @State private var isFlipped = false
+    @State private var spanishFirst = true  // Direction: true = ES→EN, false = EN→ES
 
     var currentCard: FlashCard? {
         guard !cardStore.cards.isEmpty else { return nil }
         return cardStore.cards[currentIndex]
     }
 
+    var frontText: String {
+        guard let card = currentCard else { return "" }
+        return spanishFirst ? card.front : card.back
+    }
+
+    var backText: String {
+        guard let card = currentCard else { return "" }
+        return spanishFirst ? card.back : card.front
+    }
+
+    var frontLabel: String {
+        spanishFirst ? "ES" : "EN"
+    }
+
+    var backLabel: String {
+        spanishFirst ? "EN" : "ES"
+    }
+
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 4) {
             if cardStore.cards.isEmpty {
                 ProgressView()
             } else {
-                Text("\(currentIndex + 1)/\(cardStore.cards.count)")
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
+                // Direction toggle + count
+                HStack {
+                    Button(action: toggleDirection) {
+                        HStack(spacing: 2) {
+                            Text(spanishFirst ? "ES" : "EN")
+                                .fontWeight(.bold)
+                            Image(systemName: "arrow.right")
+                                .font(.caption2)
+                            Text(spanishFirst ? "EN" : "ES")
+                        }
+                        .font(.caption2)
+                    }
+                    .buttonStyle(.plain)
+
+                    Spacer()
+
+                    Text("\(currentIndex + 1)/\(cardStore.cards.count)")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
 
                 // Flash Card
                 ZStack {
@@ -32,18 +68,16 @@ struct ContentView: View {
                         .fill(isFlipped ? Color.green.opacity(0.3) : Color.blue.opacity(0.3))
 
                     VStack(spacing: 2) {
-                        Text(isFlipped ? "EN" : "ES")
+                        Text(isFlipped ? backLabel : frontLabel)
                             .font(.caption2)
                             .foregroundStyle(.secondary)
 
-                        if let card = currentCard {
-                            Text(isFlipped ? card.back : card.front)
-                                .font(.footnote)
-                                .fontWeight(.medium)
-                                .multilineTextAlignment(.center)
-                                .minimumScaleFactor(0.4)
-                                .lineLimit(4)
-                        }
+                        Text(isFlipped ? backText : frontText)
+                            .font(.footnote)
+                            .fontWeight(.medium)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.4)
+                            .lineLimit(4)
                     }
                     .padding(6)
                 }
@@ -91,6 +125,11 @@ struct ContentView: View {
     func shuffleCards() {
         cardStore.cards.shuffle()
         currentIndex = 0
+        isFlipped = false
+    }
+
+    func toggleDirection() {
+        spanishFirst.toggle()
         isFlipped = false
     }
 }
