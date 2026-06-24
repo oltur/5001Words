@@ -2,11 +2,23 @@ import Foundation
 import Combine
 import AVFoundation
 
+struct Deck: Identifiable, Hashable {
+    let id: String
+    let name: String
+    let fileName: String
+    let emoji: String
+}
+
+let availableDecks: [Deck] = [
+    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸"),
+    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱"),
+]
+
 struct FlashCard: Identifiable, Codable {
     var id = UUID()
-    let front: String  // Spanish
-    let back: String   // English
-    let audioIndex: Int?  // Index of audio file
+    let front: String
+    let back: String
+    let audioIndex: Int?
 
     enum CodingKeys: String, CodingKey {
         case front, back, audioIndex
@@ -32,18 +44,11 @@ class AudioPlayer: ObservableObject {
     func play(audioIndex: Int) {
         let filename = "\(audioIndex)"
 
-        // Try multiple locations to find the audio file
         var url: URL? = nil
-
-        // Try with subdirectory "Audio"
         url = Bundle.main.url(forResource: filename, withExtension: "mp3", subdirectory: "Audio")
-
-        // Try without subdirectory (files might be at bundle root)
         if url == nil {
             url = Bundle.main.url(forResource: filename, withExtension: "mp3")
         }
-
-        // Try looking in Audio folder reference
         if url == nil, let audioDir = Bundle.main.url(forResource: "Audio", withExtension: nil) {
             let fileURL = audioDir.appendingPathComponent("\(filename).mp3")
             if FileManager.default.fileExists(atPath: fileURL.path) {
@@ -53,11 +58,6 @@ class AudioPlayer: ObservableObject {
 
         guard let audioURL = url else {
             print("Audio file not found: \(filename).mp3")
-            // Debug: print what's in the bundle
-            if let resourcePath = Bundle.main.resourcePath {
-                let contents = try? FileManager.default.contentsOfDirectory(atPath: resourcePath)
-                print("Bundle contents: \(contents?.prefix(20) ?? [])")
-            }
             return
         }
 
@@ -77,32 +77,25 @@ class AudioPlayer: ObservableObject {
 class CardStore: ObservableObject {
     @Published var cards: [FlashCard] = []
 
-    init() {
-        loadCards()
-    }
-
-    func loadCards() {
-        guard let url = Bundle.main.url(forResource: "spanish_cards", withExtension: "json") else {
-            print("Could not find spanish_cards.json")
-            cards = [
-                FlashCard(front: "Hola", back: "Hello"),
-                FlashCard(front: "Gracias", back: "Thank you"),
-                FlashCard(front: "Adiós", back: "Goodbye")
-            ]
+    func loadCards(from deck: Deck) {
+        guard let url = Bundle.main.url(forResource: deck.fileName, withExtension: "json") else {
+            print("Could not find \(deck.fileName).json")
+            cards = fallbackCards
             return
         }
-
         do {
             let data = try Data(contentsOf: url)
             cards = try JSONDecoder().decode([FlashCard].self, from: data)
-            print("Loaded \(cards.count) cards")
+            print("Loaded \(cards.count) cards from \(deck.fileName)")
         } catch {
             print("Error loading cards: \(error)")
-            cards = [
-                FlashCard(front: "Hola", back: "Hello"),
-                FlashCard(front: "Gracias", back: "Thank you"),
-                FlashCard(front: "Adiós", back: "Goodbye")
-            ]
+            cards = fallbackCards
         }
     }
+
+    private let fallbackCards = [
+        FlashCard(front: "Hola", back: "Hello"),
+        FlashCard(front: "Gracias", back: "Thank you"),
+        FlashCard(front: "Adiós", back: "Goodbye")
+    ]
 }

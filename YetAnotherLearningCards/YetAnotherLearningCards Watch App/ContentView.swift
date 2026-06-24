@@ -40,9 +40,14 @@ struct ContentView: View {
     @StateObject private var audioPlayer = AudioPlayer()
     @State private var currentIndex = 0
     @State private var isFlipped = false
-    @State private var spanishFirst = true  // Direction: true = ES→EN, false = EN→ES
+    @State private var spanishFirst = true
     @State private var dragOffset: CGFloat = 0
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
+    @AppStorage("selectedDeckId") private var selectedDeckId: String = "spanish"
+
+    var selectedDeck: Deck {
+        availableDecks.first { $0.id == selectedDeckId } ?? availableDecks[0]
+    }
 
     var currentCard: FlashCard? {
         guard !cardStore.cards.isEmpty else { return nil }
@@ -59,28 +64,22 @@ struct ContentView: View {
         return spanishFirst ? card.back : card.front
     }
 
-    var frontLabel: String {
-        spanishFirst ? "ES" : "EN"
-    }
-
-    var backLabel: String {
-        spanishFirst ? "EN" : "ES"
-    }
+    var frontLabel: String { spanishFirst ? selectedDeck.emoji : "🇬🇧" }
+    var backLabel: String  { spanishFirst ? "🇬🇧" : selectedDeck.emoji }
 
     var body: some View {
         VStack(spacing: 4) {
             if cardStore.cards.isEmpty {
                 ProgressView()
             } else {
-                // Direction toggle + count
                 HStack {
+                    // Direction toggle
                     Button(action: toggleDirection) {
                         HStack(spacing: 2) {
-                            Text(spanishFirst ? "ES" : "EN")
-                                .fontWeight(.bold)
+                            Text(spanishFirst ? selectedDeck.emoji : "🇬🇧")
                             Image(systemName: "arrow.right")
                                 .font(.caption2)
-                            Text(spanishFirst ? "EN" : "ES")
+                            Text(spanishFirst ? "🇬🇧" : selectedDeck.emoji)
                         }
                         .font(.caption2)
                     }
@@ -98,8 +97,16 @@ struct ContentView: View {
                         .foregroundColor(.orange)
                     }
 
+                    // Appearance toggle
                     Button(action: { appearanceMode = appearanceMode.next }) {
                         Image(systemName: appearanceMode.icon)
+                            .font(.caption2)
+                    }
+                    .buttonStyle(.plain)
+
+                    // Deck cycle button
+                    Button(action: cycleNextDeck) {
+                        Text(selectedDeck.emoji)
                             .font(.caption2)
                     }
                     .buttonStyle(.plain)
@@ -186,6 +193,22 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(appearanceMode.colorScheme)
+        .onAppear { cardStore.loadCards(from: selectedDeck) }
+    }
+
+    func cycleNextDeck() {
+        let ids = availableDecks.map(\.id)
+        guard let current = ids.firstIndex(of: selectedDeckId) else { return }
+        let next = availableDecks[(current + 1) % availableDecks.count]
+        switchDeck(next)
+    }
+
+    func switchDeck(_ deck: Deck) {
+        selectedDeckId = deck.id
+        currentIndex = 0
+        isFlipped = false
+        spanishFirst = true
+        cardStore.loadCards(from: deck)
     }
 
     func previousCard() {

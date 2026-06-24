@@ -40,9 +40,14 @@ struct ContentView: View {
     @StateObject private var audioPlayer = AudioPlayer()
     @State private var currentIndex = 0
     @State private var isFlipped = false
-    @State private var spanishFirst = true  // Direction: true = ES→EN, false = EN→ES
+    @State private var spanishFirst = true
     @State private var dragOffset: CGFloat = 0
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
+    @AppStorage("selectedDeckId") private var selectedDeckId: String = "spanish"
+
+    var selectedDeck: Deck {
+        availableDecks.first { $0.id == selectedDeckId } ?? availableDecks[0]
+    }
 
     var currentCard: FlashCard? {
         guard !cardStore.cards.isEmpty else { return nil }
@@ -59,13 +64,8 @@ struct ContentView: View {
         return spanishFirst ? card.back : card.front
     }
 
-    var frontLabel: String {
-        spanishFirst ? "Spanish" : "English"
-    }
-
-    var backLabel: String {
-        spanishFirst ? "English" : "Spanish"
-    }
+    var frontLabel: String { spanishFirst ? selectedDeck.name : "English" }
+    var backLabel: String  { spanishFirst ? "English" : selectedDeck.name }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -83,13 +83,30 @@ struct ContentView: View {
                 }
                 .padding(.trailing, 4)
 
+                // Deck picker
+                Menu {
+                    ForEach(availableDecks) { deck in
+                        Button(action: { switchDeck(deck) }) {
+                            HStack {
+                                Text(deck.emoji + " " + deck.name)
+                                if selectedDeckId == deck.id {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                        }
+                    }
+                } label: {
+                    Text(selectedDeck.emoji)
+                        .font(.title3)
+                }
+                .padding(.trailing, 4)
+
                 // Direction toggle
                 Button(action: toggleDirection) {
                     HStack(spacing: 4) {
-                        Text(spanishFirst ? "ES" : "EN")
-                            .fontWeight(.bold)
+                        Text(spanishFirst ? selectedDeck.emoji : "🇬🇧")
                         Image(systemName: "arrow.right")
-                        Text(spanishFirst ? "EN" : "ES")
+                        Text(spanishFirst ? "🇬🇧" : selectedDeck.emoji)
                     }
                     .font(.caption)
                     .padding(.horizontal, 10)
@@ -213,6 +230,15 @@ struct ContentView: View {
         }
         .padding()
         .preferredColorScheme(appearanceMode.colorScheme)
+        .onAppear { cardStore.loadCards(from: selectedDeck) }
+    }
+
+    func switchDeck(_ deck: Deck) {
+        selectedDeckId = deck.id
+        currentIndex = 0
+        isFlipped = false
+        spanishFirst = true
+        cardStore.loadCards(from: deck)
     }
 
     func previousCard() {
