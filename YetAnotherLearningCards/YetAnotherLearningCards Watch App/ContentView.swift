@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var cardStore = CardStore()
+    @StateObject private var audioPlayer = AudioPlayer()
     @State private var currentIndex = 0
     @State private var isFlipped = false
     @State private var spanishFirst = true  // Direction: true = ES→EN, false = EN→ES
@@ -56,6 +57,16 @@ struct ContentView: View {
                     .buttonStyle(.plain)
 
                     Spacer()
+
+                    // Audio button
+                    if let card = currentCard, let audioIndex = card.audioIndex {
+                        Button(action: { audioPlayer.play(audioIndex: audioIndex) }) {
+                            Image(systemName: "speaker.wave.2.fill")
+                                .font(.caption)
+                        }
+                        .buttonStyle(.plain)
+                        .foregroundColor(.orange)
+                    }
 
                     Text("\(currentIndex + 1)/\(cardStore.cards.count)")
                         .font(.caption2)

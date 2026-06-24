@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var cardStore = CardStore()
+    @StateObject private var audioPlayer = AudioPlayer()
     @State private var currentIndex = 0
     @State private var isFlipped = false
     @State private var spanishFirst = true  // Direction: true = ES→EN, false = EN→ES
@@ -93,6 +94,21 @@ struct ContentView: View {
                 .onTapGesture {
                     withAnimation(.spring(duration: 0.3)) {
                         isFlipped.toggle()
+                    }
+                }
+
+                // Audio button
+                if let card = currentCard, let audioIndex = card.audioIndex {
+                    Button(action: { audioPlayer.play(audioIndex: audioIndex) }) {
+                        HStack {
+                            Image(systemName: "speaker.wave.2.fill")
+                            Text("Play Audio")
+                        }
+                        .font(.headline)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .background(Color.orange.opacity(0.2))
+                        .cornerRadius(10)
                     }
                 }
 
