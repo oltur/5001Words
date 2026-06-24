@@ -344,7 +344,7 @@
 				DEVELOPMENT_TEAM = 5RRSS344E7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = YetAnotherLearningCards;
+				INFOPLIST_KEY_CFBundleDisplayName = "5001 Words";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.turevskiy.YetAnotherLearningCards;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -377,7 +377,7 @@
 				DEVELOPMENT_TEAM = 5RRSS344E7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = YetAnotherLearningCards;
+				INFOPLIST_KEY_CFBundleDisplayName = "5001 Words";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.turevskiy.YetAnotherLearningCards;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -411,7 +411,7 @@
 				DEVELOPMENT_TEAM = 5RRSS344E7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = YetAnotherLearningCards;
+				INFOPLIST_KEY_CFBundleDisplayName = "5001 Words";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,7 +446,7 @@
 				DEVELOPMENT_TEAM = 5RRSS344E7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = YetAnotherLearningCards;
+				INFOPLIST_KEY_CFBundleDisplayName = "5001 Words";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
