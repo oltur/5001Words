@@ -7,8 +7,8 @@ from pathlib import Path
 
 BASE = Path(__file__).parent / "YetAnotherLearningCards/YetAnotherLearningCards"
 JSON_PATH = BASE / "dutch_cards.json"
-OUT_DIR   = BASE / "Audio/dutch"
-WATCH_OUT = BASE.parent / "YetAnotherLearningCards Watch App/Audio/dutch"
+OUT_DIR   = BASE / "Audio.bundle/dutch"
+WATCH_OUT = BASE.parent / "YetAnotherLearningCards Watch App/Audio.bundle/dutch"
 VOICE     = "Xander"   # nl_NL
 
 OUT_DIR.mkdir(exist_ok=True)
@@ -26,7 +26,7 @@ updated = 0
 skipped = 0
 
 for i, card in enumerate(cards):
-    mp3_path = OUT_DIR / f"{i}.mp3"
+    mp3_path = OUT_DIR / f"dutch_{i}.mp3"
 
     if mp3_path.exists():
         card["audioIndex"] = i
@@ -50,7 +50,7 @@ for i, card in enumerate(cards):
             check=True, capture_output=True
         )
         # Copy to Watch target
-        watch_mp3 = WATCH_OUT / f"{i}.mp3"
+        watch_mp3 = WATCH_OUT / f"dutch_{i}.mp3"
         import shutil
         shutil.copy2(str(mp3_path), str(watch_mp3))
 

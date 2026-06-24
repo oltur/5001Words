@@ -11,8 +11,8 @@ struct Deck: Identifiable, Hashable {
 }
 
 let availableDecks: [Deck] = [
-    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "Audio"),
-    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "Audio/dutch"),
+    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: ""),
+    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "dutch"),
 ]
 
 struct FlashCard: Identifiable, Codable {
@@ -42,23 +42,29 @@ struct FlashCard: Identifiable, Codable {
 class AudioPlayer: ObservableObject {
     private var player: AVAudioPlayer?
 
-    func play(audioIndex: Int, subfolder: String = "SpanishAudio") {
-        let filename = "\(audioIndex)"
+    func play(audioIndex: Int, subfolder: String = "") {
+        let resourceName = subfolder == "dutch" ? "dutch_\(audioIndex)" : "\(audioIndex)"
+        let filename = "\(resourceName).mp3"
+        let audioBundleURL = Bundle.main.url(forResource: "Audio", withExtension: "bundle")
+        let bundledAudioURL = audioBundleURL?
+            .appendingPathComponent(subfolder)
+            .appendingPathComponent(filename)
 
-        var url: URL? = nil
-        url = Bundle.main.url(forResource: filename, withExtension: "mp3", subdirectory: subfolder)
+        var url = bundledAudioURL.flatMap { FileManager.default.fileExists(atPath: $0.path) ? $0 : nil }
         if url == nil {
-            url = Bundle.main.url(forResource: filename, withExtension: "mp3")
+            url = Bundle.main.url(
+                forResource: resourceName,
+                withExtension: "mp3",
+                subdirectory: subfolder.isEmpty ? nil : subfolder
+            )
         }
-        if url == nil, let audioDir = Bundle.main.url(forResource: subfolder, withExtension: nil) {
-            let fileURL = audioDir.appendingPathComponent("\(filename).mp3")
-            if FileManager.default.fileExists(atPath: fileURL.path) {
-                url = fileURL
-            }
+        if url == nil {
+            url = Bundle.main.url(forResource: resourceName, withExtension: "mp3")
         }
 
         guard let audioURL = url else {
-            print("Audio file not found: \(filename).mp3 in \(subfolder)")
+            let path = subfolder.isEmpty ? filename : "\(subfolder)/\(filename)"
+            print("Audio file not found: Audio.bundle/\(path)")
             return
         }
 
