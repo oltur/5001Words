@@ -1,3603 +1,4503 @@
 [
   {
     "front": "absoluut (adj)",
-    "back": "absolute"
+    "back": "absolute",
+    "audioIndex": 0
   },
   {
     "front": "actief (adj)",
-    "back": "active"
+    "back": "active",
+    "audioIndex": 1
   },
   {
     "front": "adequaat (adj)",
-    "back": "adequate, suitable"
+    "back": "adequate, suitable",
+    "audioIndex": 2
   },
   {
     "front": "agressief (adj)",
-    "back": "aggressive"
+    "back": "aggressive",
+    "audioIndex": 3
   },
   {
     "front": "algemeen (adj)",
-    "back": "general, common"
+    "back": "general, common",
+    "audioIndex": 4
   },
   {
     "front": "analytisch (adj)",
-    "back": "analytical"
+    "back": "analytical",
+    "audioIndex": 5
   },
   {
     "front": "anoniem (adj)",
-    "back": "anonymous"
+    "back": "anonymous",
+    "audioIndex": 6
   },
   {
     "front": "arrogant (adj)",
-    "back": "arrogant"
+    "back": "arrogant",
+    "audioIndex": 7
   },
   {
     "front": "autoritair (adj)",
-    "back": "authoritarian"
+    "back": "authoritarian",
+    "audioIndex": 8
   },
   {
     "front": "bang (adj)",
-    "back": "afraid, scared"
+    "back": "afraid, scared",
+    "audioIndex": 9
   },
   {
     "front": "beperkt (adj)",
-    "back": "limited, restricted"
+    "back": "limited, restricted",
+    "audioIndex": 10
   },
   {
     "front": "bescheiden (adj)",
-    "back": "modest, humble"
+    "back": "modest, humble",
+    "audioIndex": 11
   },
   {
     "front": "betaalbaar (adj)",
-    "back": "affordable"
+    "back": "affordable",
+    "audioIndex": 12
   },
   {
     "front": "betrouwbaar (adj)",
-    "back": "reliable, trustworthy"
+    "back": "reliable, trustworthy",
+    "audioIndex": 13
   },
   {
     "front": "bijzonder (adj)",
-    "back": "special, extraordinary"
+    "back": "special, extraordinary",
+    "audioIndex": 14
   },
   {
     "front": "blauw (adj)",
-    "back": "blue"
+    "back": "blue",
+    "audioIndex": 15
   },
   {
     "front": "blij (adj)",
-    "back": "happy, glad"
+    "back": "happy, glad",
+    "audioIndex": 16
   },
   {
     "front": "boos (adj)",
-    "back": "angry, mad"
+    "back": "angry, mad",
+    "audioIndex": 17
   },
   {
     "front": "breed (adj)",
-    "back": "wide, broad"
+    "back": "wide, broad",
+    "audioIndex": 18
   },
   {
     "front": "bruin (adj)",
-    "back": "brown"
+    "back": "brown",
+    "audioIndex": 19
   },
   {
     "front": "burgerlijk (adj)",
-    "back": "civil, civic"
+    "back": "civil, civic",
+    "audioIndex": 20
   },
   {
     "front": "centraal (adj)",
-    "back": "central"
+    "back": "central",
+    "audioIndex": 21
   },
   {
     "front": "comfortabel (adj)",
-    "back": "comfortable"
+    "back": "comfortable",
+    "audioIndex": 22
   },
   {
     "front": "competitief (adj)",
-    "back": "competitive"
+    "back": "competitive",
+    "audioIndex": 23
   },
   {
     "front": "complex (adj)",
-    "back": "complex"
+    "back": "complex",
+    "audioIndex": 24
   },
   {
     "front": "concreet (adj)",
-    "back": "concrete, real"
+    "back": "concrete, real",
+    "audioIndex": 25
   },
   {
     "front": "conservatief (adj)",
-    "back": "conservative"
+    "back": "conservative",
+    "audioIndex": 26
   },
   {
     "front": "constant (adj)",
-    "back": "constant"
+    "back": "constant",
+    "audioIndex": 27
   },
   {
     "front": "correct (adj)",
-    "back": "correct"
+    "back": "correct",
+    "audioIndex": 28
   },
   {
     "front": "creatief (adj)",
-    "back": "creative"
+    "back": "creative",
+    "audioIndex": 29
   },
   {
     "front": "cultureel (adj)",
-    "back": "cultural"
+    "back": "cultural",
+    "audioIndex": 30
   },
   {
     "front": "definitief (adj)",
-    "back": "definitive, final"
+    "back": "definitive, final",
+    "audioIndex": 31
   },
   {
     "front": "defensief (adj)",
-    "back": "defensive"
+    "back": "defensive",
+    "audioIndex": 32
   },
   {
     "front": "democratisch (adj)",
-    "back": "democratic"
+    "back": "democratic",
+    "audioIndex": 33
   },
   {
     "front": "diep (adj)",
-    "back": "deep"
+    "back": "deep",
+    "audioIndex": 34
   },
   {
     "front": "dichtbij (adj)",
-    "back": "near, close"
+    "back": "near, close",
+    "audioIndex": 35
   },
   {
     "front": "dik (adj)",
-    "back": "thick, fat"
+    "back": "thick, fat",
+    "audioIndex": 36
   },
   {
     "front": "direct (adj)",
-    "back": "direct"
+    "back": "direct",
+    "audioIndex": 37
   },
   {
     "front": "dom (adj)",
-    "back": "stupid, dumb"
+    "back": "stupid, dumb",
+    "audioIndex": 38
   },
   {
     "front": "donker (adj)",
-    "back": "dark"
+    "back": "dark",
+    "audioIndex": 39
   },
   {
     "front": "dood (adj)",
-    "back": "dead"
+    "back": "dead",
+    "audioIndex": 40
   },
   {
     "front": "druk (adj)",
-    "back": "busy, crowded"
+    "back": "busy, crowded",
+    "audioIndex": 41
   },
   {
     "front": "duidelijk (adj)",
-    "back": "clear, obvious"
+    "back": "clear, obvious",
+    "audioIndex": 42
   },
   {
     "front": "dun (adj)",
-    "back": "thin"
+    "back": "thin",
+    "audioIndex": 43
   },
   {
     "front": "duur (adj)",
-    "back": "expensive"
+    "back": "expensive",
+    "audioIndex": 44
   },
   {
     "front": "economisch (adj)",
-    "back": "economic"
+    "back": "economic",
+    "audioIndex": 45
   },
   {
     "front": "effectief (adj)",
-    "back": "effective"
+    "back": "effective",
+    "audioIndex": 46
   },
   {
     "front": "eerlijk (adj)",
-    "back": "honest, fair"
+    "back": "honest, fair",
+    "audioIndex": 47
   },
   {
     "front": "eenvoudig (adj)",
-    "back": "simple, easy"
+    "back": "simple, easy",
+    "audioIndex": 48
   },
   {
     "front": "elektrisch (adj)",
-    "back": "electric"
+    "back": "electric",
+    "audioIndex": 49
   },
   {
     "front": "emotioneel (adj)",
-    "back": "emotional"
+    "back": "emotional",
+    "audioIndex": 50
   },
   {
     "front": "energiek (adj)",
-    "back": "energetic"
+    "back": "energetic",
+    "audioIndex": 51
   },
   {
     "front": "Engels (adj)",
-    "back": "English"
+    "back": "English",
+    "audioIndex": 52
   },
   {
     "front": "essentieel (adj)",
-    "back": "essential"
+    "back": "essential",
+    "audioIndex": 53
   },
   {
     "front": "exact (adj)",
-    "back": "exact"
+    "back": "exact",
+    "audioIndex": 54
   },
   {
     "front": "exclusief (adj)",
-    "back": "exclusive"
+    "back": "exclusive",
+    "audioIndex": 55
   },
   {
     "front": "extern (adj)",
-    "back": "external"
+    "back": "external",
+    "audioIndex": 56
   },
   {
     "front": "extreem (adj)",
-    "back": "extreme"
+    "back": "extreme",
+    "audioIndex": 57
   },
   {
     "front": "fijn (adj)",
-    "back": "fine, nice"
+    "back": "fine, nice",
+    "audioIndex": 58
   },
   {
     "front": "fit (adj)",
-    "back": "fit, healthy"
+    "back": "fit, healthy",
+    "audioIndex": 59
   },
   {
     "front": "flexibel (adj)",
-    "back": "flexible"
+    "back": "flexible",
+    "audioIndex": 60
   },
   {
     "front": "formeel (adj)",
-    "back": "formal"
+    "back": "formal",
+    "audioIndex": 61
   },
   {
     "front": "Frans (adj)",
-    "back": "French"
+    "back": "French",
+    "audioIndex": 62
   },
   {
     "front": "functioneel (adj)",
-    "back": "functional"
+    "back": "functional",
+    "audioIndex": 63
   },
   {
     "front": "fundamenteel (adj)",
-    "back": "fundamental"
+    "back": "fundamental",
+    "audioIndex": 64
   },
   {
     "front": "gebruikelijk (adj)",
-    "back": "usual, common"
+    "back": "usual, common",
+    "audioIndex": 65
   },
   {
     "front": "geheim (adj)",
-    "back": "secret"
+    "back": "secret",
+    "audioIndex": 66
   },
   {
     "front": "gelukkig (adj)",
-    "back": "happy, fortunate"
+    "back": "happy, fortunate",
+    "audioIndex": 67
   },
   {
     "front": "gematigd (adj)",
-    "back": "moderate"
+    "back": "moderate",
+    "audioIndex": 68
   },
   {
     "front": "gemeen (adj)",
-    "back": "mean, nasty"
+    "back": "mean, nasty",
+    "audioIndex": 69
   },
   {
     "front": "gezond (adj)",
-    "back": "healthy"
+    "back": "healthy",
+    "audioIndex": 70
   },
   {
     "front": "geweldig (adj)",
-    "back": "great, wonderful"
+    "back": "great, wonderful",
+    "audioIndex": 71
   },
   {
     "front": "gewoon (adj)",
-    "back": "ordinary, plain"
+    "back": "ordinary, plain",
+    "audioIndex": 72
   },
   {
     "front": "geel (adj)",
-    "back": "yellow"
+    "back": "yellow",
+    "audioIndex": 73
   },
   {
     "front": "gesloten (adj)",
-    "back": "closed"
+    "back": "closed",
+    "audioIndex": 74
   },
   {
     "front": "glad (adj)",
-    "back": "slippery, smooth"
+    "back": "slippery, smooth",
+    "audioIndex": 75
   },
   {
     "front": "globaal (adj)",
-    "back": "global"
+    "back": "global",
+    "audioIndex": 76
   },
   {
     "front": "goedkoop (adj)",
-    "back": "cheap, inexpensive"
+    "back": "cheap, inexpensive",
+    "audioIndex": 77
   },
   {
     "front": "goed (adj)",
-    "back": "good"
+    "back": "good",
+    "audioIndex": 78
   },
   {
     "front": "gratis (adj)",
-    "back": "free, no charge"
+    "back": "free, no charge",
+    "audioIndex": 79
   },
   {
     "front": "groen (adj)",
-    "back": "green"
+    "back": "green",
+    "audioIndex": 80
   },
   {
     "front": "grijs (adj)",
-    "back": "grey"
+    "back": "grey",
+    "audioIndex": 81
   },
   {
     "front": "groot (adj)",
-    "back": "big, large, great"
+    "back": "big, large, great",
+    "audioIndex": 82
   },
   {
     "front": "hard (adj)",
-    "back": "hard, loud"
+    "back": "hard, loud",
+    "audioIndex": 83
   },
   {
     "front": "helder (adj)",
-    "back": "clear, bright"
+    "back": "clear, bright",
+    "audioIndex": 84
   },
   {
     "front": "historisch (adj)",
-    "back": "historical"
+    "back": "historical",
+    "audioIndex": 85
   },
   {
     "front": "hoog (adj)",
-    "back": "high"
+    "back": "high",
+    "audioIndex": 86
   },
   {
     "front": "humaan (adj)",
-    "back": "humane"
+    "back": "humane",
+    "audioIndex": 87
   },
   {
     "front": "ideaal (adj)",
-    "back": "ideal"
+    "back": "ideal",
+    "audioIndex": 88
   },
   {
     "front": "illegaal (adj)",
-    "back": "illegal"
+    "back": "illegal",
+    "audioIndex": 89
   },
   {
     "front": "individueel (adj)",
-    "back": "individual"
+    "back": "individual",
+    "audioIndex": 90
   },
   {
     "front": "informeel (adj)",
-    "back": "informal"
+    "back": "informal",
+    "audioIndex": 91
   },
   {
     "front": "innovatief (adj)",
-    "back": "innovative"
+    "back": "innovative",
+    "audioIndex": 92
   },
   {
     "front": "intelligent (adj)",
-    "back": "intelligent"
+    "back": "intelligent",
+    "audioIndex": 93
   },
   {
     "front": "interessant (adj)",
-    "back": "interesting"
+    "back": "interesting",
+    "audioIndex": 94
   },
   {
     "front": "internationaal (adj)",
-    "back": "international"
+    "back": "international",
+    "audioIndex": 95
   },
   {
     "front": "introvert (adj)",
-    "back": "introverted"
+    "back": "introverted",
+    "audioIndex": 96
   },
   {
     "front": "Italiaans (adj)",
-    "back": "Italian"
+    "back": "Italian",
+    "audioIndex": 97
   },
   {
     "front": "jong (adj)",
-    "back": "young"
+    "back": "young",
+    "audioIndex": 98
   },
   {
     "front": "juist (adj)",
-    "back": "right, correct"
+    "back": "right, correct",
+    "audioIndex": 99
   },
   {
     "front": "juridisch (adj)",
-    "back": "legal, juridical"
+    "back": "legal, juridical",
+    "audioIndex": 100
   },
   {
     "front": "kalm (adj)",
-    "back": "calm"
+    "back": "calm",
+    "audioIndex": 101
   },
   {
     "front": "kinderlijk (adj)",
-    "back": "childish"
+    "back": "childish",
+    "audioIndex": 102
   },
   {
     "front": "klassiek (adj)",
-    "back": "classical"
+    "back": "classical",
+    "audioIndex": 103
   },
   {
     "front": "klein (adj)",
-    "back": "small, little"
+    "back": "small, little",
+    "audioIndex": 104
   },
   {
     "front": "koud (adj)",
-    "back": "cold"
+    "back": "cold",
+    "audioIndex": 105
   },
   {
     "front": "kort (adj)",
-    "back": "short"
+    "back": "short",
+    "audioIndex": 106
   },
   {
     "front": "krom (adj)",
-    "back": "crooked, curved"
+    "back": "crooked, curved",
+    "audioIndex": 107
   },
   {
     "front": "kritisch (adj)",
-    "back": "critical"
+    "back": "critical",
+    "audioIndex": 108
   },
   {
     "front": "laag (adj)",
-    "back": "low"
+    "back": "low",
+    "audioIndex": 109
   },
   {
     "front": "lang (adj)",
-    "back": "long, tall"
+    "back": "long, tall",
+    "audioIndex": 110
   },
   {
     "front": "langzaam (adj)",
-    "back": "slow"
+    "back": "slow",
+    "audioIndex": 111
   },
   {
     "front": "laat (adj)",
-    "back": "late"
+    "back": "late",
+    "audioIndex": 112
   },
   {
     "front": "lelijk (adj)",
-    "back": "ugly"
+    "back": "ugly",
+    "audioIndex": 113
   },
   {
     "front": "leeg (adj)",
-    "back": "empty"
+    "back": "empty",
+    "audioIndex": 114
   },
   {
     "front": "leuk (adj)",
-    "back": "fun, nice"
+    "back": "fun, nice",
+    "audioIndex": 115
   },
   {
     "front": "liberaal (adj)",
-    "back": "liberal"
+    "back": "liberal",
+    "audioIndex": 116
   },
   {
     "front": "licht (adj)",
-    "back": "light, easy"
+    "back": "light, easy",
+    "audioIndex": 117
   },
   {
     "front": "lokaal (adj)",
-    "back": "local"
+    "back": "local",
+    "audioIndex": 118
   },
   {
     "front": "logisch (adj)",
-    "back": "logical"
+    "back": "logical",
+    "audioIndex": 119
   },
   {
     "front": "luid (adj)",
-    "back": "loud"
+    "back": "loud",
+    "audioIndex": 120
   },
   {
     "front": "loyaal (adj)",
-    "back": "loyal"
+    "back": "loyal",
+    "audioIndex": 121
   },
   {
     "front": "luxe (adj)",
-    "back": "luxury"
+    "back": "luxury",
+    "audioIndex": 122
   },
   {
     "front": "makkelijk (adj)",
-    "back": "easy"
+    "back": "easy",
+    "audioIndex": 123
   },
   {
     "front": "mannelijk (adj)",
-    "back": "masculine, male"
+    "back": "masculine, male",
+    "audioIndex": 124
   },
   {
     "front": "massaal (adj)",
-    "back": "massive, on a large scale"
+    "back": "massive, on a large scale",
+    "audioIndex": 125
   },
   {
     "front": "medisch (adj)",
-    "back": "medical"
+    "back": "medical",
+    "audioIndex": 126
   },
   {
     "front": "menselijk (adj)",
-    "back": "human"
+    "back": "human",
+    "audioIndex": 127
   },
   {
     "front": "methodisch (adj)",
-    "back": "methodical"
+    "back": "methodical",
+    "audioIndex": 128
   },
   {
     "front": "militair (adj)",
-    "back": "military"
+    "back": "military",
+    "audioIndex": 129
   },
   {
     "front": "modern (adj)",
-    "back": "modern"
+    "back": "modern",
+    "audioIndex": 130
   },
   {
     "front": "moeilijk (adj)",
-    "back": "difficult, hard"
+    "back": "difficult, hard",
+    "audioIndex": 131
   },
   {
     "front": "mooi (adj)",
-    "back": "beautiful, nice"
+    "back": "beautiful, nice",
+    "audioIndex": 132
   },
   {
     "front": "moe (adj)",
-    "back": "tired"
+    "back": "tired",
+    "audioIndex": 133
   },
   {
     "front": "moreel (adj)",
-    "back": "moral"
+    "back": "moral",
+    "audioIndex": 134
   },
   {
     "front": "nationaal (adj)",
-    "back": "national"
+    "back": "national",
+    "audioIndex": 135
   },
   {
     "front": "natuurlijk (adj)",
-    "back": "natural"
+    "back": "natural",
+    "audioIndex": 136
   },
   {
     "front": "negatief (adj)",
-    "back": "negative"
+    "back": "negative",
+    "audioIndex": 137
   },
   {
     "front": "nerveus (adj)",
-    "back": "nervous"
+    "back": "nervous",
+    "audioIndex": 138
   },
   {
     "front": "neutraal (adj)",
-    "back": "neutral"
+    "back": "neutral",
+    "audioIndex": 139
   },
   {
     "front": "nieuw (adj)",
-    "back": "new"
+    "back": "new",
+    "audioIndex": 140
   },
   {
     "front": "normaal (adj)",
-    "back": "normal"
+    "back": "normal",
+    "audioIndex": 141
   },
   {
     "front": "objectief (adj)",
-    "back": "objective"
+    "back": "objective",
+    "audioIndex": 142
   },
   {
     "front": "officieel (adj)",
-    "back": "official"
+    "back": "official",
+    "audioIndex": 143
   },
   {
     "front": "onbekend (adj)",
-    "back": "unknown"
+    "back": "unknown",
+    "audioIndex": 144
   },
   {
     "front": "onbetrouwbaar (adj)",
-    "back": "unreliable"
+    "back": "unreliable",
+    "audioIndex": 145
   },
   {
     "front": "onduidelijk (adj)",
-    "back": "unclear"
+    "back": "unclear",
+    "audioIndex": 146
   },
   {
     "front": "oneerlijk (adj)",
-    "back": "dishonest, unfair"
+    "back": "dishonest, unfair",
+    "audioIndex": 147
   },
   {
     "front": "ongelukkig (adj)",
-    "back": "unhappy, unfortunate"
+    "back": "unhappy, unfortunate",
+    "audioIndex": 148
   },
   {
     "front": "onmogelijk (adj)",
-    "back": "impossible"
+    "back": "impossible",
+    "audioIndex": 149
   },
   {
     "front": "onpartijdig (adj)",
-    "back": "impartial"
+    "back": "impartial",
+    "audioIndex": 150
   },
   {
     "front": "ontevreden (adj)",
-    "back": "dissatisfied"
+    "back": "dissatisfied",
+    "audioIndex": 151
   },
   {
     "front": "onvoorzichtig (adj)",
-    "back": "careless"
+    "back": "careless",
+    "audioIndex": 152
   },
   {
     "front": "onzeker (adj)",
-    "back": "uncertain"
+    "back": "uncertain",
+    "audioIndex": 153
   },
   {
     "front": "open (adj)",
-    "back": "open"
+    "back": "open",
+    "audioIndex": 154
   },
   {
     "front": "optimaal (adj)",
-    "back": "optimal"
+    "back": "optimal",
+    "audioIndex": 155
   },
   {
     "front": "optimistisch (adj)",
-    "back": "optimistic"
+    "back": "optimistic",
+    "audioIndex": 156
   },
   {
     "front": "oranje (adj)",
-    "back": "orange"
+    "back": "orange",
+    "audioIndex": 157
   },
   {
     "front": "oud (adj)",
-    "back": "old"
+    "back": "old",
+    "audioIndex": 158
   },
   {
     "front": "passief (adj)",
-    "back": "passive"
+    "back": "passive",
+    "audioIndex": 159
   },
   {
     "front": "paars (adj)",
-    "back": "purple"
+    "back": "purple",
+    "audioIndex": 160
   },
   {
     "front": "partijdig (adj)",
-    "back": "biased"
+    "back": "biased",
+    "audioIndex": 161
   },
   {
     "front": "pessimistisch (adj)",
-    "back": "pessimistic"
+    "back": "pessimistic",
+    "audioIndex": 162
   },
   {
     "front": "pink (adj)",
-    "back": "pink"
+    "back": "pink",
+    "audioIndex": 163
   },
   {
     "front": "politiek (adj)",
-    "back": "political"
+    "back": "political",
+    "audioIndex": 164
   },
   {
     "front": "populair (adj)",
-    "back": "popular"
+    "back": "popular",
+    "audioIndex": 165
   },
   {
     "front": "positief (adj)",
-    "back": "positive"
+    "back": "positive",
+    "audioIndex": 166
   },
   {
     "front": "praktisch (adj)",
-    "back": "practical"
+    "back": "practical",
+    "audioIndex": 167
   },
   {
     "front": "privé (adj)",
-    "back": "private"
+    "back": "private",
+    "audioIndex": 168
   },
   {
     "front": "productief (adj)",
-    "back": "productive"
+    "back": "productive",
+    "audioIndex": 169
   },
   {
     "front": "professioneel (adj)",
-    "back": "professional"
+    "back": "professional",
+    "audioIndex": 170
   },
   {
     "front": "progressief (adj)",
-    "back": "progressive"
+    "back": "progressive",
+    "audioIndex": 171
   },
   {
     "front": "publiek (adj)",
-    "back": "public"
+    "back": "public",
+    "audioIndex": 172
   },
   {
     "front": "radicaal (adj)",
-    "back": "radical"
+    "back": "radical",
+    "audioIndex": 173
   },
   {
     "front": "rationeel (adj)",
-    "back": "rational"
+    "back": "rational",
+    "audioIndex": 174
   },
   {
     "front": "realistisch (adj)",
-    "back": "realistic"
+    "back": "realistic",
+    "audioIndex": 175
   },
   {
     "front": "recent (adj)",
-    "back": "recent"
+    "back": "recent",
+    "audioIndex": 176
   },
   {
     "front": "regionaal (adj)",
-    "back": "regional"
+    "back": "regional",
+    "audioIndex": 177
   },
   {
     "front": "religieus (adj)",
-    "back": "religious"
+    "back": "religious",
+    "audioIndex": 178
   },
   {
     "front": "rigide (adj)",
-    "back": "rigid"
+    "back": "rigid",
+    "audioIndex": 179
   },
   {
     "front": "risicovol (adj)",
-    "back": "risky"
+    "back": "risky",
+    "audioIndex": 180
   },
   {
     "front": "rod (adj)",
-    "back": "red"
+    "back": "red",
+    "audioIndex": 181
   },
   {
     "front": "romantisch (adj)",
-    "back": "romantic"
+    "back": "romantic",
+    "audioIndex": 182
   },
   {
     "front": "rond (adj)",
-    "back": "round"
+    "back": "round",
+    "audioIndex": 183
   },
   {
     "front": "roze (adj)",
-    "back": "pink"
+    "back": "pink",
+    "audioIndex": 184
   },
   {
     "front": "rustig (adj)",
-    "back": "calm, quiet"
+    "back": "calm, quiet",
+    "audioIndex": 185
   },
   {
     "front": "saai (adj)",
-    "back": "boring"
+    "back": "boring",
+    "audioIndex": 186
   },
   {
     "front": "scherp (adj)",
-    "back": "sharp"
+    "back": "sharp",
+    "audioIndex": 187
   },
   {
     "front": "schoon (adj)",
-    "back": "clean"
+    "back": "clean",
+    "audioIndex": 188
   },
   {
     "front": "seksueel (adj)",
-    "back": "sexual"
+    "back": "sexual",
+    "audioIndex": 189
   },
   {
     "front": "simpel (adj)",
-    "back": "simple"
+    "back": "simple",
+    "audioIndex": 190
   },
   {
     "front": "slim (adj)",
-    "back": "smart, clever"
+    "back": "smart, clever",
+    "audioIndex": 191
   },
   {
     "front": "slecht (adj)",
-    "back": "bad"
+    "back": "bad",
+    "audioIndex": 192
   },
   {
     "front": "smal (adj)",
-    "back": "narrow"
+    "back": "narrow",
+    "audioIndex": 193
   },
   {
     "front": "snel (adj)",
-    "back": "fast, quick"
+    "back": "fast, quick",
+    "audioIndex": 194
   },
   {
     "front": "sociaal (adj)",
-    "back": "social"
+    "back": "social",
+    "audioIndex": 195
   },
   {
     "front": "Spaans (adj)",
-    "back": "Spanish"
+    "back": "Spanish",
+    "audioIndex": 196
   },
   {
     "front": "specifiek (adj)",
-    "back": "specific"
+    "back": "specific",
+    "audioIndex": 197
   },
   {
     "front": "spannend (adj)",
-    "back": "exciting, thrilling"
+    "back": "exciting, thrilling",
+    "audioIndex": 198
   },
   {
     "front": "spiritueel (adj)",
-    "back": "spiritual"
+    "back": "spiritual",
+    "audioIndex": 199
   },
   {
     "front": "stabiel (adj)",
-    "back": "stable"
+    "back": "stable",
+    "audioIndex": 200
   },
   {
     "front": "stedelijk (adj)",
-    "back": "urban"
+    "back": "urban",
+    "audioIndex": 201
   },
   {
     "front": "stil (adj)",
-    "back": "quiet, silent"
+    "back": "quiet, silent",
+    "audioIndex": 202
   },
   {
     "front": "sterk (adj)",
-    "back": "strong"
+    "back": "strong",
+    "audioIndex": 203
   },
   {
     "front": "subjectief (adj)",
-    "back": "subjective"
+    "back": "subjective",
+    "audioIndex": 204
   },
   {
     "front": "systematisch (adj)",
-    "back": "systematic"
+    "back": "systematic",
+    "audioIndex": 205
   },
   {
     "front": "technisch (adj)",
-    "back": "technical"
+    "back": "technical",
+    "audioIndex": 206
   },
   {
     "front": "tevreden (adj)",
-    "back": "satisfied, content"
+    "back": "satisfied, content",
+    "audioIndex": 207
   },
   {
     "front": "theoretisch (adj)",
-    "back": "theoretical"
+    "back": "theoretical",
+    "audioIndex": 208
   },
   {
     "front": "tijdelijk (adj)",
-    "back": "temporary"
+    "back": "temporary",
+    "audioIndex": 209
   },
   {
     "front": "tolerant (adj)",
-    "back": "tolerant"
+    "back": "tolerant",
+    "audioIndex": 210
   },
   {
     "front": "totaal (adj)",
-    "back": "total"
+    "back": "total",
+    "audioIndex": 211
   },
   {
     "front": "traditioneel (adj)",
-    "back": "traditional"
+    "back": "traditional",
+    "audioIndex": 212
   },
   {
     "front": "transparant (adj)",
-    "back": "transparent"
+    "back": "transparent",
+    "audioIndex": 213
   },
   {
     "front": "trots (adj)",
-    "back": "proud"
+    "back": "proud",
+    "audioIndex": 214
   },
   {
     "front": "trouw (adj)",
-    "back": "faithful, loyal"
+    "back": "faithful, loyal",
+    "audioIndex": 215
   },
   {
     "front": "typisch (adj)",
-    "back": "typical"
+    "back": "typical",
+    "audioIndex": 216
   },
   {
     "front": "uniek (adj)",
-    "back": "unique"
+    "back": "unique",
+    "audioIndex": 217
   },
   {
     "front": "universeel (adj)",
-    "back": "universal"
+    "back": "universal",
+    "audioIndex": 218
   },
   {
     "front": "uitzonderlijk (adj)",
-    "back": "exceptional"
+    "back": "exceptional",
+    "audioIndex": 219
   },
   {
     "front": "vaag (adj)",
-    "back": "vague"
+    "back": "vague",
+    "audioIndex": 220
   },
   {
     "front": "veilig (adj)",
-    "back": "safe"
+    "back": "safe",
+    "audioIndex": 221
   },
   {
     "front": "ver (adj)",
-    "back": "far"
+    "back": "far",
+    "audioIndex": 222
   },
   {
     "front": "verlegen (adj)",
-    "back": "shy"
+    "back": "shy",
+    "audioIndex": 223
   },
   {
     "front": "verdrietig (adj)",
-    "back": "sad"
+    "back": "sad",
+    "audioIndex": 224
   },
   {
     "front": "verplicht (adj)",
-    "back": "obligatory, mandatory"
+    "back": "obligatory, mandatory",
+    "audioIndex": 225
   },
   {
     "front": "vitaal (adj)",
-    "back": "vital"
+    "back": "vital",
+    "audioIndex": 226
   },
   {
     "front": "vlak (adj)",
-    "back": "flat"
+    "back": "flat",
+    "audioIndex": 227
   },
   {
     "front": "vol (adj)",
-    "back": "full"
+    "back": "full",
+    "audioIndex": 228
   },
   {
     "front": "volwassen (adj)",
-    "back": "adult, mature"
+    "back": "adult, mature",
+    "audioIndex": 229
   },
   {
     "front": "voorzichtig (adj)",
-    "back": "careful, cautious"
+    "back": "careful, cautious",
+    "audioIndex": 230
   },
   {
     "front": "vrijwillig (adj)",
-    "back": "voluntary"
+    "back": "voluntary",
+    "audioIndex": 231
   },
   {
     "front": "vrij (adj)",
-    "back": "free"
+    "back": "free",
+    "audioIndex": 232
   },
   {
     "front": "vrouwelijk (adj)",
-    "back": "feminine, female"
+    "back": "feminine, female",
+    "audioIndex": 233
   },
   {
     "front": "vreemd (adj)",
-    "back": "strange, weird"
+    "back": "strange, weird",
+    "audioIndex": 234
   },
   {
     "front": "vroeg (adj)",
-    "back": "early"
+    "back": "early",
+    "audioIndex": 235
   },
   {
     "front": "warm (adj)",
-    "back": "warm"
+    "back": "warm",
+    "audioIndex": 236
   },
   {
     "front": "wetenschappelijk (adj)",
-    "back": "scientific"
+    "back": "scientific",
+    "audioIndex": 237
   },
   {
     "front": "wettig (adj)",
-    "back": "legal, lawful"
+    "back": "legal, lawful",
+    "audioIndex": 238
   },
   {
     "front": "westers (adj)",
-    "back": "western"
+    "back": "western",
+    "audioIndex": 239
   },
   {
     "front": "wijs (adj)",
-    "back": "wise"
+    "back": "wise",
+    "audioIndex": 240
   },
   {
     "front": "wit (adj)",
-    "back": "white"
+    "back": "white",
+    "audioIndex": 241
   },
   {
     "front": "zacht (adj)",
-    "back": "soft"
+    "back": "soft",
+    "audioIndex": 242
   },
   {
     "front": "zelfverzekerd (adj)",
-    "back": "self-confident"
+    "back": "self-confident",
+    "audioIndex": 243
   },
   {
     "front": "zeker (adj)",
-    "back": "certain, sure"
+    "back": "certain, sure",
+    "audioIndex": 244
   },
   {
     "front": "ziek (adj)",
-    "back": "sick, ill"
+    "back": "sick, ill",
+    "audioIndex": 245
   },
   {
     "front": "zwaar (adj)",
-    "back": "heavy, serious"
+    "back": "heavy, serious",
+    "audioIndex": 246
   },
   {
     "front": "zwak (adj)",
-    "back": "weak"
+    "back": "weak",
+    "audioIndex": 247
   },
   {
     "front": "zwart (adj)",
-    "back": "black"
+    "back": "black",
+    "audioIndex": 248
   },
   {
     "front": "zeldzaam (adj)",
-    "back": "rare"
+    "back": "rare",
+    "audioIndex": 249
   },
   {
     "front": "zorgvuldig (adj)",
-    "back": "careful, thorough"
+    "back": "careful, thorough",
+    "audioIndex": 250
   },
   {
     "front": "zuiver (adj)",
-    "back": "pure, clean"
+    "back": "pure, clean",
+    "audioIndex": 251
   },
   {
     "front": "gevaarlijk (adj)",
-    "back": "dangerous"
+    "back": "dangerous",
+    "audioIndex": 252
   },
   {
     "front": "bekwaam (adj)",
-    "back": "capable, skilled"
+    "back": "capable, skilled",
+    "audioIndex": 253
   },
   {
     "front": "beroemd (adj)",
-    "back": "famous"
+    "back": "famous",
+    "audioIndex": 254
   },
   {
     "front": "bekend (adj)",
-    "back": "known, well-known"
+    "back": "known, well-known",
+    "audioIndex": 255
   },
   {
     "front": "bezig (adj)",
-    "back": "busy"
+    "back": "busy",
+    "audioIndex": 256
   },
   {
     "front": "bewust (adj)",
-    "back": "aware, conscious"
+    "back": "aware, conscious",
+    "audioIndex": 257
   },
   {
     "front": "blind (adj)",
-    "back": "blind"
+    "back": "blind",
+    "audioIndex": 258
   },
   {
     "front": "boeiend (adj)",
-    "back": "fascinating, engaging"
+    "back": "fascinating, engaging",
+    "audioIndex": 259
   },
   {
     "front": "braaf (adj)",
-    "back": "well-behaved, good"
+    "back": "well-behaved, good",
+    "audioIndex": 260
   },
   {
     "front": "broos (adj)",
-    "back": "fragile, brittle"
+    "back": "fragile, brittle",
+    "audioIndex": 261
   },
   {
     "front": "dapper (adj)",
-    "back": "brave, courageous"
+    "back": "brave, courageous",
+    "audioIndex": 262
   },
   {
     "front": "divers (adj)",
-    "back": "diverse"
+    "back": "diverse",
+    "audioIndex": 263
   },
   {
     "front": "dringend (adj)",
-    "back": "urgent"
+    "back": "urgent",
+    "audioIndex": 264
   },
   {
     "front": "droog (adj)",
-    "back": "dry"
+    "back": "dry",
+    "audioIndex": 265
   },
   {
     "front": "duf (adj)",
-    "back": "dull, stuffy"
+    "back": "dull, stuffy",
+    "audioIndex": 266
   },
   {
     "front": "efficiënt (adj)",
-    "back": "efficient"
+    "back": "efficient",
+    "audioIndex": 267
   },
   {
     "front": "elegant (adj)",
-    "back": "elegant"
+    "back": "elegant",
+    "audioIndex": 268
   },
   {
     "front": "ernstig (adj)",
-    "back": "serious, severe"
+    "back": "serious, severe",
+    "audioIndex": 269
   },
   {
     "front": "ervaren (adj)",
-    "back": "experienced"
+    "back": "experienced",
+    "audioIndex": 270
   },
   {
     "front": "ethisch (adj)",
-    "back": "ethical"
+    "back": "ethical",
+    "audioIndex": 271
   },
   {
     "front": "existentieel (adj)",
-    "back": "existential"
+    "back": "existential",
+    "audioIndex": 272
   },
   {
     "front": "gedetailleerd (adj)",
-    "back": "detailed"
+    "back": "detailed",
+    "audioIndex": 273
   },
   {
     "front": "geïnteresseerd (adj)",
-    "back": "interested"
+    "back": "interested",
+    "audioIndex": 274
   },
   {
     "front": "gemakkelijk (adj)",
-    "back": "easy, comfortable"
+    "back": "easy, comfortable",
+    "audioIndex": 275
   },
   {
     "front": "gereed (adj)",
-    "back": "ready, prepared"
+    "back": "ready, prepared",
+    "audioIndex": 276
   },
   {
     "front": "gevoelig (adj)",
-    "back": "sensitive"
+    "back": "sensitive",
+    "audioIndex": 277
   },
   {
     "front": "gevorderd (adj)",
-    "back": "advanced"
+    "back": "advanced",
+    "audioIndex": 278
   },
   {
     "front": "giftig (adj)",
-    "back": "toxic, poisonous"
+    "back": "toxic, poisonous",
+    "audioIndex": 279
   },
   {
     "front": "grappig (adj)",
-    "back": "funny, amusing"
+    "back": "funny, amusing",
+    "audioIndex": 280
   },
   {
     "front": "grondig (adj)",
-    "back": "thorough"
+    "back": "thorough",
+    "audioIndex": 281
   },
   {
     "front": "handig (adj)",
-    "back": "handy, convenient"
+    "back": "handy, convenient",
+    "audioIndex": 282
   },
   {
     "front": "heerlijk (adj)",
-    "back": "delicious, wonderful"
+    "back": "delicious, wonderful",
+    "audioIndex": 283
   },
   {
     "front": "heftig (adj)",
-    "back": "intense, fierce"
+    "back": "intense, fierce",
+    "audioIndex": 284
   },
   {
     "front": "hollands (adj)",
-    "back": "Dutch, Holland"
+    "back": "Dutch, Holland",
+    "audioIndex": 285
   },
   {
     "front": "hoffelijk (adj)",
-    "back": "polite, courteous"
+    "back": "polite, courteous",
+    "audioIndex": 286
   },
   {
     "front": "ingewikkeld (adj)",
-    "back": "complicated"
+    "back": "complicated",
+    "audioIndex": 287
   },
   {
     "front": "intact (adj)",
-    "back": "intact"
+    "back": "intact",
+    "audioIndex": 288
   },
   {
     "front": "intens (adj)",
-    "back": "intense"
+    "back": "intense",
+    "audioIndex": 289
   },
   {
     "front": "jaloers (adj)",
-    "back": "jealous"
+    "back": "jealous",
+    "audioIndex": 290
   },
   {
     "front": "krachtig (adj)",
-    "back": "powerful, strong"
+    "back": "powerful, strong",
+    "audioIndex": 291
   },
   {
     "front": "kwetsbaar (adj)",
-    "back": "vulnerable"
+    "back": "vulnerable",
+    "audioIndex": 292
   },
   {
     "front": "levendig (adj)",
-    "back": "lively, vivid"
+    "back": "lively, vivid",
+    "audioIndex": 293
   },
   {
     "front": "matig (adj)",
-    "back": "moderate, mediocre"
+    "back": "moderate, mediocre",
+    "audioIndex": 294
   },
   {
     "front": "meervoudig (adj)",
-    "back": "multiple, plural"
+    "back": "multiple, plural",
+    "audioIndex": 295
   },
   {
     "front": "merkwaardig (adj)",
-    "back": "remarkable, strange"
+    "back": "remarkable, strange",
+    "audioIndex": 296
   },
   {
     "front": "nep (adj)",
-    "back": "fake, false"
+    "back": "fake, false",
+    "audioIndex": 297
   },
   {
     "front": "nuttig (adj)",
-    "back": "useful"
+    "back": "useful",
+    "audioIndex": 298
   },
   {
     "front": "nuchter (adj)",
-    "back": "sober, matter-of-fact"
+    "back": "sober, matter-of-fact",
+    "audioIndex": 299
   },
   {
     "front": "onfatsoenlijk (adj)",
-    "back": "indecent"
+    "back": "indecent",
+    "audioIndex": 300
   },
   {
     "front": "ongelooflijk (adj)",
-    "back": "incredible"
+    "back": "incredible",
+    "audioIndex": 301
   },
   {
     "front": "onmisbaar (adj)",
-    "back": "indispensable"
+    "back": "indispensable",
+    "audioIndex": 302
   },
   {
     "front": "onrealistisch (adj)",
-    "back": "unrealistic"
+    "back": "unrealistic",
+    "audioIndex": 303
   },
   {
     "front": "onrustig (adj)",
-    "back": "restless"
+    "back": "restless",
+    "audioIndex": 304
   },
   {
     "front": "opgewekt (adj)",
-    "back": "cheerful"
+    "back": "cheerful",
+    "audioIndex": 305
   },
   {
     "front": "oprecht (adj)",
-    "back": "sincere, genuine"
+    "back": "sincere, genuine",
+    "audioIndex": 306
   },
   {
     "front": "overtuigend (adj)",
-    "back": "convincing"
+    "back": "convincing",
+    "audioIndex": 307
   },
   {
     "front": "pittig (adj)",
-    "back": "spicy, feisty"
+    "back": "spicy, feisty",
+    "audioIndex": 308
   },
   {
     "front": "plat (adj)",
-    "back": "flat, crude"
+    "back": "flat, crude",
+    "audioIndex": 309
   },
   {
     "front": "prachtig (adj)",
-    "back": "magnificent, gorgeous"
+    "back": "magnificent, gorgeous",
+    "audioIndex": 310
   },
   {
     "front": "precies (adj)",
-    "back": "precise, exact"
+    "back": "precise, exact",
+    "audioIndex": 311
   },
   {
     "front": "prettig (adj)",
-    "back": "pleasant, nice"
+    "back": "pleasant, nice",
+    "audioIndex": 312
   },
   {
     "front": "pure (adj)",
-    "back": "pure"
+    "back": "pure",
+    "audioIndex": 313
   },
   {
     "front": "rebel (adj)",
-    "back": "rebellious"
+    "back": "rebellious",
+    "audioIndex": 314
   },
   {
     "front": "respectvol (adj)",
-    "back": "respectful"
+    "back": "respectful",
+    "audioIndex": 315
   },
   {
     "front": "ruim (adj)",
-    "back": "spacious, ample"
+    "back": "spacious, ample",
+    "audioIndex": 316
   },
   {
     "front": "schandalig (adj)",
-    "back": "scandalous"
+    "back": "scandalous",
+    "audioIndex": 317
   },
   {
     "front": "schijnbaar (adj)",
-    "back": "apparent, seeming"
+    "back": "apparent, seeming",
+    "audioIndex": 318
   },
   {
     "front": "soepel (adj)",
-    "back": "flexible, supple"
+    "back": "flexible, supple",
+    "audioIndex": 319
   },
   {
     "front": "spaarzaam (adj)",
-    "back": "economical, frugal"
+    "back": "economical, frugal",
+    "audioIndex": 320
   },
   {
     "front": "spontaan (adj)",
-    "back": "spontaneous"
+    "back": "spontaneous",
+    "audioIndex": 321
   },
   {
     "front": "steil (adj)",
-    "back": "steep"
+    "back": "steep",
+    "audioIndex": 322
   },
   {
     "front": "streng (adj)",
-    "back": "strict, severe"
+    "back": "strict, severe",
+    "audioIndex": 323
   },
   {
     "front": "subliem (adj)",
-    "back": "sublime"
+    "back": "sublime",
+    "audioIndex": 324
   },
   {
     "front": "subtiel (adj)",
-    "back": "subtle"
+    "back": "subtle",
+    "audioIndex": 325
   },
   {
     "front": "superieur (adj)",
-    "back": "superior"
+    "back": "superior",
+    "audioIndex": 326
   },
   {
     "front": "tamelijk (adj)",
-    "back": "fairly, rather"
+    "back": "fairly, rather",
+    "audioIndex": 327
   },
   {
     "front": "talrijk (adj)",
-    "back": "numerous"
+    "back": "numerous",
+    "audioIndex": 328
   },
   {
     "front": "tegenstrijdig (adj)",
-    "back": "contradictory"
+    "back": "contradictory",
+    "audioIndex": 329
   },
   {
     "front": "teleurstellend (adj)",
-    "back": "disappointing"
+    "back": "disappointing",
+    "audioIndex": 330
   },
   {
     "front": "tijdig (adj)",
-    "back": "timely"
+    "back": "timely",
+    "audioIndex": 331
   },
   {
     "front": "twijfelachtig (adj)",
-    "back": "doubtful, dubious"
+    "back": "doubtful, dubious",
+    "audioIndex": 332
   },
   {
     "front": "unaniem (adj)",
-    "back": "unanimous"
+    "back": "unanimous",
+    "audioIndex": 333
   },
   {
     "front": "uitgebreid (adj)",
-    "back": "extensive, comprehensive"
+    "back": "extensive, comprehensive",
+    "audioIndex": 334
   },
   {
     "front": "uitstekend (adj)",
-    "back": "excellent"
+    "back": "excellent",
+    "audioIndex": 335
   },
   {
     "front": "verbazingwekkend (adj)",
-    "back": "astonishing"
+    "back": "astonishing",
+    "audioIndex": 336
   },
   {
     "front": "vermoeiend (adj)",
-    "back": "tiring, exhausting"
+    "back": "tiring, exhausting",
+    "audioIndex": 337
   },
   {
     "front": "verrassend (adj)",
-    "back": "surprising"
+    "back": "surprising",
+    "audioIndex": 338
   },
   {
     "front": "verantwoordelijk (adj)",
-    "back": "responsible"
+    "back": "responsible",
+    "audioIndex": 339
   },
   {
     "front": "verstandig (adj)",
-    "back": "sensible, wise"
+    "back": "sensible, wise",
+    "audioIndex": 340
   },
   {
     "front": "vertederend (adj)",
-    "back": "endearing"
+    "back": "endearing",
+    "audioIndex": 341
   },
   {
     "front": "verwacht (adj)",
-    "back": "expected"
+    "back": "expected",
+    "audioIndex": 342
   },
   {
     "front": "vlot (adj)",
-    "back": "smooth, fluent"
+    "back": "smooth, fluent",
+    "audioIndex": 343
   },
   {
     "front": "volkomen (adj)",
-    "back": "complete, utter"
+    "back": "complete, utter",
+    "audioIndex": 344
   },
   {
     "front": "voldoende (adj)",
-    "back": "sufficient, enough"
+    "back": "sufficient, enough",
+    "audioIndex": 345
   },
   {
     "front": "waardevol (adj)",
-    "back": "valuable"
+    "back": "valuable",
+    "audioIndex": 346
   },
   {
     "front": "wazig (adj)",
-    "back": "hazy, blurry"
+    "back": "hazy, blurry",
+    "audioIndex": 347
   },
   {
     "front": "welkom (adj)",
-    "back": "welcome"
+    "back": "welcome",
+    "audioIndex": 348
   },
   {
     "front": "wereldwijd (adj)",
-    "back": "worldwide"
+    "back": "worldwide",
+    "audioIndex": 349
   },
   {
     "front": "zinnig (adj)",
-    "back": "meaningful, sensible"
+    "back": "meaningful, sensible",
+    "audioIndex": 350
   },
   {
     "front": "zorgelijk (adj)",
-    "back": "worrying"
+    "back": "worrying",
+    "audioIndex": 351
   },
   {
     "front": "zorgzaam (adj)",
-    "back": "caring"
+    "back": "caring",
+    "audioIndex": 352
   },
   {
     "front": "aanpassen (v)",
-    "back": "to adjust, adapt"
+    "back": "to adjust, adapt",
+    "audioIndex": 353
   },
   {
     "front": "aanvallen (v)",
-    "back": "to attack"
+    "back": "to attack",
+    "audioIndex": 354
   },
   {
     "front": "accepteren (v)",
-    "back": "to accept"
+    "back": "to accept",
+    "audioIndex": 355
   },
   {
     "front": "adverteren (v)",
-    "back": "to advertise"
+    "back": "to advertise",
+    "audioIndex": 356
   },
   {
     "front": "analyseren (v)",
-    "back": "to analyze"
+    "back": "to analyze",
+    "audioIndex": 357
   },
   {
     "front": "annuleren (v)",
-    "back": "to cancel"
+    "back": "to cancel",
+    "audioIndex": 358
   },
   {
     "front": "antwoorden (v)",
-    "back": "to answer"
+    "back": "to answer",
+    "audioIndex": 359
   },
   {
     "front": "archiveren (v)",
-    "back": "to archive"
+    "back": "to archive",
+    "audioIndex": 360
   },
   {
     "front": "automatiseren (v)",
-    "back": "to automate"
+    "back": "to automate",
+    "audioIndex": 361
   },
   {
     "front": "beëindigen (v)",
-    "back": "to end, terminate"
+    "back": "to end, terminate",
+    "audioIndex": 362
   },
   {
     "front": "beïnvloeden (v)",
-    "back": "to influence"
+    "back": "to influence",
+    "audioIndex": 363
   },
   {
     "front": "bekijken (v)",
-    "back": "to look at, view"
+    "back": "to look at, view",
+    "audioIndex": 364
   },
   {
     "front": "belonen (v)",
-    "back": "to reward"
+    "back": "to reward",
+    "audioIndex": 365
   },
   {
     "front": "berekenen (v)",
-    "back": "to calculate"
+    "back": "to calculate",
+    "audioIndex": 366
   },
   {
     "front": "bereiken (v)",
-    "back": "to reach, achieve"
+    "back": "to reach, achieve",
+    "audioIndex": 367
   },
   {
     "front": "beschermen (v)",
-    "back": "to protect"
+    "back": "to protect",
+    "audioIndex": 368
   },
   {
     "front": "beslissen (v)",
-    "back": "to decide"
+    "back": "to decide",
+    "audioIndex": 369
   },
   {
     "front": "betalen (v)",
-    "back": "to pay"
+    "back": "to pay",
+    "audioIndex": 370
   },
   {
     "front": "betekenen (v)",
-    "back": "to mean, signify"
+    "back": "to mean, signify",
+    "audioIndex": 371
   },
   {
     "front": "bieden (v)",
-    "back": "to offer, provide"
+    "back": "to offer, provide",
+    "audioIndex": 372
   },
   {
     "front": "bijdragen (v)",
-    "back": "to contribute"
+    "back": "to contribute",
+    "audioIndex": 373
   },
   {
     "front": "blijven (v)",
-    "back": "to stay, remain"
+    "back": "to stay, remain",
+    "audioIndex": 374
   },
   {
     "front": "blokkeren (v)",
-    "back": "to block"
+    "back": "to block",
+    "audioIndex": 375
   },
   {
     "front": "bouwen (v)",
-    "back": "to build"
+    "back": "to build",
+    "audioIndex": 376
   },
   {
     "front": "breken (v)",
-    "back": "to break"
+    "back": "to break",
+    "audioIndex": 377
   },
   {
     "front": "brengen (v)",
-    "back": "to bring"
+    "back": "to bring",
+    "audioIndex": 378
   },
   {
     "front": "combineren (v)",
-    "back": "to combine"
+    "back": "to combine",
+    "audioIndex": 379
   },
   {
     "front": "communiceren (v)",
-    "back": "to communicate"
+    "back": "to communicate",
+    "audioIndex": 380
   },
   {
     "front": "controleren (v)",
-    "back": "to check, control"
+    "back": "to check, control",
+    "audioIndex": 381
   },
   {
     "front": "converteren (v)",
-    "back": "to convert"
+    "back": "to convert",
+    "audioIndex": 382
   },
   {
     "front": "coördineren (v)",
-    "back": "to coordinate"
+    "back": "to coordinate",
+    "audioIndex": 383
   },
   {
     "front": "creëren (v)",
-    "back": "to create"
+    "back": "to create",
+    "audioIndex": 384
   },
   {
     "front": "dansen (v)",
-    "back": "to dance"
+    "back": "to dance",
+    "audioIndex": 385
   },
   {
     "front": "debuggen (v)",
-    "back": "to debug"
+    "back": "to debug",
+    "audioIndex": 386
   },
   {
     "front": "delen (v)",
-    "back": "to share, divide"
+    "back": "to share, divide",
+    "audioIndex": 387
   },
   {
     "front": "denken (v)",
-    "back": "to think"
+    "back": "to think",
+    "audioIndex": 388
   },
   {
     "front": "distribueren (v)",
-    "back": "to distribute"
+    "back": "to distribute",
+    "audioIndex": 389
   },
   {
     "front": "doen (v)",
-    "back": "to do"
+    "back": "to do",
+    "audioIndex": 390
   },
   {
     "front": "downloaden (v)",
-    "back": "to download"
+    "back": "to download",
+    "audioIndex": 391
   },
   {
     "front": "drukken (v)",
-    "back": "to press, push, print"
+    "back": "to press, push, print",
+    "audioIndex": 392
   },
   {
     "front": "duren (v)",
-    "back": "to last, take time"
+    "back": "to last, take time",
+    "audioIndex": 393
   },
   {
     "front": "dwingen (v)",
-    "back": "to force, compel"
+    "back": "to force, compel",
+    "audioIndex": 394
   },
   {
     "front": "eindigen (v)",
-    "back": "to end, finish"
+    "back": "to end, finish",
+    "audioIndex": 395
   },
   {
     "front": "eten (v)",
-    "back": "to eat"
+    "back": "to eat",
+    "audioIndex": 396
   },
   {
     "front": "evalueren (v)",
-    "back": "to evaluate"
+    "back": "to evaluate",
+    "audioIndex": 397
   },
   {
     "front": "exporteren (v)",
-    "back": "to export"
+    "back": "to export",
+    "audioIndex": 398
   },
   {
     "front": "filteren (v)",
-    "back": "to filter"
+    "back": "to filter",
+    "audioIndex": 399
   },
   {
     "front": "fotograferen (v)",
-    "back": "to photograph"
+    "back": "to photograph",
+    "audioIndex": 400
   },
   {
     "front": "gaan (v)",
-    "back": "to go"
+    "back": "to go",
+    "audioIndex": 401
   },
   {
     "front": "geven (v)",
-    "back": "to give"
+    "back": "to give",
+    "audioIndex": 402
   },
   {
     "front": "groeien (v)",
-    "back": "to grow"
+    "back": "to grow",
+    "audioIndex": 403
   },
   {
     "front": "halen (v)",
-    "back": "to get, fetch"
+    "back": "to get, fetch",
+    "audioIndex": 404
   },
   {
     "front": "hangen (v)",
-    "back": "to hang"
+    "back": "to hang",
+    "audioIndex": 405
   },
   {
     "front": "hebben (v)",
-    "back": "to have"
+    "back": "to have",
+    "audioIndex": 406
   },
   {
     "front": "helpen (v)",
-    "back": "to help"
+    "back": "to help",
+    "audioIndex": 407
   },
   {
     "front": "herhalen (v)",
-    "back": "to repeat"
+    "back": "to repeat",
+    "audioIndex": 408
   },
   {
     "front": "herinneren (v)",
-    "back": "to remember"
+    "back": "to remember",
+    "audioIndex": 409
   },
   {
     "front": "herstarten (v)",
-    "back": "to restart"
+    "back": "to restart",
+    "audioIndex": 410
   },
   {
     "front": "horen (v)",
-    "back": "to hear"
+    "back": "to hear",
+    "audioIndex": 411
   },
   {
     "front": "importeren (v)",
-    "back": "to import"
+    "back": "to import",
+    "audioIndex": 412
   },
   {
     "front": "informeren (v)",
-    "back": "to inform"
+    "back": "to inform",
+    "audioIndex": 413
   },
   {
     "front": "innoveren (v)",
-    "back": "to innovate"
+    "back": "to innovate",
+    "audioIndex": 414
   },
   {
     "front": "installeren (v)",
-    "back": "to install"
+    "back": "to install",
+    "audioIndex": 415
   },
   {
     "front": "integreren (v)",
-    "back": "to integrate"
+    "back": "to integrate",
+    "audioIndex": 416
   },
   {
     "front": "investeren (v)",
-    "back": "to invest"
+    "back": "to invest",
+    "audioIndex": 417
   },
   {
     "front": "kiezen (v)",
-    "back": "to choose"
+    "back": "to choose",
+    "audioIndex": 418
   },
   {
     "front": "kijken (v)",
-    "back": "to look, watch"
+    "back": "to look, watch",
+    "audioIndex": 419
   },
   {
     "front": "kopen (v)",
-    "back": "to buy"
+    "back": "to buy",
+    "audioIndex": 420
   },
   {
     "front": "komen (v)",
-    "back": "to come"
+    "back": "to come",
+    "audioIndex": 421
   },
   {
     "front": "koken (v)",
-    "back": "to cook"
+    "back": "to cook",
+    "audioIndex": 422
   },
   {
     "front": "kopiëren (v)",
-    "back": "to copy"
+    "back": "to copy",
+    "audioIndex": 423
   },
   {
     "front": "krimpen (v)",
-    "back": "to shrink"
+    "back": "to shrink",
+    "audioIndex": 424
   },
   {
     "front": "kunnen (v)",
-    "back": "can, to be able to"
+    "back": "can, to be able to",
+    "audioIndex": 425
   },
   {
     "front": "lanceren (v)",
-    "back": "to launch"
+    "back": "to launch",
+    "audioIndex": 426
   },
   {
     "front": "laten (v)",
-    "back": "to let, allow"
+    "back": "to let, allow",
+    "audioIndex": 427
   },
   {
     "front": "laden (v)",
-    "back": "to load"
+    "back": "to load",
+    "audioIndex": 428
   },
   {
     "front": "leggen (v)",
-    "back": "to lay, put"
+    "back": "to lay, put",
+    "audioIndex": 429
   },
   {
     "front": "leiden (v)",
-    "back": "to lead"
+    "back": "to lead",
+    "audioIndex": 430
   },
   {
     "front": "lenen (v)",
-    "back": "to borrow, lend"
+    "back": "to borrow, lend",
+    "audioIndex": 431
   },
   {
     "front": "leren (v)",
-    "back": "to learn, teach"
+    "back": "to learn, teach",
+    "audioIndex": 432
   },
   {
     "front": "lezen (v)",
-    "back": "to read"
+    "back": "to read",
+    "audioIndex": 433
   },
   {
     "front": "liggen (v)",
-    "back": "to lie"
+    "back": "to lie",
+    "audioIndex": 434
   },
   {
     "front": "luisteren (v)",
-    "back": "to listen"
+    "back": "to listen",
+    "audioIndex": 435
   },
   {
     "front": "lopen (v)",
-    "back": "to walk, run"
+    "back": "to walk, run",
+    "audioIndex": 436
   },
   {
     "front": "maken (v)",
-    "back": "to make"
+    "back": "to make",
+    "audioIndex": 437
   },
   {
     "front": "meten (v)",
-    "back": "to measure"
+    "back": "to measure",
+    "audioIndex": 438
   },
   {
     "front": "moderniseren (v)",
-    "back": "to modernize"
+    "back": "to modernize",
+    "audioIndex": 439
   },
   {
     "front": "moeten (v)",
-    "back": "must, to have to"
+    "back": "must, to have to",
+    "audioIndex": 440
   },
   {
     "front": "mogen (v)",
-    "back": "may, to be allowed to"
+    "back": "may, to be allowed to",
+    "audioIndex": 441
   },
   {
     "front": "motiveren (v)",
-    "back": "to motivate"
+    "back": "to motivate",
+    "audioIndex": 442
   },
   {
     "front": "nemen (v)",
-    "back": "to take"
+    "back": "to take",
+    "audioIndex": 443
   },
   {
     "front": "oefenen (v)",
-    "back": "to practice"
+    "back": "to practice",
+    "audioIndex": 444
   },
   {
     "front": "ondersteunen (v)",
-    "back": "to support"
+    "back": "to support",
+    "audioIndex": 445
   },
   {
     "front": "onderwijzen (v)",
-    "back": "to teach"
+    "back": "to teach",
+    "audioIndex": 446
   },
   {
     "front": "ontdekken (v)",
-    "back": "to discover"
+    "back": "to discover",
+    "audioIndex": 447
   },
   {
     "front": "ontkennen (v)",
-    "back": "to deny"
+    "back": "to deny",
+    "audioIndex": 448
   },
   {
     "front": "ontvangen (v)",
-    "back": "to receive"
+    "back": "to receive",
+    "audioIndex": 449
   },
   {
     "front": "ontwerpen (v)",
-    "back": "to design"
+    "back": "to design",
+    "audioIndex": 450
   },
   {
     "front": "openen (v)",
-    "back": "to open"
+    "back": "to open",
+    "audioIndex": 451
   },
   {
     "front": "oplossen (v)",
-    "back": "to solve"
+    "back": "to solve",
+    "audioIndex": 452
   },
   {
     "front": "opslaan (v)",
-    "back": "to save, store"
+    "back": "to save, store",
+    "audioIndex": 453
   },
   {
     "front": "organiseren (v)",
-    "back": "to organize"
+    "back": "to organize",
+    "audioIndex": 454
   },
   {
     "front": "overtuigen (v)",
-    "back": "to convince"
+    "back": "to convince",
+    "audioIndex": 455
   },
   {
     "front": "pauzeren (v)",
-    "back": "to pause"
+    "back": "to pause",
+    "audioIndex": 456
   },
   {
     "front": "plannen (v)",
-    "back": "to plan"
+    "back": "to plan",
+    "audioIndex": 457
   },
   {
     "front": "plaatsen (v)",
-    "back": "to place, put"
+    "back": "to place, put",
+    "audioIndex": 458
   },
   {
     "front": "printen (v)",
-    "back": "to print"
+    "back": "to print",
+    "audioIndex": 459
   },
   {
     "front": "produceren (v)",
-    "back": "to produce"
+    "back": "to produce",
+    "audioIndex": 460
   },
   {
     "front": "promoten (v)",
-    "back": "to promote"
+    "back": "to promote",
+    "audioIndex": 461
   },
   {
     "front": "praten (v)",
-    "back": "to talk"
+    "back": "to talk",
+    "audioIndex": 462
   },
   {
     "front": "redden (v)",
-    "back": "to save, rescue"
+    "back": "to save, rescue",
+    "audioIndex": 463
   },
   {
     "front": "registreren (v)",
-    "back": "to register"
+    "back": "to register",
+    "audioIndex": 464
   },
   {
     "front": "repareren (v)",
-    "back": "to repair, fix"
+    "back": "to repair, fix",
+    "audioIndex": 465
   },
   {
     "front": "rijden (v)",
-    "back": "to drive, ride"
+    "back": "to drive, ride",
+    "audioIndex": 466
   },
   {
     "front": "roepen (v)",
-    "back": "to call, shout"
+    "back": "to call, shout",
+    "audioIndex": 467
   },
   {
     "front": "ruiken (v)",
-    "back": "to smell"
+    "back": "to smell",
+    "audioIndex": 468
   },
   {
     "front": "rusten (v)",
-    "back": "to rest"
+    "back": "to rest",
+    "audioIndex": 469
   },
   {
     "front": "samenvatten (v)",
-    "back": "to summarize"
+    "back": "to summarize",
+    "audioIndex": 470
   },
   {
     "front": "scannen (v)",
-    "back": "to scan"
+    "back": "to scan",
+    "audioIndex": 471
   },
   {
     "front": "schilderen (v)",
-    "back": "to paint"
+    "back": "to paint",
+    "audioIndex": 472
   },
   {
     "front": "schrijven (v)",
-    "back": "to write"
+    "back": "to write",
+    "audioIndex": 473
   },
   {
     "front": "separeren (v)",
-    "back": "to separate"
+    "back": "to separate",
+    "audioIndex": 474
   },
   {
     "front": "simplificeren (v)",
-    "back": "to simplify"
+    "back": "to simplify",
+    "audioIndex": 475
   },
   {
     "front": "slapen (v)",
-    "back": "to sleep"
+    "back": "to sleep",
+    "audioIndex": 476
   },
   {
     "front": "sluiten (v)",
-    "back": "to close"
+    "back": "to close",
+    "audioIndex": 477
   },
   {
     "front": "smaken (v)",
-    "back": "to taste"
+    "back": "to taste",
+    "audioIndex": 478
   },
   {
     "front": "sorteren (v)",
-    "back": "to sort"
+    "back": "to sort",
+    "audioIndex": 479
   },
   {
     "front": "sparen (v)",
-    "back": "to save, spare"
+    "back": "to save, spare",
+    "audioIndex": 480
   },
   {
     "front": "spelen (v)",
-    "back": "to play"
+    "back": "to play",
+    "audioIndex": 481
   },
   {
     "front": "springen (v)",
-    "back": "to jump"
+    "back": "to jump",
+    "audioIndex": 482
   },
   {
     "front": "staan (v)",
-    "back": "to stand"
+    "back": "to stand",
+    "audioIndex": 483
   },
   {
     "front": "starten (v)",
-    "back": "to start"
+    "back": "to start",
+    "audioIndex": 484
   },
   {
     "front": "sturen (v)",
-    "back": "to send, steer"
+    "back": "to send, steer",
+    "audioIndex": 485
   },
   {
     "front": "studeren (v)",
-    "back": "to study"
+    "back": "to study",
+    "audioIndex": 486
   },
   {
     "front": "stoppen (v)",
-    "back": "to stop"
+    "back": "to stop",
+    "audioIndex": 487
   },
   {
     "front": "straffen (v)",
-    "back": "to punish"
+    "back": "to punish",
+    "audioIndex": 488
   },
   {
     "front": "synchroniseren (v)",
-    "back": "to synchronize"
+    "back": "to synchronize",
+    "audioIndex": 489
   },
   {
     "front": "tekenen (v)",
-    "back": "to draw, sign"
+    "back": "to draw, sign",
+    "audioIndex": 490
   },
   {
     "front": "tellen (v)",
-    "back": "to count"
+    "back": "to count",
+    "audioIndex": 491
   },
   {
     "front": "toestaan (v)",
-    "back": "to allow, permit"
+    "back": "to allow, permit",
+    "audioIndex": 492
   },
   {
     "front": "toevoegen (v)",
-    "back": "to add"
+    "back": "to add",
+    "audioIndex": 493
   },
   {
     "front": "trainen (v)",
-    "back": "to train"
+    "back": "to train",
+    "audioIndex": 494
   },
   {
     "front": "transformeren (v)",
-    "back": "to transform"
+    "back": "to transform",
+    "audioIndex": 495
   },
   {
     "front": "trekken (v)",
-    "back": "to pull, draw"
+    "back": "to pull, draw",
+    "audioIndex": 496
   },
   {
     "front": "uitbreiden (v)",
-    "back": "to expand"
+    "back": "to expand",
+    "audioIndex": 497
   },
   {
     "front": "uitloggen (v)",
-    "back": "to log out"
+    "back": "to log out",
+    "audioIndex": 498
   },
   {
     "front": "uitvoeren (v)",
-    "back": "to execute, carry out"
+    "back": "to execute, carry out",
+    "audioIndex": 499
   },
   {
     "front": "uploaden (v)",
-    "back": "to upload"
+    "back": "to upload",
+    "audioIndex": 500
   },
   {
     "front": "valideren (v)",
-    "back": "to validate"
+    "back": "to validate",
+    "audioIndex": 501
   },
   {
     "front": "vallen (v)",
-    "back": "to fall"
+    "back": "to fall",
+    "audioIndex": 502
   },
   {
     "front": "vangen (v)",
-    "back": "to catch"
+    "back": "to catch",
+    "audioIndex": 503
   },
   {
     "front": "veranderen (v)",
-    "back": "to change"
+    "back": "to change",
+    "audioIndex": 504
   },
   {
     "front": "verbieden (v)",
-    "back": "to forbid, prohibit"
+    "back": "to forbid, prohibit",
+    "audioIndex": 505
   },
   {
     "front": "verbinden (v)",
-    "back": "to connect"
+    "back": "to connect",
+    "audioIndex": 506
   },
   {
     "front": "verdedigen (v)",
-    "back": "to defend"
+    "back": "to defend",
+    "audioIndex": 507
   },
   {
     "front": "verdienen (v)",
-    "back": "to earn, deserve"
+    "back": "to earn, deserve",
+    "audioIndex": 508
   },
   {
     "front": "vergelijken (v)",
-    "back": "to compare"
+    "back": "to compare",
+    "audioIndex": 509
   },
   {
     "front": "vergeten (v)",
-    "back": "to forget"
+    "back": "to forget",
+    "audioIndex": 510
   },
   {
     "front": "verbeteren (v)",
-    "back": "to improve"
+    "back": "to improve",
+    "audioIndex": 511
   },
   {
     "front": "vernielen (v)",
-    "back": "to destroy"
+    "back": "to destroy",
+    "audioIndex": 512
   },
   {
     "front": "versnellen (v)",
-    "back": "to accelerate"
+    "back": "to accelerate",
+    "audioIndex": 513
   },
   {
     "front": "vertellen (v)",
-    "back": "to tell"
+    "back": "to tell",
+    "audioIndex": 514
   },
   {
     "front": "vertragen (v)",
-    "back": "to slow down, delay"
+    "back": "to slow down, delay",
+    "audioIndex": 515
   },
   {
     "front": "vertrekken (v)",
-    "back": "to leave, depart"
+    "back": "to leave, depart",
+    "audioIndex": 516
   },
   {
     "front": "verwijderen (v)",
-    "back": "to remove, delete"
+    "back": "to remove, delete",
+    "audioIndex": 517
   },
   {
     "front": "vinden (v)",
-    "back": "to find"
+    "back": "to find",
+    "audioIndex": 518
   },
   {
     "front": "vliegen (v)",
-    "back": "to fly"
+    "back": "to fly",
+    "audioIndex": 519
   },
   {
     "front": "voelen (v)",
-    "back": "to feel"
+    "back": "to feel",
+    "audioIndex": 520
   },
   {
     "front": "volgen (v)",
-    "back": "to follow"
+    "back": "to follow",
+    "audioIndex": 521
   },
   {
     "front": "vragen (v)",
-    "back": "to ask"
+    "back": "to ask",
+    "audioIndex": 522
   },
   {
     "front": "waarschuwen (v)",
-    "back": "to warn"
+    "back": "to warn",
+    "audioIndex": 523
   },
   {
     "front": "wachten (v)",
-    "back": "to wait"
+    "back": "to wait",
+    "audioIndex": 524
   },
   {
     "front": "wegen (v)",
-    "back": "to weigh"
+    "back": "to weigh",
+    "audioIndex": 525
   },
   {
     "front": "weigeren (v)",
-    "back": "to refuse, decline"
+    "back": "to refuse, decline",
+    "audioIndex": 526
   },
   {
     "front": "werken (v)",
-    "back": "to work"
+    "back": "to work",
+    "audioIndex": 527
   },
   {
     "front": "winnen (v)",
-    "back": "to win"
+    "back": "to win",
+    "audioIndex": 528
   },
   {
     "front": "weten (v)",
-    "back": "to know"
+    "back": "to know",
+    "audioIndex": 529
   },
   {
     "front": "worden (v)",
-    "back": "to become"
+    "back": "to become",
+    "audioIndex": 530
   },
   {
     "front": "zeggen (v)",
-    "back": "to say"
+    "back": "to say",
+    "audioIndex": 531
   },
   {
     "front": "zetten (v)",
-    "back": "to put, set"
+    "back": "to put, set",
+    "audioIndex": 532
   },
   {
     "front": "zien (v)",
-    "back": "to see"
+    "back": "to see",
+    "audioIndex": 533
   },
   {
     "front": "zijn (v)",
-    "back": "to be"
+    "back": "to be",
+    "audioIndex": 534
   },
   {
     "front": "zinken (v)",
-    "back": "to sink"
+    "back": "to sink",
+    "audioIndex": 535
   },
   {
     "front": "zitten (v)",
-    "back": "to sit"
+    "back": "to sit",
+    "audioIndex": 536
   },
   {
     "front": "zoeken (v)",
-    "back": "to search, look for"
+    "back": "to search, look for",
+    "audioIndex": 537
   },
   {
     "front": "zwemmen (v)",
-    "back": "to swim"
+    "back": "to swim",
+    "audioIndex": 538
   },
   {
     "front": "aankomen (v)",
-    "back": "to arrive"
+    "back": "to arrive",
+    "audioIndex": 539
   },
   {
     "front": "abonneren (v)",
-    "back": "to subscribe"
+    "back": "to subscribe",
+    "audioIndex": 540
   },
   {
     "front": "afsluiten (v)",
-    "back": "to close, shut down"
+    "back": "to close, shut down",
+    "audioIndex": 541
   },
   {
     "front": "afspelen (v)",
-    "back": "to play back"
+    "back": "to play back",
+    "audioIndex": 542
   },
   {
     "front": "activeren (v)",
-    "back": "to activate"
+    "back": "to activate",
+    "audioIndex": 543
   },
   {
     "front": "adviseren (v)",
-    "back": "to advise"
+    "back": "to advise",
+    "audioIndex": 544
   },
   {
     "front": "aanbevelen (v)",
-    "back": "to recommend"
+    "back": "to recommend",
+    "audioIndex": 545
   },
   {
     "front": "beginnen (v)",
-    "back": "to begin, start"
+    "back": "to begin, start",
+    "audioIndex": 546
   },
   {
     "front": "bewijzen (v)",
-    "back": "to prove"
+    "back": "to prove",
+    "audioIndex": 547
   },
   {
     "front": "bevrijden (v)",
-    "back": "to free, liberate"
+    "back": "to free, liberate",
+    "audioIndex": 548
   },
   {
     "front": "bewegen (v)",
-    "back": "to move"
+    "back": "to move",
+    "audioIndex": 549
   },
   {
     "front": "branden (v)",
-    "back": "to burn"
+    "back": "to burn",
+    "audioIndex": 550
   },
   {
     "front": "deactiveren (v)",
-    "back": "to deactivate"
+    "back": "to deactivate",
+    "audioIndex": 551
   },
   {
     "front": "dragen (v)",
-    "back": "to carry, wear"
+    "back": "to carry, wear",
+    "audioIndex": 552
   },
   {
     "front": "drinken (v)",
-    "back": "to drink"
+    "back": "to drink",
+    "audioIndex": 553
   },
   {
     "front": "ervaren (v)",
-    "back": "to experience"
+    "back": "to experience",
+    "audioIndex": 554
   },
   {
     "front": "filmen (v)",
-    "back": "to film, record"
+    "back": "to film, record",
+    "audioIndex": 555
   },
   {
     "front": "genieten (v)",
-    "back": "to enjoy"
+    "back": "to enjoy",
+    "audioIndex": 556
   },
   {
     "front": "hervatten (v)",
-    "back": "to resume"
+    "back": "to resume",
+    "audioIndex": 557
   },
   {
     "front": "hopen (v)",
-    "back": "to hope"
+    "back": "to hope",
+    "audioIndex": 558
   },
   {
     "front": "inloggen (v)",
-    "back": "to log in"
+    "back": "to log in",
+    "audioIndex": 559
   },
   {
     "front": "inspireren (v)",
-    "back": "to inspire"
+    "back": "to inspire",
+    "audioIndex": 560
   },
   {
     "front": "knijpen (v)",
-    "back": "to squeeze, pinch"
+    "back": "to squeeze, pinch",
+    "audioIndex": 561
   },
   {
     "front": "knippen (v)",
-    "back": "to cut, clip"
+    "back": "to cut, clip",
+    "audioIndex": 562
   },
   {
     "front": "leven (v)",
-    "back": "to live"
+    "back": "to live",
+    "audioIndex": 563
   },
   {
     "front": "leveren (v)",
-    "back": "to deliver, supply"
+    "back": "to deliver, supply",
+    "audioIndex": 564
   },
   {
     "front": "missen (v)",
-    "back": "to miss"
+    "back": "to miss",
+    "audioIndex": 565
   },
   {
     "front": "ontmoeten (v)",
-    "back": "to meet"
+    "back": "to meet",
+    "audioIndex": 566
   },
   {
     "front": "opnemen (v)",
-    "back": "to record, pick up"
+    "back": "to record, pick up",
+    "audioIndex": 567
   },
   {
     "front": "plakken (v)",
-    "back": "to paste, stick"
+    "back": "to paste, stick",
+    "audioIndex": 568
   },
   {
     "front": "rijzen (v)",
-    "back": "to rise"
+    "back": "to rise",
+    "audioIndex": 569
   },
   {
     "front": "schatten (v)",
-    "back": "to estimate, value"
+    "back": "to estimate, value",
+    "audioIndex": 570
   },
   {
     "front": "slaan (v)",
-    "back": "to hit, beat"
+    "back": "to hit, beat",
+    "audioIndex": 571
   },
   {
     "front": "smijten (v)",
-    "back": "to throw, fling"
+    "back": "to throw, fling",
+    "audioIndex": 572
   },
   {
     "front": "snijden (v)",
-    "back": "to cut"
+    "back": "to cut",
+    "audioIndex": 573
   },
   {
     "front": "spreken (v)",
-    "back": "to speak"
+    "back": "to speak",
+    "audioIndex": 574
   },
   {
     "front": "steunen (v)",
-    "back": "to support"
+    "back": "to support",
+    "audioIndex": 575
   },
   {
     "front": "sterven (v)",
-    "back": "to die"
+    "back": "to die",
+    "audioIndex": 576
   },
   {
     "front": "terugkomen (v)",
-    "back": "to return, come back"
+    "back": "to return, come back",
+    "audioIndex": 577
   },
   {
     "front": "upgraden (v)",
-    "back": "to upgrade"
+    "back": "to upgrade",
+    "audioIndex": 578
   },
   {
     "front": "uitleggen (v)",
-    "back": "to explain"
+    "back": "to explain",
+    "audioIndex": 579
   },
   {
     "front": "uitschakelen (v)",
-    "back": "to disable, turn off"
+    "back": "to disable, turn off",
+    "audioIndex": 580
   },
   {
     "front": "uitstellen (v)",
-    "back": "to postpone"
+    "back": "to postpone",
+    "audioIndex": 581
   },
   {
     "front": "uitvinden (v)",
-    "back": "to invent"
+    "back": "to invent",
+    "audioIndex": 582
   },
   {
     "front": "verliezen (v)",
-    "back": "to lose"
+    "back": "to lose",
+    "audioIndex": 583
   },
   {
     "front": "vernieuwen (v)",
-    "back": "to renew, refresh"
+    "back": "to renew, refresh",
+    "audioIndex": 584
   },
   {
     "front": "versleutelen (v)",
-    "back": "to encrypt"
+    "back": "to encrypt",
+    "audioIndex": 585
   },
   {
     "front": "verzorgen (v)",
-    "back": "to care for, provide"
+    "back": "to care for, provide",
+    "audioIndex": 586
   },
   {
     "front": "vieren (v)",
-    "back": "to celebrate"
+    "back": "to celebrate",
+    "audioIndex": 587
   },
   {
     "front": "vluchten (v)",
-    "back": "to flee, escape"
+    "back": "to flee, escape",
+    "audioIndex": 588
   },
   {
     "front": "voorbereiden (v)",
-    "back": "to prepare"
+    "back": "to prepare",
+    "audioIndex": 589
   },
   {
     "front": "vrijstellen (v)",
-    "back": "to exempt"
+    "back": "to exempt",
+    "audioIndex": 590
   },
   {
     "front": "vullen (v)",
-    "back": "to fill"
+    "back": "to fill",
+    "audioIndex": 591
   },
   {
     "front": "wassen (v)",
-    "back": "to wash"
+    "back": "to wash",
+    "audioIndex": 592
   },
   {
     "front": "zingen (v)",
-    "back": "to sing"
+    "back": "to sing",
+    "audioIndex": 593
   },
   {
     "front": "zorgen (v)",
-    "back": "to take care, ensure"
+    "back": "to take care, ensure",
+    "audioIndex": 594
   },
   {
     "front": "zwaaien (v)",
-    "back": "to wave, swing"
+    "back": "to wave, swing",
+    "audioIndex": 595
   },
   {
     "front": "strijden (v)",
-    "back": "to fight, struggle"
+    "back": "to fight, struggle",
+    "audioIndex": 596
   },
   {
     "front": "betwijfelen (v)",
-    "back": "to doubt"
+    "back": "to doubt",
+    "audioIndex": 597
   },
   {
     "front": "dreigen (v)",
-    "back": "to threaten"
+    "back": "to threaten",
+    "audioIndex": 598
   },
   {
     "front": "eisen (v)",
-    "back": "to demand, require"
+    "back": "to demand, require",
+    "audioIndex": 599
   },
   {
     "front": "falen (v)",
-    "back": "to fail"
+    "back": "to fail",
+    "audioIndex": 600
   },
   {
     "front": "gebruiken (v)",
-    "back": "to use"
+    "back": "to use",
+    "audioIndex": 601
   },
   {
     "front": "gelden (v)",
-    "back": "to be valid, apply"
+    "back": "to be valid, apply",
+    "audioIndex": 602
   },
   {
     "front": "hanteren (v)",
-    "back": "to handle, manage"
+    "back": "to handle, manage",
+    "audioIndex": 603
   },
   {
     "front": "herkennen (v)",
-    "back": "to recognize"
+    "back": "to recognize",
+    "audioIndex": 604
   },
   {
     "front": "herstellen (v)",
-    "back": "to recover, repair"
+    "back": "to recover, repair",
+    "audioIndex": 605
   },
   {
     "front": "invullen (v)",
-    "back": "to fill in"
+    "back": "to fill in",
+    "audioIndex": 606
   },
   {
     "front": "klagen (v)",
-    "back": "to complain"
+    "back": "to complain",
+    "audioIndex": 607
   },
   {
     "front": "kloppen (v)",
-    "back": "to knock, beat"
+    "back": "to knock, beat",
+    "audioIndex": 608
   },
   {
     "front": "koppelen (v)",
-    "back": "to link, couple"
+    "back": "to link, couple",
+    "audioIndex": 609
   },
   {
     "front": "lachen (v)",
-    "back": "to laugh"
+    "back": "to laugh",
+    "audioIndex": 610
   },
   {
     "front": "meedoen (v)",
-    "back": "to participate"
+    "back": "to participate",
+    "audioIndex": 611
   },
   {
     "front": "melding maken (v)",
-    "back": "to report"
+    "back": "to report",
+    "audioIndex": 612
   },
   {
     "front": "neerleggen (v)",
-    "back": "to put down, lay down"
+    "back": "to put down, lay down",
+    "audioIndex": 613
   },
   {
     "front": "neigen (v)",
-    "back": "to tend, incline"
+    "back": "to tend, incline",
+    "audioIndex": 614
   },
   {
     "front": "omvatten (v)",
-    "back": "to include, encompass"
+    "back": "to include, encompass",
+    "audioIndex": 615
   },
   {
     "front": "ondergaan (v)",
-    "back": "to undergo"
+    "back": "to undergo",
+    "audioIndex": 616
   },
   {
     "front": "onderhandelen (v)",
-    "back": "to negotiate"
+    "back": "to negotiate",
+    "audioIndex": 617
   },
   {
     "front": "opheffen (v)",
-    "back": "to lift, abolish"
+    "back": "to lift, abolish",
+    "audioIndex": 618
   },
   {
     "front": "opstaan (v)",
-    "back": "to stand up, get up"
+    "back": "to stand up, get up",
+    "audioIndex": 619
   },
   {
     "front": "overstappen (v)",
-    "back": "to switch, transfer"
+    "back": "to switch, transfer",
+    "audioIndex": 620
   },
   {
     "front": "prijzen (v)",
-    "back": "to praise, price"
+    "back": "to praise, price",
+    "audioIndex": 621
   },
   {
     "front": "raden (v)",
-    "back": "to guess, advise"
+    "back": "to guess, advise",
+    "audioIndex": 622
   },
   {
     "front": "reageren (v)",
-    "back": "to react, respond"
+    "back": "to react, respond",
+    "audioIndex": 623
   },
   {
     "front": "reizen (v)",
-    "back": "to travel"
+    "back": "to travel",
+    "audioIndex": 624
   },
   {
     "front": "reserveren (v)",
-    "back": "to reserve"
+    "back": "to reserve",
+    "audioIndex": 625
   },
   {
     "front": "slagen (v)",
-    "back": "to succeed"
+    "back": "to succeed",
+    "audioIndex": 626
   },
   {
     "front": "stellen (v)",
-    "back": "to set, pose"
+    "back": "to set, pose",
+    "audioIndex": 627
   },
   {
     "front": "terugkeren (v)",
-    "back": "to return"
+    "back": "to return",
+    "audioIndex": 628
   },
   {
     "front": "terugsturen (v)",
-    "back": "to send back"
+    "back": "to send back",
+    "audioIndex": 629
   },
   {
     "front": "toepassen (v)",
-    "back": "to apply"
+    "back": "to apply",
+    "audioIndex": 630
   },
   {
     "front": "vaststellen (v)",
-    "back": "to establish, determine"
+    "back": "to establish, determine",
+    "audioIndex": 631
   },
   {
     "front": "verwachten (v)",
-    "back": "to expect"
+    "back": "to expect",
+    "audioIndex": 632
   },
   {
     "front": "verwijzen (v)",
-    "back": "to refer"
+    "back": "to refer",
+    "audioIndex": 633
   },
   {
     "front": "voorkomen (v)",
-    "back": "to prevent, occur"
+    "back": "to prevent, occur",
+    "audioIndex": 634
   },
   {
     "front": "voorstellen (v)",
-    "back": "to propose, introduce"
+    "back": "to propose, introduce",
+    "audioIndex": 635
   },
   {
     "front": "weergeven (v)",
-    "back": "to display, represent"
+    "back": "to display, represent",
+    "audioIndex": 636
   },
   {
     "front": "zenden (v)",
-    "back": "to send, broadcast"
+    "back": "to send, broadcast",
+    "audioIndex": 637
   },
   {
     "front": "aarde (nm)",
-    "back": "earth, ground"
+    "back": "earth, ground",
+    "audioIndex": 638
   },
   {
     "front": "aardappel (nm)",
-    "back": "potato"
+    "back": "potato",
+    "audioIndex": 639
   },
   {
     "front": "advocaat (nm)",
-    "back": "lawyer"
+    "back": "lawyer",
+    "audioIndex": 640
   },
   {
     "front": "afstand (nm)",
-    "back": "distance"
+    "back": "distance",
+    "audioIndex": 641
   },
   {
     "front": "agent (nm)",
-    "back": "agent, police officer"
+    "back": "agent, police officer",
+    "audioIndex": 642
   },
   {
     "front": "agenda (nm)",
-    "back": "agenda, diary"
+    "back": "agenda, diary",
+    "audioIndex": 643
   },
   {
     "front": "arm (nm)",
-    "back": "arm"
+    "back": "arm",
+    "audioIndex": 644
   },
   {
     "front": "auto (nm)",
-    "back": "car"
+    "back": "car",
+    "audioIndex": 645
   },
   {
     "front": "avond (nm)",
-    "back": "evening"
+    "back": "evening",
+    "audioIndex": 646
   },
   {
     "front": "azijn (nm)",
-    "back": "vinegar"
+    "back": "vinegar",
+    "audioIndex": 647
   },
   {
     "front": "baas (nm)",
-    "back": "boss"
+    "back": "boss",
+    "audioIndex": 648
   },
   {
     "front": "baby (nm)",
-    "back": "baby"
+    "back": "baby",
+    "audioIndex": 649
   },
   {
     "front": "baan (nm)",
-    "back": "job, track"
+    "back": "job, track",
+    "audioIndex": 650
   },
   {
     "front": "bank (nm)",
-    "back": "bank, sofa"
+    "back": "bank, sofa",
+    "audioIndex": 651
   },
   {
     "front": "been (nm)",
-    "back": "leg, bone"
+    "back": "leg, bone",
+    "audioIndex": 652
   },
   {
     "front": "berg (nm)",
-    "back": "mountain"
+    "back": "mountain",
+    "audioIndex": 653
   },
   {
     "front": "beslissing (nm)",
-    "back": "decision"
+    "back": "decision",
+    "audioIndex": 654
   },
   {
     "front": "beweging (nm)",
-    "back": "movement"
+    "back": "movement",
+    "audioIndex": 655
   },
   {
     "front": "bioscoop (nm)",
-    "back": "cinema"
+    "back": "cinema",
+    "audioIndex": 656
   },
   {
     "front": "bloem (nm)",
-    "back": "flower"
+    "back": "flower",
+    "audioIndex": 657
   },
   {
     "front": "boer (nm)",
-    "back": "farmer"
+    "back": "farmer",
+    "audioIndex": 658
   },
   {
     "front": "boom (nm)",
-    "back": "tree"
+    "back": "tree",
+    "audioIndex": 659
   },
   {
     "front": "bos (nm)",
-    "back": "forest"
+    "back": "forest",
+    "audioIndex": 660
   },
   {
     "front": "boodschap (nm)",
-    "back": "message, errand"
+    "back": "message, errand",
+    "audioIndex": 661
   },
   {
     "front": "brand (nm)",
-    "back": "fire"
+    "back": "fire",
+    "audioIndex": 662
   },
   {
     "front": "brief (nm)",
-    "back": "letter"
+    "back": "letter",
+    "audioIndex": 663
   },
   {
     "front": "brug (nm)",
-    "back": "bridge"
+    "back": "bridge",
+    "audioIndex": 664
   },
   {
     "front": "bus (nm)",
-    "back": "bus"
+    "back": "bus",
+    "audioIndex": 665
   },
   {
     "front": "centimeter (nm)",
-    "back": "centimeter"
+    "back": "centimeter",
+    "audioIndex": 666
   },
   {
     "front": "chef (nm)",
-    "back": "chef, boss"
+    "back": "chef, boss",
+    "audioIndex": 667
   },
   {
     "front": "collega (nm)",
-    "back": "colleague"
+    "back": "colleague",
+    "audioIndex": 668
   },
   {
     "front": "computer (nm)",
-    "back": "computer"
+    "back": "computer",
+    "audioIndex": 669
   },
   {
     "front": "cursus (nm)",
-    "back": "course"
+    "back": "course",
+    "audioIndex": 670
   },
   {
     "front": "dag (nm)",
-    "back": "day"
+    "back": "day",
+    "audioIndex": 671
   },
   {
     "front": "deur (nm)",
-    "back": "door"
+    "back": "door",
+    "audioIndex": 672
   },
   {
     "front": "dienst (nm)",
-    "back": "service"
+    "back": "service",
+    "audioIndex": 673
   },
   {
     "front": "dief (nm)",
-    "back": "thief"
+    "back": "thief",
+    "audioIndex": 674
   },
   {
     "front": "dokter (nm)",
-    "back": "doctor"
+    "back": "doctor",
+    "audioIndex": 675
   },
   {
     "front": "droom (nm)",
-    "back": "dream"
+    "back": "dream",
+    "audioIndex": 676
   },
   {
     "front": "drugs (nm)",
-    "back": "drugs"
+    "back": "drugs",
+    "audioIndex": 677
   },
   {
     "front": "druk (nm)",
-    "back": "pressure, print"
+    "back": "pressure, print",
+    "audioIndex": 678
   },
   {
     "front": "eeuw (nm)",
-    "back": "century"
+    "back": "century",
+    "audioIndex": 679
   },
   {
     "front": "energie (nm)",
-    "back": "energy"
+    "back": "energy",
+    "audioIndex": 680
   },
   {
     "front": "euro (nm)",
-    "back": "euro"
+    "back": "euro",
+    "audioIndex": 681
   },
   {
     "front": "fabriek (nm)",
-    "back": "factory"
+    "back": "factory",
+    "audioIndex": 682
   },
   {
     "front": "fles (nm)",
-    "back": "bottle"
+    "back": "bottle",
+    "audioIndex": 683
   },
   {
     "front": "fout (nm)",
-    "back": "mistake, error"
+    "back": "mistake, error",
+    "audioIndex": 684
   },
   {
     "front": "functie (nm)",
-    "back": "function, role"
+    "back": "function, role",
+    "audioIndex": 685
   },
   {
     "front": "gemeente (nm)",
-    "back": "municipality"
+    "back": "municipality",
+    "audioIndex": 686
   },
   {
     "front": "geschiedenis (nm)",
-    "back": "history"
+    "back": "history",
+    "audioIndex": 687
   },
   {
     "front": "gevangenis (nm)",
-    "back": "prison"
+    "back": "prison",
+    "audioIndex": 688
   },
   {
     "front": "gezondheid (nm)",
-    "back": "health"
+    "back": "health",
+    "audioIndex": 689
   },
   {
     "front": "grens (nm)",
-    "back": "border, limit"
+    "back": "border, limit",
+    "audioIndex": 690
   },
   {
     "front": "groep (nm)",
-    "back": "group"
+    "back": "group",
+    "audioIndex": 691
   },
   {
     "front": "hand (nm)",
-    "back": "hand"
+    "back": "hand",
+    "audioIndex": 692
   },
   {
     "front": "haven (nm)",
-    "back": "harbor, port"
+    "back": "harbor, port",
+    "audioIndex": 693
   },
   {
     "front": "hoofd (nm)",
-    "back": "head"
+    "back": "head",
+    "audioIndex": 694
   },
   {
     "front": "hond (nm)",
-    "back": "dog"
+    "back": "dog",
+    "audioIndex": 695
   },
   {
     "front": "hotel (nm)",
-    "back": "hotel"
+    "back": "hotel",
+    "audioIndex": 696
   },
   {
     "front": "uur (nm)",
-    "back": "hour"
+    "back": "hour",
+    "audioIndex": 697
   },
   {
     "front": "industrie (nm)",
-    "back": "industry"
+    "back": "industry",
+    "audioIndex": 698
   },
   {
     "front": "informatie (nm)",
-    "back": "information"
+    "back": "information",
+    "audioIndex": 699
   },
   {
     "front": "journalist (nm)",
-    "back": "journalist"
+    "back": "journalist",
+    "audioIndex": 700
   },
   {
     "front": "jongen (nm)",
-    "back": "boy"
+    "back": "boy",
+    "audioIndex": 701
   },
   {
     "front": "kaart (nm)",
-    "back": "card, map"
+    "back": "card, map",
+    "audioIndex": 702
   },
   {
     "front": "kamer (nm)",
-    "back": "room"
+    "back": "room",
+    "audioIndex": 703
   },
   {
     "front": "kat (nm)",
-    "back": "cat"
+    "back": "cat",
+    "audioIndex": 704
   },
   {
     "front": "keuken (nm)",
-    "back": "kitchen"
+    "back": "kitchen",
+    "audioIndex": 705
   },
   {
     "front": "kilometer (nm)",
-    "back": "kilometer"
+    "back": "kilometer",
+    "audioIndex": 706
   },
   {
     "front": "klas (nm)",
-    "back": "class"
+    "back": "class",
+    "audioIndex": 707
   },
   {
     "front": "kleur (nm)",
-    "back": "color"
+    "back": "color",
+    "audioIndex": 708
   },
   {
     "front": "klant (nm)",
-    "back": "customer, client"
+    "back": "customer, client",
+    "audioIndex": 709
   },
   {
     "front": "klok (nm)",
-    "back": "clock, bell"
+    "back": "clock, bell",
+    "audioIndex": 710
   },
   {
     "front": "knop (nm)",
-    "back": "button, knob"
+    "back": "button, knob",
+    "audioIndex": 711
   },
   {
     "front": "koffie (nm)",
-    "back": "coffee"
+    "back": "coffee",
+    "audioIndex": 712
   },
   {
     "front": "koning (nm)",
-    "back": "king"
+    "back": "king",
+    "audioIndex": 713
   },
   {
     "front": "krant (nm)",
-    "back": "newspaper"
+    "back": "newspaper",
+    "audioIndex": 714
   },
   {
     "front": "kring (nm)",
-    "back": "circle, group"
+    "back": "circle, group",
+    "audioIndex": 715
   },
   {
     "front": "leider (nm)",
-    "back": "leader"
+    "back": "leader",
+    "audioIndex": 716
   },
   {
     "front": "leraar (nm)",
-    "back": "teacher"
+    "back": "teacher",
+    "audioIndex": 717
   },
   {
     "front": "lucht (nm)",
-    "back": "air, sky"
+    "back": "air, sky",
+    "audioIndex": 718
   },
   {
     "front": "man (nm)",
-    "back": "man"
+    "back": "man",
+    "audioIndex": 719
   },
   {
     "front": "markt (nm)",
-    "back": "market"
+    "back": "market",
+    "audioIndex": 720
   },
   {
     "front": "maand (nm)",
-    "back": "month"
+    "back": "month",
+    "audioIndex": 721
   },
   {
     "front": "maaltijd (nm)",
-    "back": "meal"
+    "back": "meal",
+    "audioIndex": 722
   },
   {
     "front": "machine (nm)",
-    "back": "machine"
+    "back": "machine",
+    "audioIndex": 723
   },
   {
     "front": "mening (nm)",
-    "back": "opinion"
+    "back": "opinion",
+    "audioIndex": 724
   },
   {
     "front": "minister (nm)",
-    "back": "minister"
+    "back": "minister",
+    "audioIndex": 725
   },
   {
     "front": "minuut (nm)",
-    "back": "minute"
+    "back": "minute",
+    "audioIndex": 726
   },
   {
     "front": "mist (nm)",
-    "back": "fog, mist"
+    "back": "fog, mist",
+    "audioIndex": 727
   },
   {
     "front": "muur (nm)",
-    "back": "wall"
+    "back": "wall",
+    "audioIndex": 728
   },
   {
     "front": "naam (nm)",
-    "back": "name"
+    "back": "name",
+    "audioIndex": 729
   },
   {
     "front": "nacht (nm)",
-    "back": "night"
+    "back": "night",
+    "audioIndex": 730
   },
   {
     "front": "natuur (nm)",
-    "back": "nature"
+    "back": "nature",
+    "audioIndex": 731
   },
   {
     "front": "neef (nm)",
-    "back": "nephew, cousin"
+    "back": "nephew, cousin",
+    "audioIndex": 732
   },
   {
     "front": "neus (nm)",
-    "back": "nose"
+    "back": "nose",
+    "audioIndex": 733
   },
   {
     "front": "nieuws (nm)",
-    "back": "news"
+    "back": "news",
+    "audioIndex": 734
   },
   {
     "front": "ochtend (nm)",
-    "back": "morning"
+    "back": "morning",
+    "audioIndex": 735
   },
   {
     "front": "oom (nm)",
-    "back": "uncle"
+    "back": "uncle",
+    "audioIndex": 736
   },
   {
     "front": "oorlog (nm)",
-    "back": "war"
+    "back": "war",
+    "audioIndex": 737
   },
   {
     "front": "oplossing (nm)",
-    "back": "solution"
+    "back": "solution",
+    "audioIndex": 738
   },
   {
     "front": "order (nm)",
-    "back": "order"
+    "back": "order",
+    "audioIndex": 739
   },
   {
     "front": "organisatie (nm)",
-    "back": "organization"
+    "back": "organization",
+    "audioIndex": 740
   },
   {
     "front": "ouder (nm)",
-    "back": "parent"
+    "back": "parent",
+    "audioIndex": 741
   },
   {
     "front": "overheid (nm)",
-    "back": "government"
+    "back": "government",
+    "audioIndex": 742
   },
   {
     "front": "pijn (nm)",
-    "back": "pain"
+    "back": "pain",
+    "audioIndex": 743
   },
   {
     "front": "plant (nm)",
-    "back": "plant"
+    "back": "plant",
+    "audioIndex": 744
   },
   {
     "front": "plein (nm)",
-    "back": "square, plaza"
+    "back": "square, plaza",
+    "audioIndex": 745
   },
   {
     "front": "politie (nm)",
-    "back": "police"
+    "back": "police",
+    "audioIndex": 746
   },
   {
     "front": "politicus (nm)",
-    "back": "politician"
+    "back": "politician",
+    "audioIndex": 747
   },
   {
     "front": "poort (nm)",
-    "back": "gate, port"
+    "back": "gate, port",
+    "audioIndex": 748
   },
   {
     "front": "president (nm)",
-    "back": "president"
+    "back": "president",
+    "audioIndex": 749
   },
   {
     "front": "prijs (nm)",
-    "back": "price, prize"
+    "back": "price, prize",
+    "audioIndex": 750
   },
   {
     "front": "problemen (nm)",
-    "back": "problems"
+    "back": "problems",
+    "audioIndex": 751
   },
   {
     "front": "procedure (nm)",
-    "back": "procedure"
+    "back": "procedure",
+    "audioIndex": 752
   },
   {
     "front": "rechter (nm)",
-    "back": "judge"
+    "back": "judge",
+    "audioIndex": 753
   },
   {
     "front": "regen (nm)",
-    "back": "rain"
+    "back": "rain",
+    "audioIndex": 754
   },
   {
     "front": "regering (nm)",
-    "back": "government"
+    "back": "government",
+    "audioIndex": 755
   },
   {
     "front": "reis (nm)",
-    "back": "trip, journey"
+    "back": "trip, journey",
+    "audioIndex": 756
   },
   {
     "front": "relatie (nm)",
-    "back": "relationship"
+    "back": "relationship",
+    "audioIndex": 757
   },
   {
     "front": "rivier (nm)",
-    "back": "river"
+    "back": "river",
+    "audioIndex": 758
   },
   {
     "front": "rol (nm)",
-    "back": "role"
+    "back": "role",
+    "audioIndex": 759
   },
   {
     "front": "rug (nm)",
-    "back": "back"
+    "back": "back",
+    "audioIndex": 760
   },
   {
     "front": "ruimte (nm)",
-    "back": "space, room"
+    "back": "space, room",
+    "audioIndex": 761
   },
   {
     "front": "school (nm)",
-    "back": "school"
+    "back": "school",
+    "audioIndex": 762
   },
   {
     "front": "seconde (nm)",
-    "back": "second"
+    "back": "second",
+    "audioIndex": 763
   },
   {
     "front": "situatie (nm)",
-    "back": "situation"
+    "back": "situation",
+    "audioIndex": 764
   },
   {
     "front": "sleutel (nm)",
-    "back": "key"
+    "back": "key",
+    "audioIndex": 765
   },
   {
     "front": "soldaat (nm)",
-    "back": "soldier"
+    "back": "soldier",
+    "audioIndex": 766
   },
   {
     "front": "soort (nm)",
-    "back": "sort, type, kind"
+    "back": "sort, type, kind",
+    "audioIndex": 767
   },
   {
     "front": "sport (nm)",
-    "back": "sport"
+    "back": "sport",
+    "audioIndex": 768
   },
   {
     "front": "stad (nm)",
-    "back": "city"
+    "back": "city",
+    "audioIndex": 769
   },
   {
     "front": "stap (nm)",
-    "back": "step"
+    "back": "step",
+    "audioIndex": 770
   },
   {
     "front": "stem (nm)",
-    "back": "voice, vote"
+    "back": "voice, vote",
+    "audioIndex": 771
   },
   {
     "front": "straat (nm)",
-    "back": "street"
+    "back": "street",
+    "audioIndex": 772
   },
   {
     "front": "stroom (nm)",
-    "back": "current, stream"
+    "back": "current, stream",
+    "audioIndex": 773
   },
   {
     "front": "student (nm)",
-    "back": "student"
+    "back": "student",
+    "audioIndex": 774
   },
   {
     "front": "studie (nm)",
-    "back": "study"
+    "back": "study",
+    "audioIndex": 775
   },
   {
     "front": "taak (nm)",
-    "back": "task"
+    "back": "task",
+    "audioIndex": 776
   },
   {
     "front": "taal (nm)",
-    "back": "language"
+    "back": "language",
+    "audioIndex": 777
   },
   {
     "front": "tafel (nm)",
-    "back": "table"
+    "back": "table",
+    "audioIndex": 778
   },
   {
     "front": "tandarts (nm)",
-    "back": "dentist"
+    "back": "dentist",
+    "audioIndex": 779
   },
   {
     "front": "telefoon (nm)",
-    "back": "phone"
+    "back": "phone",
+    "audioIndex": 780
   },
   {
     "front": "tent (nm)",
-    "back": "tent"
+    "back": "tent",
+    "audioIndex": 781
   },
   {
     "front": "test (nm)",
-    "back": "test"
+    "back": "test",
+    "audioIndex": 782
   },
   {
     "front": "toekomst (nm)",
-    "back": "future"
+    "back": "future",
+    "audioIndex": 783
   },
   {
     "front": "tol (nm)",
-    "back": "toll, spinning top"
+    "back": "toll, spinning top",
+    "audioIndex": 784
   },
   {
     "front": "trap (nm)",
-    "back": "stairs"
+    "back": "stairs",
+    "audioIndex": 785
   },
   {
     "front": "trein (nm)",
-    "back": "train"
+    "back": "train",
+    "audioIndex": 786
   },
   {
     "front": "tuin (nm)",
-    "back": "garden"
+    "back": "garden",
+    "audioIndex": 787
   },
   {
     "front": "vader (nm)",
-    "back": "father"
+    "back": "father",
+    "audioIndex": 788
   },
   {
     "front": "vraag (nm)",
-    "back": "question"
+    "back": "question",
+    "audioIndex": 789
   },
   {
     "front": "vrede (nm)",
-    "back": "peace"
+    "back": "peace",
+    "audioIndex": 790
   },
   {
     "front": "vriend (nm)",
-    "back": "friend"
+    "back": "friend",
+    "audioIndex": 791
   },
   {
     "front": "vrouw (nm)",
-    "back": "woman, wife"
+    "back": "woman, wife",
+    "audioIndex": 792
   },
   {
     "front": "weg (nm)",
-    "back": "road, way"
+    "back": "road, way",
+    "audioIndex": 793
   },
   {
     "front": "week (nm)",
-    "back": "week"
+    "back": "week",
+    "audioIndex": 794
   },
   {
     "front": "wijk (nm)",
-    "back": "neighborhood"
+    "back": "neighborhood",
+    "audioIndex": 795
   },
   {
     "front": "wind (nm)",
-    "back": "wind"
+    "back": "wind",
+    "audioIndex": 796
   },
   {
     "front": "winkel (nm)",
-    "back": "shop, store"
+    "back": "shop, store",
+    "audioIndex": 797
   },
   {
     "front": "woning (nm)",
-    "back": "house, dwelling"
+    "back": "house, dwelling",
+    "audioIndex": 798
   },
   {
     "front": "zin (nm)",
-    "back": "sentence, desire"
+    "back": "sentence, desire",
+    "audioIndex": 799
   },
   {
     "front": "ziekte (nm)",
-    "back": "illness, disease"
+    "back": "illness, disease",
+    "audioIndex": 800
   },
   {
     "front": "zomer (nm)",
-    "back": "summer"
+    "back": "summer",
+    "audioIndex": 801
   },
   {
     "front": "zon (nm)",
-    "back": "sun"
+    "back": "sun",
+    "audioIndex": 802
   },
   {
     "front": "zoon (nm)",
-    "back": "son"
+    "back": "son",
+    "audioIndex": 803
   },
   {
     "front": "zus (nm)",
-    "back": "sister"
+    "back": "sister",
+    "audioIndex": 804
   },
   {
     "front": "zwembad (nm)",
-    "back": "swimming pool"
+    "back": "swimming pool",
+    "audioIndex": 805
   },
   {
     "front": "aandacht (nm)",
-    "back": "attention"
+    "back": "attention",
+    "audioIndex": 806
   },
   {
     "front": "aanpak (nm)",
-    "back": "approach"
+    "back": "approach",
+    "audioIndex": 807
   },
   {
     "front": "aansluiting (nm)",
-    "back": "connection"
+    "back": "connection",
+    "audioIndex": 808
   },
   {
     "front": "aanval (nm)",
-    "back": "attack"
+    "back": "attack",
+    "audioIndex": 809
   },
   {
     "front": "achtergrond (nm)",
-    "back": "background"
+    "back": "background",
+    "audioIndex": 810
   },
   {
     "front": "actie (nm)",
-    "back": "action"
+    "back": "action",
+    "audioIndex": 811
   },
   {
     "front": "activiteit (nm)",
-    "back": "activity"
+    "back": "activity",
+    "audioIndex": 812
   },
   {
     "front": "adres (nm)",
-    "back": "address"
+    "back": "address",
+    "audioIndex": 813
   },
   {
     "front": "afbeelding (nm)",
-    "back": "image, picture"
+    "back": "image, picture",
+    "audioIndex": 814
   },
   {
     "front": "afdeling (nm)",
-    "back": "department"
+    "back": "department",
+    "audioIndex": 815
   },
   {
     "front": "aflevering (nm)",
-    "back": "episode, delivery"
+    "back": "episode, delivery",
+    "audioIndex": 816
   },
   {
     "front": "afspraak (nm)",
-    "back": "appointment, agreement"
+    "back": "appointment, agreement",
+    "audioIndex": 817
   },
   {
     "front": "alcohol (nm)",
-    "back": "alcohol"
+    "back": "alcohol",
+    "audioIndex": 818
   },
   {
     "front": "analyse (nm)",
-    "back": "analysis"
+    "back": "analysis",
+    "audioIndex": 819
   },
   {
     "front": "antwoord (nm)",
-    "back": "answer"
+    "back": "answer",
+    "audioIndex": 820
   },
   {
     "front": "apparaat (nm)",
-    "back": "device, appliance"
+    "back": "device, appliance",
+    "audioIndex": 821
   },
   {
     "front": "appartement (nm)",
-    "back": "apartment"
+    "back": "apartment",
+    "audioIndex": 822
   },
   {
     "front": "appel (nm)",
-    "back": "apple"
+    "back": "apple",
+    "audioIndex": 823
   },
   {
     "front": "arbeider (nm)",
-    "back": "worker, laborer"
+    "back": "worker, laborer",
+    "audioIndex": 824
   },
   {
     "front": "architect (nm)",
-    "back": "architect"
+    "back": "architect",
+    "audioIndex": 825
   },
   {
     "front": "artikel (nm)",
-    "back": "article"
+    "back": "article",
+    "audioIndex": 826
   },
   {
     "front": "arts (nm)",
-    "back": "doctor, physician"
+    "back": "doctor, physician",
+    "audioIndex": 827
   },
   {
     "front": "assistent (nm)",
-    "back": "assistant"
+    "back": "assistant",
+    "audioIndex": 828
   },
   {
     "front": "auteur (nm)",
-    "back": "author"
+    "back": "author",
+    "audioIndex": 829
   },
   {
     "front": "bal (nm)",
-    "back": "ball"
+    "back": "ball",
+    "audioIndex": 830
   },
   {
     "front": "band (nm)",
-    "back": "band, tire, bond"
+    "back": "band, tire, bond",
+    "audioIndex": 831
   },
   {
     "front": "behoefte (nm)",
-    "back": "need"
+    "back": "need",
+    "audioIndex": 832
   },
   {
     "front": "beleid (nm)",
-    "back": "policy"
+    "back": "policy",
+    "audioIndex": 833
   },
   {
     "front": "beloning (nm)",
-    "back": "reward"
+    "back": "reward",
+    "audioIndex": 834
   },
   {
     "front": "betaling (nm)",
-    "back": "payment"
+    "back": "payment",
+    "audioIndex": 835
   },
   {
     "front": "beurt (nm)",
-    "back": "turn"
+    "back": "turn",
+    "audioIndex": 836
   },
   {
     "front": "bezoeker (nm)",
-    "back": "visitor"
+    "back": "visitor",
+    "audioIndex": 837
   },
   {
     "front": "bibliotheek (nm)",
-    "back": "library"
+    "back": "library",
+    "audioIndex": 838
   },
   {
     "front": "bijdrage (nm)",
-    "back": "contribution"
+    "back": "contribution",
+    "audioIndex": 839
   },
   {
     "front": "biljet (nm)",
-    "back": "ticket, banknote"
+    "back": "ticket, banknote",
+    "audioIndex": 840
   },
   {
     "front": "blokkade (nm)",
-    "back": "blockade"
+    "back": "blockade",
+    "audioIndex": 841
   },
   {
     "front": "bouw (nm)",
-    "back": "construction"
+    "back": "construction",
+    "audioIndex": 842
   },
   {
     "front": "broer (nm)",
-    "back": "brother"
+    "back": "brother",
+    "audioIndex": 843
   },
   {
     "front": "bureau (nm)",
-    "back": "desk, office"
+    "back": "desk, office",
+    "audioIndex": 844
   },
   {
     "front": "burger (nm)",
-    "back": "citizen, burger"
+    "back": "citizen, burger",
+    "audioIndex": 845
   },
   {
     "front": "categorie (nm)",
-    "back": "category"
+    "back": "category",
+    "audioIndex": 846
   },
   {
     "front": "cent (nm)",
-    "back": "cent"
+    "back": "cent",
+    "audioIndex": 847
   },
   {
     "front": "circuit (nm)",
-    "back": "circuit"
+    "back": "circuit",
+    "audioIndex": 848
   },
   {
     "front": "crisis (nm)",
-    "back": "crisis"
+    "back": "crisis",
+    "audioIndex": 849
   },
   {
     "front": "cultuur (nm)",
-    "back": "culture"
+    "back": "culture",
+    "audioIndex": 850
   },
   {
     "front": "datum (nm)",
-    "back": "date"
+    "back": "date",
+    "audioIndex": 851
   },
   {
     "front": "debat (nm)",
-    "back": "debate"
+    "back": "debate",
+    "audioIndex": 852
   },
   {
     "front": "definitie (nm)",
-    "back": "definition"
+    "back": "definition",
+    "audioIndex": 853
   },
   {
     "front": "directeur (nm)",
-    "back": "director, manager"
+    "back": "director, manager",
+    "audioIndex": 854
   },
   {
     "front": "discussie (nm)",
-    "back": "discussion"
+    "back": "discussion",
+    "audioIndex": 855
   },
   {
     "front": "doel (nm)",
-    "back": "goal, aim"
+    "back": "goal, aim",
+    "audioIndex": 856
   },
   {
     "front": "drank (nm)",
-    "back": "drink, beverage"
+    "back": "drink, beverage",
+    "audioIndex": 857
   },
   {
     "front": "drugshandel (nm)",
-    "back": "drug trade"
+    "back": "drug trade",
+    "audioIndex": 858
   },
   {
     "front": "echtgenoot (nm)",
-    "back": "husband"
+    "back": "husband",
+    "audioIndex": 859
   },
   {
     "front": "eenheid (nm)",
-    "back": "unit, unity"
+    "back": "unit, unity",
+    "audioIndex": 860
   },
   {
     "front": "eigenaar (nm)",
-    "back": "owner"
+    "back": "owner",
+    "audioIndex": 861
   },
   {
     "front": "email (nm)",
-    "back": "email"
+    "back": "email",
+    "audioIndex": 862
   },
   {
     "front": "emotie (nm)",
-    "back": "emotion"
+    "back": "emotion",
+    "audioIndex": 863
   },
   {
     "front": "ervaring (nm)",
-    "back": "experience"
+    "back": "experience",
+    "audioIndex": 864
   },
   {
     "front": "feest (nm)",
-    "back": "party, celebration"
+    "back": "party, celebration",
+    "audioIndex": 865
   },
   {
     "front": "fiets (nm)",
-    "back": "bicycle"
+    "back": "bicycle",
+    "audioIndex": 866
   },
   {
     "front": "figuur (nm)",
-    "back": "figure"
+    "back": "figure",
+    "audioIndex": 867
   },
   {
     "front": "film (nm)",
-    "back": "film, movie"
+    "back": "film, movie",
+    "audioIndex": 868
   },
   {
     "front": "fotograaf (nm)",
-    "back": "photographer"
+    "back": "photographer",
+    "audioIndex": 869
   },
   {
     "front": "geluid (nm)",
-    "back": "sound, noise"
+    "back": "sound, noise",
+    "audioIndex": 870
   },
   {
     "front": "geur (nm)",
-    "back": "smell, scent"
+    "back": "smell, scent",
+    "audioIndex": 871
   },
   {
     "front": "gevaar (nm)",
-    "back": "danger"
+    "back": "danger",
+    "audioIndex": 872
   },
   {
     "front": "gesprek (nm)",
-    "back": "conversation"
+    "back": "conversation",
+    "audioIndex": 873
   },
   {
     "front": "goal (nm)",
-    "back": "goal"
+    "back": "goal",
+    "audioIndex": 874
   },
   {
     "front": "graf (nm)",
-    "back": "grave"
+    "back": "grave",
+    "audioIndex": 875
   },
   {
     "front": "grap (nm)",
-    "back": "joke"
+    "back": "joke",
+    "audioIndex": 876
   },
   {
     "front": "grond (nm)",
-    "back": "ground, soil"
+    "back": "ground, soil",
+    "audioIndex": 877
   },
   {
     "front": "handel (nm)",
-    "back": "trade, commerce"
+    "back": "trade, commerce",
+    "audioIndex": 878
   },
   {
     "front": "idee (nm)",
-    "back": "idea"
+    "back": "idea",
+    "audioIndex": 879
   },
   {
     "front": "internet (nm)",
-    "back": "internet"
+    "back": "internet",
+    "audioIndex": 880
   },
   {
     "front": "investering (nm)",
-    "back": "investment"
+    "back": "investment",
+    "audioIndex": 881
   },
   {
     "front": "kaas (nm)",
-    "back": "cheese"
+    "back": "cheese",
+    "audioIndex": 882
   },
   {
     "front": "kans (nm)",
-    "back": "chance, opportunity"
+    "back": "chance, opportunity",
+    "audioIndex": 883
   },
   {
     "front": "kapitaal (nm)",
-    "back": "capital"
+    "back": "capital",
+    "audioIndex": 884
   },
   {
     "front": "keuze (nm)",
-    "back": "choice"
+    "back": "choice",
+    "audioIndex": 885
   },
   {
     "front": "kind (nm)",
-    "back": "child"
+    "back": "child",
+    "audioIndex": 886
   },
   {
     "front": "klimaat (nm)",
-    "back": "climate"
+    "back": "climate",
+    "audioIndex": 887
   },
   {
     "front": "koningin (nm)",
-    "back": "queen"
+    "back": "queen",
+    "audioIndex": 888
   },
   {
     "front": "koorts (nm)",
-    "back": "fever"
+    "back": "fever",
+    "audioIndex": 889
   },
   {
     "front": "kracht (nm)",
-    "back": "power, strength"
+    "back": "power, strength",
+    "audioIndex": 890
   },
   {
     "front": "kwartier (nm)",
-    "back": "quarter hour"
+    "back": "quarter hour",
+    "audioIndex": 891
   },
   {
     "front": "lamp (nm)",
-    "back": "lamp"
+    "back": "lamp",
+    "audioIndex": 892
   },
   {
     "front": "landschap (nm)",
-    "back": "landscape"
+    "back": "landscape",
+    "audioIndex": 893
   },
   {
     "front": "leeftijd (nm)",
-    "back": "age"
+    "back": "age",
+    "audioIndex": 894
   },
   {
     "front": "leger (nm)",
-    "back": "army"
+    "back": "army",
+    "audioIndex": 895
   },
   {
     "front": "les (nm)",
-    "back": "lesson"
+    "back": "lesson",
+    "audioIndex": 896
   },
   {
     "front": "licht (nm)",
-    "back": "light"
+    "back": "light",
+    "audioIndex": 897
   },
   {
     "front": "liefde (nm)",
-    "back": "love"
+    "back": "love",
+    "audioIndex": 898
   },
   {
     "front": "lijn (nm)",
-    "back": "line"
+    "back": "line",
+    "audioIndex": 899
   },
   {
     "front": "maan (nm)",

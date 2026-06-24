@@ -174,7 +174,7 @@ struct ContentView: View {
                 )
                 .onTapGesture(count: 2) {
                     if let audioIndex = currentCard?.audioIndex {
-                        audioPlayer.play(audioIndex: audioIndex)
+                        audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder)
                     }
                 }
                 .onTapGesture {
@@ -185,7 +185,7 @@ struct ContentView: View {
 
                 // Audio button
                 if let card = currentCard, let audioIndex = card.audioIndex {
-                    Button(action: { audioPlayer.play(audioIndex: audioIndex) }) {
+                    Button(action: { audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder) }) {
                         HStack {
                             Image(systemName: "speaker.wave.2.fill")
                             Text("Play Audio")

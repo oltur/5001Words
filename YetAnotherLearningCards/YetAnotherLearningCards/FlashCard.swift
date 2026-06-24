@@ -7,11 +7,12 @@ struct Deck: Identifiable, Hashable {
     let name: String
     let fileName: String
     let emoji: String
+    let audioFolder: String
 }
 
 let availableDecks: [Deck] = [
-    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸"),
-    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱"),
+    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "Audio"),
+    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "Audio/dutch"),
 ]
 
 struct FlashCard: Identifiable, Codable {
@@ -41,15 +42,15 @@ struct FlashCard: Identifiable, Codable {
 class AudioPlayer: ObservableObject {
     private var player: AVAudioPlayer?
 
-    func play(audioIndex: Int) {
+    func play(audioIndex: Int, subfolder: String = "SpanishAudio") {
         let filename = "\(audioIndex)"
 
         var url: URL? = nil
-        url = Bundle.main.url(forResource: filename, withExtension: "mp3", subdirectory: "Audio")
+        url = Bundle.main.url(forResource: filename, withExtension: "mp3", subdirectory: subfolder)
         if url == nil {
             url = Bundle.main.url(forResource: filename, withExtension: "mp3")
         }
-        if url == nil, let audioDir = Bundle.main.url(forResource: "Audio", withExtension: nil) {
+        if url == nil, let audioDir = Bundle.main.url(forResource: subfolder, withExtension: nil) {
             let fileURL = audioDir.appendingPathComponent("\(filename).mp3")
             if FileManager.default.fileExists(atPath: fileURL.path) {
                 url = fileURL
@@ -57,7 +58,7 @@ class AudioPlayer: ObservableObject {
         }
 
         guard let audioURL = url else {
-            print("Audio file not found: \(filename).mp3")
+            print("Audio file not found: \(filename).mp3 in \(subfolder)")
             return
         }
 
