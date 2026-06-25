@@ -1,7 +1,8 @@
 import Foundation
 import Combine
 
-// After uploading .pack files to a GitHub Release, paste the download URLs here.
+// Download URLs for all language packs (word list + audio).
+// Bundled decks still need a download for audio; isBundled only means cards work without it.
 let packDownloadURLs: [String: String] = [
     "spanish": "https://github.com/oltur/5001Words/releases/download/audio-v1/spanish_audio.pack",
     "dutch":   "https://github.com/oltur/5001Words/releases/download/audio-v1/dutch_audio.pack",
@@ -34,13 +35,14 @@ class PackManager: NSObject, ObservableObject {
         configuration: .default, delegate: self, delegateQueue: nil
     )
 
-    var audioRoot: URL {
+    // Each language lives in applicationSupport/packs/{deckId}/
+    var packsRoot: URL {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("Audio")
+            .appendingPathComponent("packs")
     }
 
-    func audioDirectory(for deck: Deck) -> URL {
-        audioRoot.appendingPathComponent(deck.audioFolder)
+    func packDirectory(for deck: Deck) -> URL {
+        packsRoot.appendingPathComponent(deck.id)
     }
 
     override init() {
@@ -49,17 +51,22 @@ class PackManager: NSObject, ObservableObject {
     }
 
     func refresh() {
-        for deck in availableDecks where !deck.audioFolder.isEmpty {
+        for deck in availableDecks {
             if let s = states[deck.id], case .downloading = s { continue }
-            states[deck.id] = isInstalled(deck) ? .installed : .notDownloaded
+            // states tracks whether the audio pack is downloaded (not whether cards are usable)
+            states[deck.id] = isPackDownloaded(deck) ? .installed : .notDownloaded
         }
     }
 
+    // True when the full pack (cards + audio) has been downloaded to the packs directory
+    func isPackDownloaded(_ deck: Deck) -> Bool {
+        let json = packDirectory(for: deck).appendingPathComponent("\(deck.fileName).json")
+        return FileManager.default.fileExists(atPath: json.path)
+    }
+
+    // True when the deck can be selected and cards browsed (bundled JSON, or pack downloaded)
     func isInstalled(_ deck: Deck) -> Bool {
-        guard !deck.audioFolder.isEmpty else { return false }
-        let files = (try? FileManager.default.contentsOfDirectory(
-            atPath: audioDirectory(for: deck).path)) ?? []
-        return files.contains { $0.hasSuffix(".mp3") }
+        deck.isBundled || isPackDownloaded(deck)
     }
 
     func download(_ deck: Deck) {
@@ -81,7 +88,7 @@ class PackManager: NSObject, ObservableObject {
     }
 
     func remove(_ deck: Deck) {
-        try? FileManager.default.removeItem(at: audioDirectory(for: deck))
+        try? FileManager.default.removeItem(at: packDirectory(for: deck))
         states[deck.id] = .notDownloaded
     }
 
@@ -91,8 +98,8 @@ class PackManager: NSObject, ObservableObject {
         case badMagic, truncated
         var errorDescription: String? {
             switch self {
-            case .badMagic:   return "Not a valid .pack file"
-            case .truncated:  return "Pack file is truncated or corrupt"
+            case .badMagic:  return "Not a valid .pack file"
+            case .truncated: return "Pack file is truncated or corrupt"
             }
         }
     }
@@ -101,11 +108,8 @@ class PackManager: NSObject, ObservableObject {
         let raw = try Data(contentsOf: source, options: .mappedIfSafe)
         var cursor = raw.startIndex
 
-        func need(_ n: Int) throws {
-            guard cursor + n <= raw.endIndex else { throw PackError.truncated }
-        }
         func readBytes(_ n: Int) throws -> Data {
-            try need(n)
+            guard cursor + n <= raw.endIndex else { throw PackError.truncated }
             defer { cursor += n }
             return raw[cursor ..< cursor + n]
         }
@@ -125,16 +129,15 @@ class PackManager: NSObject, ObservableObject {
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
 
         for _ in 0 ..< fileCount {
-            let nameLen = try readU16()
+            let nameLen  = try readU16()
             guard let name = String(data: try readBytes(nameLen), encoding: .utf8) else {
                 throw PackError.truncated
             }
-            let dataLen = try readU32()
+            let dataLen  = try readU32()
             let fileData = try readBytes(dataLen)
             try fileData.write(to: directory.appendingPathComponent(name))
         }
 
-        // Exclude from iCloud backup
         var dirURL = directory
         var rv = URLResourceValues()
         rv.isExcludedFromBackup = true
@@ -164,7 +167,7 @@ extension PackManager: URLSessionDownloadDelegate {
         didFinishDownloadingTo location: URL
     ) {
         guard let deck = deckForTask.removeValue(forKey: downloadTask) else { return }
-        let destDir = audioDirectory(for: deck)
+        let destDir = packDirectory(for: deck)
         do {
             try unpack(from: location, to: destDir)
             DispatchQueue.main.async { self.states[deck.id] = .installed }

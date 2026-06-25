@@ -8,11 +8,12 @@ struct Deck: Identifiable, Hashable {
     let fileName: String
     let emoji: String
     let audioFolder: String
+    let isBundled: Bool
 }
 
 let availableDecks: [Deck] = [
-    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "spanish"),
-    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "dutch"),
+    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "spanish", isBundled: true),
+    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "dutch",   isBundled: false),
 ]
 
 struct FlashCard: Identifiable, Codable {

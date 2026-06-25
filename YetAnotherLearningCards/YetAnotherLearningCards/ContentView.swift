@@ -38,7 +38,7 @@ enum AppearanceMode: String, CaseIterable {
 struct ContentView: View {
     @StateObject private var cardStore = CardStore()
     @StateObject private var audioPlayer = AudioPlayer()
-    @StateObject private var packManager = PackManager.shared
+    @ObservedObject private var packManager = PackManager.shared
     @State private var currentIndex = 0
     @State private var isFlipped = false
     @State private var spanishFirst = true
@@ -70,86 +70,92 @@ struct ContentView: View {
     var frontLabel: String { spanishFirst ? selectedDeck.name : "English" }
     var backLabel: String  { spanishFirst ? "English" : selectedDeck.name }
 
+    var audioReady: Bool { packManager.isPackDownloaded(selectedDeck) }
+
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 16) {
+            // Header
             HStack {
-                // Hamburger → settings
                 Button(action: { showSettings = true }) {
                     Image(systemName: "line.3.horizontal")
                         .font(.title3)
                 }
-                .padding(.trailing, 4)
-
-                Text("Flash Cards")
-                    .font(.title2)
-                    .fontWeight(.bold)
 
                 Spacer()
 
-                // Appearance toggle
-                Button(action: { appearanceMode = appearanceMode.next }) {
-                    Image(systemName: appearanceMode.icon)
-                        .font(.title3)
-                }
-                .padding(.trailing, 4)
-
-                // Deck picker
+                // Deck picker — only shows installed decks
                 Menu {
-                    ForEach(availableDecks) { deck in
+                    ForEach(availableDecks.filter { packManager.isInstalled($0) }) { deck in
                         Button(action: { switchDeck(deck) }) {
                             HStack {
-                                Text(deck.emoji + " " + deck.name)
+                                Text("\(deck.emoji) \(deck.name) – English")
                                 if selectedDeckId == deck.id {
                                     Image(systemName: "checkmark")
                                 }
                             }
                         }
                     }
-                } label: {
-                    Text(selectedDeck.emoji)
-                        .font(.title3)
-                }
-                .padding(.trailing, 4)
-
-                // Direction toggle
-                Button(action: toggleDirection) {
-                    HStack(spacing: 4) {
-                        Text(spanishFirst ? selectedDeck.emoji : "🇬🇧")
-                        Image(systemName: "arrow.right")
-                        Text(spanishFirst ? "🇬🇧" : selectedDeck.emoji)
+                    if availableDecks.contains(where: { !packManager.isInstalled($0) }) {
+                        Divider()
+                        Button(action: { showSettings = true }) {
+                            Label("Get more languages…", systemImage: "plus.circle")
+                        }
                     }
-                    .font(.caption)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 5)
-                    .background(Color.secondary.opacity(0.2))
-                    .cornerRadius(8)
+                } label: {
+                    HStack(spacing: 4) {
+                        Text(selectedDeck.emoji)
+                        Text(selectedDeck.name + " – EN")
+                            .font(.subheadline).fontWeight(.semibold)
+                        Image(systemName: "chevron.down")
+                            .font(.caption2)
+                    }
+                }
+
+                Spacer()
+
+                Button(action: { appearanceMode = appearanceMode.next }) {
+                    Image(systemName: appearanceMode.icon)
+                        .font(.title3)
                 }
             }
             .padding(.horizontal)
 
             if cardStore.cards.isEmpty {
+                Spacer()
                 ProgressView("Loading cards...")
+                Spacer()
             } else if cardStore.displayCards.isEmpty {
+                Spacer()
                 completionView
+                Spacer()
             } else {
-                let displayCount = cardStore.displayCards.count
+                // Counter + status
                 HStack(spacing: 6) {
-                    Text("\(currentIndex + 1) / \(displayCount)")
+                    Text("\(currentIndex + 1) / \(cardStore.displayCards.count)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                     if cardStore.isFocusModeOn {
                         Text("· Focus")
-                            .font(.caption)
-                            .foregroundStyle(.orange)
+                            .font(.caption).foregroundStyle(.orange)
                     }
                     if cardStore.learnedCount > 0 {
                         Text("· \(cardStore.learnedCount) learned")
-                            .font(.caption)
-                            .foregroundStyle(.green)
+                            .font(.caption).foregroundStyle(.green)
                     }
                 }
 
-                // Flash Card
+                // Direction picker
+                Picker("Direction", selection: Binding(
+                    get: { spanishFirst },
+                    set: { spanishFirst = $0; isFlipped = false }
+                )) {
+                    Text("\(selectedDeck.emoji) → 🇬🇧").tag(true)
+                    Text("🇬🇧 → \(selectedDeck.emoji)").tag(false)
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+
+                // Flash card
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(isFlipped ? Color.green.opacity(0.2) : Color.blue.opacity(0.2))
@@ -169,27 +175,23 @@ struct ContentView: View {
                     }
                 }
                 .offset(x: dragOffset)
-                .frame(height: 250)
+                .frame(height: 220)
                 .padding(.horizontal)
                 .gesture(
                     DragGesture(minimumDistance: 40)
-                        .onChanged { value in
-                            dragOffset = value.translation.width
-                        }
+                        .onChanged { value in dragOffset = value.translation.width }
                         .onEnded { value in
-                            let threshold: CGFloat = 40
-                            if value.translation.width < -threshold {
+                            let t: CGFloat = 40
+                            if value.translation.width < -t {
                                 withAnimation(.spring(duration: 0.25)) { dragOffset = -500 }
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                    nextCard()
-                                    dragOffset = 500
+                                    nextCard(); dragOffset = 500
                                     withAnimation(.spring(duration: 0.25)) { dragOffset = 0 }
                                 }
-                            } else if value.translation.width > threshold {
+                            } else if value.translation.width > t {
                                 withAnimation(.spring(duration: 0.25)) { dragOffset = 500 }
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                    previousCard()
-                                    dragOffset = -500
+                                    previousCard(); dragOffset = -500
                                     withAnimation(.spring(duration: 0.25)) { dragOffset = 0 }
                                 }
                             } else {
@@ -198,21 +200,16 @@ struct ContentView: View {
                         }
                 )
                 .onTapGesture(count: 2) {
-                    if let audioIndex = currentCard?.audioIndex {
-                        audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder)
-                    }
+                    guard audioReady, let audioIndex = currentCard?.audioIndex else { return }
+                    audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder)
                 }
                 .onTapGesture {
-                    withAnimation(.spring(duration: 0.3)) {
-                        isFlipped.toggle()
-                    }
+                    withAnimation(.spring(duration: 0.3)) { isFlipped.toggle() }
                 }
 
-                // Action buttons row
+                // Action buttons
                 HStack(spacing: 12) {
-                    // Audio button
                     if let card = currentCard, let audioIndex = card.audioIndex {
-                        let audioReady = packManager.isInstalled(selectedDeck)
                         Button(action: {
                             if audioReady {
                                 audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder)
@@ -222,40 +219,29 @@ struct ContentView: View {
                         }) {
                             HStack {
                                 Image(systemName: audioReady ? "speaker.wave.2.fill" : "arrow.down.circle")
-                                Text(audioReady ? "Audio" : "Download Audio")
+                                Text(audioReady ? "Audio" : "Download")
                             }
                             .font(.headline)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 10)
+                            .padding(.horizontal, 16).padding(.vertical, 10)
                             .background(Color.orange.opacity(audioReady ? 0.2 : 0.08))
                             .cornerRadius(10)
                         }
                         .foregroundStyle(audioReady ? .primary : .secondary)
                     }
 
-                    // Mark as learned
                     Button(action: markCurrentCardLearned) {
                         HStack {
                             Image(systemName: "checkmark.circle.fill")
                             Text("Learned")
                         }
                         .font(.headline)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 10)
+                        .padding(.horizontal, 16).padding(.vertical, 10)
                         .background(Color.green.opacity(0.2))
                         .cornerRadius(10)
                     }
                 }
 
-                HStack(spacing: 12) {
-                    Label("Flip", systemImage: "hand.tap")
-                    Label("Audio", systemImage: "hand.tap.fill")
-                    Label("Navigate", systemImage: "hand.draw")
-                }
-                .font(.caption)
-                .foregroundStyle(.secondary)
-
-                // Navigation buttons
+                // Navigation
                 HStack(spacing: 40) {
                     Button(action: previousCard) {
                         Image(systemName: "chevron.left.circle.fill")
@@ -274,15 +260,20 @@ struct ContentView: View {
                     }
                     .disabled(currentIndex >= cardStore.displayCards.count - 1)
                 }
-                .padding(.top)
+                .padding(.top, 4)
             }
         }
-        .padding()
+        .padding(.vertical)
         .preferredColorScheme(appearanceMode.colorScheme)
         .onAppear { cardStore.loadCards(from: selectedDeck) }
         .onChange(of: cardStore.displayCards.count) {
             if currentIndex >= cardStore.displayCards.count {
                 currentIndex = max(0, cardStore.displayCards.count - 1)
+            }
+        }
+        .onChange(of: packManager.states[selectedDeckId]) { _, newState in
+            if case .installed = newState {
+                cardStore.loadCards(from: selectedDeck)
             }
         }
         .sheet(isPresented: $showSettings) {
@@ -293,28 +284,19 @@ struct ContentView: View {
     var completionView: some View {
         VStack(spacing: 20) {
             Image(systemName: "star.fill")
-                .font(.system(size: 60))
-                .foregroundStyle(.yellow)
+                .font(.system(size: 60)).foregroundStyle(.yellow)
             if cardStore.isFocusModeOn {
-                Text("Focus set complete!")
-                    .font(.title2).fontWeight(.bold)
+                Text("Focus set complete!").font(.title2).fontWeight(.bold)
                 Text("You've learned all words in your focus set.")
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-                Button("Pick new set of 20") {
-                    cardStore.pickNewFocusSet()
-                    currentIndex = 0
-                }
-                .buttonStyle(.borderedProminent)
+                    .multilineTextAlignment(.center).foregroundStyle(.secondary)
+                Button("Pick new set of 20") { cardStore.pickNewFocusSet(); currentIndex = 0 }
+                    .buttonStyle(.borderedProminent)
             } else {
-                Text("All done!")
-                    .font(.title2).fontWeight(.bold)
+                Text("All done!").font(.title2).fontWeight(.bold)
                 Text("You've marked all \(cardStore.learnedCount) words as learned.")
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center).foregroundStyle(.secondary)
             }
-            Button("Open Settings") { showSettings = true }
-                .buttonStyle(.bordered)
+            Button("Open Settings") { showSettings = true }.buttonStyle(.bordered)
         }
         .padding()
     }
@@ -324,44 +306,29 @@ struct ContentView: View {
         cardStore.markLearned(card)
         isFlipped = false
         let newCount = cardStore.displayCards.count
-        if currentIndex >= newCount {
-            currentIndex = max(0, newCount - 1)
-        }
+        if currentIndex >= newCount { currentIndex = max(0, newCount - 1) }
     }
 
     func switchDeck(_ deck: Deck) {
         selectedDeckId = deck.id
-        currentIndex = 0
-        isFlipped = false
-        spanishFirst = true
+        currentIndex = 0; isFlipped = false; spanishFirst = true
         cardStore.loadCards(from: deck)
     }
 
     func previousCard() {
-        if currentIndex > 0 {
-            isFlipped = false
-            currentIndex -= 1
-        }
+        if currentIndex > 0 { isFlipped = false; currentIndex -= 1 }
     }
 
     func nextCard() {
-        if currentIndex < cardStore.displayCards.count - 1 {
-            isFlipped = false
-            currentIndex += 1
-        }
+        if currentIndex < cardStore.displayCards.count - 1 { isFlipped = false; currentIndex += 1 }
     }
 
     func shuffleCards() {
-        cardStore.cards.shuffle()
-        currentIndex = 0
-        isFlipped = false
-    }
-
-    func toggleDirection() {
-        spanishFirst.toggle()
-        isFlipped = false
+        cardStore.cards.shuffle(); currentIndex = 0; isFlipped = false
     }
 }
+
+// MARK: - Settings
 
 struct SettingsView: View {
     @ObservedObject var cardStore: CardStore
@@ -379,29 +346,25 @@ struct SettingsView: View {
                         set: { cardStore.setFocusMode($0) }
                     ))
                     if cardStore.isFocusModeOn {
-                        Button("Pick new set of 20") {
-                            cardStore.pickNewFocusSet()
-                        }
+                        Button("Pick new set of 20") { cardStore.pickNewFocusSet() }
                     }
                 }
 
                 Section("Progress") {
-                    LabeledContent("Learned", value: "\(cardStore.learnedCount)")
+                    LabeledContent("Learned",   value: "\(cardStore.learnedCount)")
                     LabeledContent("Remaining", value: "\(cardStore.remainingCount)")
-                    LabeledContent("Total", value: "\(cardStore.totalCount)")
+                    LabeledContent("Total",     value: "\(cardStore.totalCount)")
                 }
 
                 Section {
-                    Button("Reset all progress", role: .destructive) {
-                        showResetConfirm = true
-                    }
+                    Button("Reset all progress", role: .destructive) { showResetConfirm = true }
                 }
 
                 Section(
                     header: Text("Language Packs"),
-                    footer: Text("Downloaded packs are stored locally and never backed up to iCloud.")
+                    footer: Text("Each pack includes the word list and audio. Stored locally, not backed up to iCloud.")
                 ) {
-                    ForEach(availableDecks.filter { packDownloadURLs[$0.id] != nil }) { deck in
+                    ForEach(availableDecks) { deck in
                         PackRowView(deck: deck, packManager: packManager) {
                             packToRemove = deck
                         }
@@ -415,18 +378,14 @@ struct SettingsView: View {
                     Button("Done") { dismiss() }
                 }
             }
-            .confirmationDialog(
-                "Reset all progress?",
-                isPresented: $showResetConfirm,
-                titleVisibility: .visible
-            ) {
+            .confirmationDialog("Reset all progress?", isPresented: $showResetConfirm, titleVisibility: .visible) {
                 Button("Reset", role: .destructive) { cardStore.resetLearned() }
                 Button("Cancel", role: .cancel) {}
             } message: {
                 Text("This clears all learned words and focus sets for this deck.")
             }
             .confirmationDialog(
-                "Remove \(packToRemove?.name ?? "") audio pack?",
+                "Remove \(packToRemove?.name ?? "") pack?",
                 isPresented: Binding(get: { packToRemove != nil }, set: { if !$0 { packToRemove = nil } }),
                 titleVisibility: .visible
             ) {
@@ -436,7 +395,7 @@ struct SettingsView: View {
                 }
                 Button("Cancel", role: .cancel) { packToRemove = nil }
             } message: {
-                Text("Audio will need to be downloaded again to play pronunciations.")
+                Text("The word list and audio will be deleted. You can re-download anytime.")
             }
         }
     }
@@ -449,40 +408,43 @@ struct PackRowView: View {
 
     var body: some View {
         HStack {
-            Text(deck.emoji + " " + deck.name)
+            VStack(alignment: .leading, spacing: 2) {
+                Text("\(deck.emoji) \(deck.name) – English")
+                    .font(.body)
+                Group {
+                    if case .installed = packManager.states[deck.id] ?? .notDownloaded {
+                        Text("5,001 cards + audio installed")
+                    } else if deck.isBundled {
+                        Text("5,001 cards included · Download for audio")
+                    } else {
+                        Text("5,001 cards + audio  ·  ~30 MB")
+                    }
+                }
+                .font(.caption).foregroundStyle(.secondary)
+            }
             Spacer()
             switch packManager.states[deck.id] ?? .notDownloaded {
             case .notDownloaded:
                 Button("Download") { packManager.download(deck) }
-                    .buttonStyle(.borderless)
-                    .foregroundStyle(.blue)
+                    .buttonStyle(.borderless).foregroundStyle(.blue)
             case .downloading(let progress):
-                ProgressView(value: progress)
-                    .frame(width: 70)
+                ProgressView(value: progress).frame(width: 60)
                 Text("\(Int(progress * 100))%")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .monospacedDigit()
+                    .font(.caption).foregroundStyle(.secondary).monospacedDigit()
                 Button(action: { packManager.cancelDownload(deck) }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundStyle(.secondary)
+                    Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
                 }
                 .buttonStyle(.borderless)
             case .installed:
-                Image(systemName: "checkmark.circle.fill")
-                    .foregroundStyle(.green)
-                Button("Remove", role: .destructive, action: onRemove)
-                    .buttonStyle(.borderless)
+                Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                Button("Remove", role: .destructive, action: onRemove).buttonStyle(.borderless)
             case .failed(let msg):
-                Text("Failed")
-                    .font(.caption)
-                    .foregroundStyle(.red)
+                Text("Failed").font(.caption).foregroundStyle(.red)
                 Button("Retry") { packManager.download(deck) }
-                    .buttonStyle(.borderless)
-                    .foregroundStyle(.blue)
-                    .help(msg)
+                    .buttonStyle(.borderless).foregroundStyle(.blue).help(msg)
             }
         }
+        .padding(.vertical, 2)
     }
 }
 

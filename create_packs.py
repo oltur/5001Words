@@ -1,31 +1,45 @@
 #!/usr/bin/env python3
 """
-Creates .pack files for each language's audio, ready to upload to a GitHub Release.
+Creates .pack files for each language, including word list JSON + audio MP3s.
 Run from the repo root: python3 create_packs.py
+Upload the resulting *.pack files to a GitHub Release.
 """
 import struct
 from pathlib import Path
 
-def create_pack(folder: Path, output: Path):
-    files = sorted(folder.glob("*.mp3"))
-    print(f"Packing {len(files)} files from {folder.name}/ → {output.name} ...", flush=True)
+BASE  = Path(__file__).parent / "YetAnotherLearningCards/YetAnotherLearningCards"
+AUDIO = BASE / "Audio.bundle"
+
+def create_pack(deck_id: str, audio_folder: str, output: Path):
+    json_file  = BASE / f"{deck_id}_cards.json"
+    audio_dir  = AUDIO / audio_folder
+    mp3_files  = sorted(audio_dir.glob("*.mp3"))
+
+    entries = []
+    if json_file.exists():
+        entries.append(json_file)
+        print(f"  + {json_file.name}")
+    entries.extend(mp3_files)
+    print(f"  + {len(mp3_files)} mp3 files from {audio_folder}/")
+
     with open(output, "wb") as out:
-        out.write(b"PACK")                          # magic
-        out.write(struct.pack(">I", len(files)))    # file count (uint32 big-endian)
-        for path in files:
+        out.write(b"PACK")
+        out.write(struct.pack(">I", len(entries)))
+        for path in entries:
             name = path.name.encode("utf-8")
             data = path.read_bytes()
-            out.write(struct.pack(">H", len(name))) # name length (uint16)
+            out.write(struct.pack(">H", len(name)))
             out.write(name)
-            out.write(struct.pack(">I", len(data))) # data length (uint32)
+            out.write(struct.pack(">I", len(data)))
             out.write(data)
+
     mb = output.stat().st_size / 1024 / 1024
-    print(f"  ✓ {mb:.1f} MB")
+    print(f"  → {output.name}  {mb:.1f} MB\n")
 
-base = Path(__file__).parent / "YetAnotherLearningCards/YetAnotherLearningCards/Audio.bundle"
-create_pack(base / "spanish", Path("spanish_audio.pack"))
-create_pack(base / "dutch",   Path("dutch_audio.pack"))
+print("Packing Spanish...")
+create_pack("spanish", "spanish", Path("spanish_audio.pack"))
 
-print()
-print("Upload spanish_audio.pack and dutch_audio.pack to a GitHub Release,")
-print("then update packDownloadURLs in PackManager.swift.")
+print("Packing Dutch...")
+create_pack("dutch", "dutch", Path("dutch_audio.pack"))
+
+print("Done. Upload both .pack files to a GitHub Release, then update packDownloadURLs in PackManager.swift.")

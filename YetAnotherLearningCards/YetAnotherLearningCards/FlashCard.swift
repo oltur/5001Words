@@ -8,11 +8,12 @@ struct Deck: Identifiable, Hashable {
     let fileName: String
     let emoji: String
     let audioFolder: String
+    let isBundled: Bool  // ships with the app, no download required
 }
 
 let availableDecks: [Deck] = [
-    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "spanish"),
-    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "dutch"),
+    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "spanish", isBundled: true),
+    Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "dutch",   isBundled: false),
 ]
 
 struct FlashCard: Identifiable, Codable {
@@ -46,15 +47,15 @@ class AudioPlayer: ObservableObject {
         let resourceName = subfolder.isEmpty ? "\(audioIndex)" : "\(subfolder)_\(audioIndex)"
         let filename = "\(resourceName).mp3"
 
-        // Check downloaded pack first (applicationSupport/Audio/{subfolder}/)
+        // Check downloaded pack first (applicationSupport/packs/{subfolder}/)
         if !subfolder.isEmpty {
-            let downloaded = FileManager.default
+            let packFile = FileManager.default
                 .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-                .appendingPathComponent("Audio")
+                .appendingPathComponent("packs")
                 .appendingPathComponent(subfolder)
                 .appendingPathComponent(filename)
-            if FileManager.default.fileExists(atPath: downloaded.path) {
-                playURL(downloaded); return
+            if FileManager.default.fileExists(atPath: packFile.path) {
+                playURL(packFile); return
             }
         }
 
@@ -124,11 +125,24 @@ class CardStore: ObservableObject {
         focusFronts = UserDefaults.standard.stringArray(forKey: "focus_\(deck.id)") ?? []
         isFocusModeOn = UserDefaults.standard.bool(forKey: "focusMode_\(deck.id)")
 
-        guard let url = Bundle.main.url(forResource: deck.fileName, withExtension: "json") else {
+        // Check downloaded pack first, fall back to bundle
+        let packJSON = FileManager.default
+            .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("packs")
+            .appendingPathComponent(deck.id)
+            .appendingPathComponent("\(deck.fileName).json")
+
+        let url: URL
+        if FileManager.default.fileExists(atPath: packJSON.path) {
+            url = packJSON
+        } else if let bundled = Bundle.main.url(forResource: deck.fileName, withExtension: "json") {
+            url = bundled
+        } else {
             print("Could not find \(deck.fileName).json")
             cards = fallbackCards
             return
         }
+
         do {
             let data = try Data(contentsOf: url)
             cards = try JSONDecoder().decode([FlashCard].self, from: data).shuffled()
