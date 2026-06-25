@@ -11,6 +11,7 @@ let packDownloadURLs: [String: String] = [
     "dutch":      "https://github.com/oltur/5001Words/releases/download/audio-v1/dutch_audio.pack",
     "german":     "https://github.com/oltur/5001Words/releases/download/audio-v1/german_audio.pack",
     "french":     "https://github.com/oltur/5001Words/releases/download/audio-v1/french_audio.pack",
+    "ukrainian":  "https://github.com/oltur/5001Words/releases/download/audio-v1/ukrainian_audio.pack",
 ]
 
 class PackManager: NSObject, ObservableObject {

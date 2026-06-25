@@ -83,4 +83,7 @@ create_pack("german", "german", Path("german_audio.pack"))
 print("Packing French...")
 create_pack("french", "french", Path("french_audio.pack"))
 
+print("Packing Ukrainian...")
+create_pack("ukrainian", "ukrainian", Path("ukrainian_audio.pack"))
+
 print("Done. Upload .pack files to a GitHub Release, then update packDownloadURLs in PackManager.swift.")
