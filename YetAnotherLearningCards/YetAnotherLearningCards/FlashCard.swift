@@ -83,8 +83,31 @@ class AudioPlayer: ObservableObject {
 
 class CardStore: ObservableObject {
     @Published var cards: [FlashCard] = []
+    @Published var isFocusModeOn: Bool = false
+    @Published var focusFronts: [String] = []
+    @Published var learnedFronts: Set<String> = []
+
+    private var currentDeckId: String = "spanish"
+
+    var displayCards: [FlashCard] {
+        let unlearned = cards.filter { !learnedFronts.contains($0.front) }
+        if isFocusModeOn && !focusFronts.isEmpty {
+            let focusSet = Set(focusFronts)
+            return unlearned.filter { focusSet.contains($0.front) }
+        }
+        return unlearned
+    }
+
+    var learnedCount: Int { learnedFronts.count }
+    var totalCount: Int { cards.count }
+    var remainingCount: Int { cards.filter { !learnedFronts.contains($0.front) }.count }
 
     func loadCards(from deck: Deck) {
+        currentDeckId = deck.id
+        learnedFronts = Set(UserDefaults.standard.stringArray(forKey: "learned_\(deck.id)") ?? [])
+        focusFronts = UserDefaults.standard.stringArray(forKey: "focus_\(deck.id)") ?? []
+        isFocusModeOn = UserDefaults.standard.bool(forKey: "focusMode_\(deck.id)")
+
         guard let url = Bundle.main.url(forResource: deck.fileName, withExtension: "json") else {
             print("Could not find \(deck.fileName).json")
             cards = fallbackCards
@@ -98,6 +121,34 @@ class CardStore: ObservableObject {
             print("Error loading cards: \(error)")
             cards = fallbackCards
         }
+    }
+
+    func markLearned(_ card: FlashCard) {
+        learnedFronts.insert(card.front)
+        UserDefaults.standard.set(Array(learnedFronts), forKey: "learned_\(currentDeckId)")
+    }
+
+    func pickNewFocusSet() {
+        let available = cards.filter { !learnedFronts.contains($0.front) }
+        focusFronts = Array(available.shuffled().prefix(20)).map(\.front)
+        UserDefaults.standard.set(focusFronts, forKey: "focus_\(currentDeckId)")
+    }
+
+    func setFocusMode(_ on: Bool) {
+        isFocusModeOn = on
+        UserDefaults.standard.set(on, forKey: "focusMode_\(currentDeckId)")
+        if on && focusFronts.isEmpty {
+            pickNewFocusSet()
+        }
+    }
+
+    func resetLearned() {
+        learnedFronts = []
+        focusFronts = []
+        isFocusModeOn = false
+        UserDefaults.standard.removeObject(forKey: "learned_\(currentDeckId)")
+        UserDefaults.standard.removeObject(forKey: "focus_\(currentDeckId)")
+        UserDefaults.standard.removeObject(forKey: "focusMode_\(currentDeckId)")
     }
 
     private let fallbackCards = [

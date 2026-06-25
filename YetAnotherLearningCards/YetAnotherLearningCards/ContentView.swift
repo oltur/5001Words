@@ -42,6 +42,7 @@ struct ContentView: View {
     @State private var isFlipped = false
     @State private var spanishFirst = true
     @State private var dragOffset: CGFloat = 0
+    @State private var showSettings = false
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
     @AppStorage("selectedDeckId") private var selectedDeckId: String = "spanish"
 
@@ -50,8 +51,9 @@ struct ContentView: View {
     }
 
     var currentCard: FlashCard? {
-        guard !cardStore.cards.isEmpty else { return nil }
-        return cardStore.cards[currentIndex]
+        let dc = cardStore.displayCards
+        guard !dc.isEmpty else { return nil }
+        return dc[min(currentIndex, dc.count - 1)]
     }
 
     var frontText: String {
@@ -70,6 +72,13 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 20) {
             HStack {
+                // Hamburger → settings
+                Button(action: { showSettings = true }) {
+                    Image(systemName: "line.3.horizontal")
+                        .font(.title3)
+                }
+                .padding(.trailing, 4)
+
                 Text("Flash Cards")
                     .font(.title2)
                     .fontWeight(.bold)
@@ -119,10 +128,25 @@ struct ContentView: View {
 
             if cardStore.cards.isEmpty {
                 ProgressView("Loading cards...")
+            } else if cardStore.displayCards.isEmpty {
+                completionView
             } else {
-                Text("\(currentIndex + 1) / \(cardStore.cards.count)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                let displayCount = cardStore.displayCards.count
+                HStack(spacing: 6) {
+                    Text("\(currentIndex + 1) / \(displayCount)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    if cardStore.isFocusModeOn {
+                        Text("· Focus")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    }
+                    if cardStore.learnedCount > 0 {
+                        Text("· \(cardStore.learnedCount) learned")
+                            .font(.caption)
+                            .foregroundStyle(.green)
+                    }
+                }
 
                 // Flash Card
                 ZStack {
@@ -183,17 +207,33 @@ struct ContentView: View {
                     }
                 }
 
-                // Audio button
-                if let card = currentCard, let audioIndex = card.audioIndex {
-                    Button(action: { audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder) }) {
+                // Action buttons row
+                HStack(spacing: 12) {
+                    // Audio button
+                    if let card = currentCard, let audioIndex = card.audioIndex {
+                        Button(action: { audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder) }) {
+                            HStack {
+                                Image(systemName: "speaker.wave.2.fill")
+                                Text("Audio")
+                            }
+                            .font(.headline)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                            .background(Color.orange.opacity(0.2))
+                            .cornerRadius(10)
+                        }
+                    }
+
+                    // Mark as learned
+                    Button(action: markCurrentCardLearned) {
                         HStack {
-                            Image(systemName: "speaker.wave.2.fill")
-                            Text("Play Audio")
+                            Image(systemName: "checkmark.circle.fill")
+                            Text("Learned")
                         }
                         .font(.headline)
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(Color.orange.opacity(0.2))
+                        .background(Color.green.opacity(0.2))
                         .cornerRadius(10)
                     }
                 }
@@ -223,7 +263,7 @@ struct ContentView: View {
                         Image(systemName: "chevron.right.circle.fill")
                             .font(.system(size: 50))
                     }
-                    .disabled(currentIndex == cardStore.cards.count - 1)
+                    .disabled(currentIndex >= cardStore.displayCards.count - 1)
                 }
                 .padding(.top)
             }
@@ -231,6 +271,53 @@ struct ContentView: View {
         .padding()
         .preferredColorScheme(appearanceMode.colorScheme)
         .onAppear { cardStore.loadCards(from: selectedDeck) }
+        .onChange(of: cardStore.displayCards.count) { _ in
+            if currentIndex >= cardStore.displayCards.count {
+                currentIndex = max(0, cardStore.displayCards.count - 1)
+            }
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView(cardStore: cardStore)
+        }
+    }
+
+    var completionView: some View {
+        VStack(spacing: 20) {
+            Image(systemName: "star.fill")
+                .font(.system(size: 60))
+                .foregroundStyle(.yellow)
+            if cardStore.isFocusModeOn {
+                Text("Focus set complete!")
+                    .font(.title2).fontWeight(.bold)
+                Text("You've learned all words in your focus set.")
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+                Button("Pick new set of 20") {
+                    cardStore.pickNewFocusSet()
+                    currentIndex = 0
+                }
+                .buttonStyle(.borderedProminent)
+            } else {
+                Text("All done!")
+                    .font(.title2).fontWeight(.bold)
+                Text("You've marked all \(cardStore.learnedCount) words as learned.")
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+            }
+            Button("Open Settings") { showSettings = true }
+                .buttonStyle(.bordered)
+        }
+        .padding()
+    }
+
+    func markCurrentCardLearned() {
+        guard let card = currentCard else { return }
+        cardStore.markLearned(card)
+        isFlipped = false
+        let newCount = cardStore.displayCards.count
+        if currentIndex >= newCount {
+            currentIndex = max(0, newCount - 1)
+        }
     }
 
     func switchDeck(_ deck: Deck) {
@@ -249,7 +336,7 @@ struct ContentView: View {
     }
 
     func nextCard() {
-        if currentIndex < cardStore.cards.count - 1 {
+        if currentIndex < cardStore.displayCards.count - 1 {
             isFlipped = false
             currentIndex += 1
         }
@@ -264,6 +351,59 @@ struct ContentView: View {
     func toggleDirection() {
         spanishFirst.toggle()
         isFlipped = false
+    }
+}
+
+struct SettingsView: View {
+    @ObservedObject var cardStore: CardStore
+    @Environment(\.dismiss) private var dismiss
+    @State private var showResetConfirm = false
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Focus Mode") {
+                    Toggle("Focus on 20 words", isOn: Binding(
+                        get: { cardStore.isFocusModeOn },
+                        set: { cardStore.setFocusMode($0) }
+                    ))
+                    if cardStore.isFocusModeOn {
+                        Button("Pick new set of 20") {
+                            cardStore.pickNewFocusSet()
+                        }
+                    }
+                }
+
+                Section("Progress") {
+                    LabeledContent("Learned", value: "\(cardStore.learnedCount)")
+                    LabeledContent("Remaining", value: "\(cardStore.remainingCount)")
+                    LabeledContent("Total", value: "\(cardStore.totalCount)")
+                }
+
+                Section {
+                    Button("Reset all progress", role: .destructive) {
+                        showResetConfirm = true
+                    }
+                }
+            }
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+            .confirmationDialog(
+                "Reset all progress?",
+                isPresented: $showResetConfirm,
+                titleVisibility: .visible
+            ) {
+                Button("Reset", role: .destructive) { cardStore.resetLearned() }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("This clears all learned words and focus sets for this deck.")
+            }
+        }
     }
 }
 
