@@ -22,6 +22,7 @@ let availableDecks: [Deck] = [
     Deck(id: "hebrew",     name: "Hebrew - English",    fileName: "hebrew_cards",     emoji: "🇮🇱", audioFolder: "hebrew",  isBundled: false, hasAudio: true,  sourceLanguage: "Hebrew",  targetLanguage: "English",   targetEmoji: "🇬🇧"),
     Deck(id: "dutch",      name: "Dutch - English",     fileName: "dutch_cards",      emoji: "🇳🇱", audioFolder: "dutch",   isBundled: false, hasAudio: true,  sourceLanguage: "Dutch",   targetLanguage: "English",   targetEmoji: "🇬🇧"),
     Deck(id: "german",     name: "German - English",    fileName: "german_cards",     emoji: "🇩🇪", audioFolder: "german",  isBundled: false, hasAudio: true,  sourceLanguage: "German",  targetLanguage: "English",   targetEmoji: "🇬🇧"),
+    Deck(id: "french",     name: "French - English",    fileName: "french_cards",     emoji: "🇫🇷", audioFolder: "french",  isBundled: false, hasAudio: true,  sourceLanguage: "French",  targetLanguage: "English",   targetEmoji: "🇬🇧"),
 ]
 
 struct FlashCard: Identifiable, Codable {
