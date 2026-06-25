@@ -19,6 +19,7 @@ let availableDecks: [Deck] = [
     Deck(id: "spanish",    name: "Spanish - English",   fileName: "spanish_cards",    emoji: "🇪🇸", audioFolder: "spanish", isBundled: true,  hasAudio: true,  sourceLanguage: "Spanish", targetLanguage: "English",   targetEmoji: "🇬🇧"),
     Deck(id: "spanish_uk", name: "Spanish - Ukrainian", fileName: "spanish_uk_cards", emoji: "🇪🇸", audioFolder: "spanish", isBundled: false, hasAudio: true,  sourceLanguage: "Spanish", targetLanguage: "Ukrainian", targetEmoji: "🇺🇦"),
     Deck(id: "yiddish",    name: "Yiddish - English",   fileName: "yiddish_cards",    emoji: "✡️",  audioFolder: "yiddish", isBundled: true,  hasAudio: false, sourceLanguage: "Yiddish", targetLanguage: "English",   targetEmoji: "🇬🇧"),
+    Deck(id: "hebrew",     name: "Hebrew - English",    fileName: "hebrew_cards",     emoji: "🇮🇱", audioFolder: "hebrew",  isBundled: false, hasAudio: true,  sourceLanguage: "Hebrew",  targetLanguage: "English",   targetEmoji: "🇬🇧"),
     Deck(id: "dutch",      name: "Dutch - English",     fileName: "dutch_cards",      emoji: "🇳🇱", audioFolder: "dutch",   isBundled: false, hasAudio: true,  sourceLanguage: "Dutch",   targetLanguage: "English",   targetEmoji: "🇬🇧"),
     Deck(id: "german",     name: "German - English",    fileName: "german_cards",     emoji: "🇩🇪", audioFolder: "german",  isBundled: false, hasAudio: true,  sourceLanguage: "German",  targetLanguage: "English",   targetEmoji: "🇬🇧"),
 ]

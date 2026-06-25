@@ -77,3 +77,10 @@ playground.xcworkspace
 # Provisioning profiles
 *.mobileprovision
 *.provisionprofile
+
+# Generated audio (source of truth is GitHub Releases .pack files)
+audio_source/
+*.pack
+
+# Translation caches
+*_cache.json

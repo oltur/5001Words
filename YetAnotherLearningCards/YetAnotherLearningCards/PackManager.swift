@@ -7,6 +7,7 @@ let packDownloadURLs: [String: String] = [
     "spanish":    "https://github.com/oltur/5001Words/releases/download/audio-v1/spanish_audio.pack",
     "spanish_uk": "https://github.com/oltur/5001Words/releases/download/audio-v1/spanish_uk.pack",
     "yiddish":    "https://github.com/oltur/5001Words/releases/download/audio-v1/yiddish.pack",
+    "hebrew":     "https://github.com/oltur/5001Words/releases/download/audio-v1/hebrew_audio.pack",
     "dutch":      "https://github.com/oltur/5001Words/releases/download/audio-v1/dutch_audio.pack",
     "german":     "https://github.com/oltur/5001Words/releases/download/audio-v1/german_audio.pack",
 ]

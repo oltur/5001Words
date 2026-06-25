@@ -7,8 +7,9 @@ Upload the resulting *.pack files to a GitHub Release.
 import struct
 from pathlib import Path
 
-BASE  = Path(__file__).parent / "YetAnotherLearningCards/YetAnotherLearningCards"
-AUDIO = BASE / "Audio.bundle"
+BASE        = Path(__file__).parent / "YetAnotherLearningCards/YetAnotherLearningCards"
+AUDIO       = BASE / "Audio.bundle"
+AUDIO_SRC   = Path(__file__).parent / "audio_source"  # fallback for non-bundled audio
 
 def create_json_only_pack(deck_id: str, output: Path):
     json_file = BASE / f"{deck_id}_cards.json"
@@ -36,6 +37,8 @@ def create_json_only_pack(deck_id: str, output: Path):
 def create_pack(deck_id: str, audio_folder: str, output: Path):
     json_file  = BASE / f"{deck_id}_cards.json"
     audio_dir  = AUDIO / audio_folder
+    if not any(audio_dir.glob("*.mp3")):
+        audio_dir = AUDIO_SRC / audio_folder  # fall back to audio_source/
     mp3_files  = sorted(audio_dir.glob("*.mp3"))
 
     entries = []
@@ -67,6 +70,9 @@ create_json_only_pack("spanish_uk", Path("spanish_uk.pack"))
 
 print("Packing Yiddish — JSON only, no audio...")
 create_json_only_pack("yiddish", Path("yiddish.pack"))
+
+print("Packing Hebrew...")
+create_pack("hebrew", "hebrew", Path("hebrew_audio.pack"))
 
 print("Packing Dutch...")
 create_pack("dutch", "dutch", Path("dutch_audio.pack"))

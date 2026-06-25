@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Generates yiddish_cards.json (5,001 Yiddish-English flashcards).
-Translates English words from spanish_cards.json into Yiddish.
-Front: Yiddish word/phrase  Back: English
-No audio.
+Translates Spanish fronts from spanish_cards.json into Yiddish.
+Front: Yiddish  Back: English. No audio.
+Translating ES→YI avoids comma-separated multi-value English translations.
 Usage: python3 generate_yiddish_cards.py
 Safe to re-run — resumes from cached progress.
 """
@@ -30,7 +30,7 @@ if CACHE.exists():
     with open(CACHE, encoding="utf-8") as f:
         cache = json.load(f)
 
-translator = GoogleTranslator(source="en", target="yi")
+translator = GoogleTranslator(source="es", target="yi")
 
 def translate_batch(texts: list[str]) -> list[str]:
     joined = "\n||||\n".join(texts)
@@ -40,11 +40,10 @@ def translate_batch(texts: list[str]) -> list[str]:
         return [translator.translate(t) for t in texts]
     return parts
 
-# Use cleaned English backs as source
-all_english = [strip_annotation(card["back"]) for card in src]
-needed_unique = list(dict.fromkeys(t for t in all_english if t not in cache))
+all_spanish = [strip_annotation(card["front"]) for card in src]
+needed_unique = list(dict.fromkeys(t for t in all_spanish if t not in cache))
 
-print(f"Translating {len(needed_unique)} unique English strings EN→YI...")
+print(f"Translating {len(needed_unique)} unique Spanish strings ES→YI...")
 
 for i in range(0, len(needed_unique), BATCH):
     batch = needed_unique[i:i+BATCH]
@@ -73,9 +72,9 @@ with open(CACHE, "w", encoding="utf-8") as f:
     json.dump(cache, f, ensure_ascii=False)
 
 result = []
-for card, english in zip(src, all_english):
-    yi_front = cache.get(english, english)
-    result.append({"front": yi_front, "back": english})
+for card, spanish in zip(src, all_spanish):
+    yi_front = cache.get(spanish, spanish)
+    result.append({"front": yi_front, "back": card["back"]})
 
 with open(OUT_JSON, "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
