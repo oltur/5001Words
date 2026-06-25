@@ -38,6 +38,7 @@ enum AppearanceMode: String, CaseIterable {
 struct ContentView: View {
     @StateObject private var cardStore = CardStore()
     @StateObject private var audioPlayer = AudioPlayer()
+    @StateObject private var packManager = PackManager.shared
     @State private var currentIndex = 0
     @State private var isFlipped = false
     @State private var spanishFirst = true
@@ -211,17 +212,25 @@ struct ContentView: View {
                 HStack(spacing: 12) {
                     // Audio button
                     if let card = currentCard, let audioIndex = card.audioIndex {
-                        Button(action: { audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder) }) {
+                        let audioReady = packManager.isInstalled(selectedDeck)
+                        Button(action: {
+                            if audioReady {
+                                audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder)
+                            } else {
+                                showSettings = true
+                            }
+                        }) {
                             HStack {
-                                Image(systemName: "speaker.wave.2.fill")
-                                Text("Audio")
+                                Image(systemName: audioReady ? "speaker.wave.2.fill" : "arrow.down.circle")
+                                Text(audioReady ? "Audio" : "Download Audio")
                             }
                             .font(.headline)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 10)
-                            .background(Color.orange.opacity(0.2))
+                            .background(Color.orange.opacity(audioReady ? 0.2 : 0.08))
                             .cornerRadius(10)
                         }
+                        .foregroundStyle(audioReady ? .primary : .secondary)
                     }
 
                     // Mark as learned
@@ -271,13 +280,13 @@ struct ContentView: View {
         .padding()
         .preferredColorScheme(appearanceMode.colorScheme)
         .onAppear { cardStore.loadCards(from: selectedDeck) }
-        .onChange(of: cardStore.displayCards.count) { _ in
+        .onChange(of: cardStore.displayCards.count) {
             if currentIndex >= cardStore.displayCards.count {
                 currentIndex = max(0, cardStore.displayCards.count - 1)
             }
         }
         .sheet(isPresented: $showSettings) {
-            SettingsView(cardStore: cardStore)
+            SettingsView(cardStore: cardStore, packManager: packManager)
         }
     }
 
@@ -356,8 +365,10 @@ struct ContentView: View {
 
 struct SettingsView: View {
     @ObservedObject var cardStore: CardStore
+    @ObservedObject var packManager: PackManager
     @Environment(\.dismiss) private var dismiss
     @State private var showResetConfirm = false
+    @State private var packToRemove: Deck? = nil
 
     var body: some View {
         NavigationStack {
@@ -385,6 +396,17 @@ struct SettingsView: View {
                         showResetConfirm = true
                     }
                 }
+
+                Section(
+                    header: Text("Language Packs"),
+                    footer: Text("Downloaded packs are stored locally and never backed up to iCloud.")
+                ) {
+                    ForEach(availableDecks.filter { packDownloadURLs[$0.id] != nil }) { deck in
+                        PackRowView(deck: deck, packManager: packManager) {
+                            packToRemove = deck
+                        }
+                    }
+                }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
@@ -402,6 +424,63 @@ struct SettingsView: View {
                 Button("Cancel", role: .cancel) {}
             } message: {
                 Text("This clears all learned words and focus sets for this deck.")
+            }
+            .confirmationDialog(
+                "Remove \(packToRemove?.name ?? "") audio pack?",
+                isPresented: Binding(get: { packToRemove != nil }, set: { if !$0 { packToRemove = nil } }),
+                titleVisibility: .visible
+            ) {
+                Button("Remove", role: .destructive) {
+                    if let deck = packToRemove { packManager.remove(deck) }
+                    packToRemove = nil
+                }
+                Button("Cancel", role: .cancel) { packToRemove = nil }
+            } message: {
+                Text("Audio will need to be downloaded again to play pronunciations.")
+            }
+        }
+    }
+}
+
+struct PackRowView: View {
+    let deck: Deck
+    @ObservedObject var packManager: PackManager
+    let onRemove: () -> Void
+
+    var body: some View {
+        HStack {
+            Text(deck.emoji + " " + deck.name)
+            Spacer()
+            switch packManager.states[deck.id] ?? .notDownloaded {
+            case .notDownloaded:
+                Button("Download") { packManager.download(deck) }
+                    .buttonStyle(.borderless)
+                    .foregroundStyle(.blue)
+            case .downloading(let progress):
+                ProgressView(value: progress)
+                    .frame(width: 70)
+                Text("\(Int(progress * 100))%")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .monospacedDigit()
+                Button(action: { packManager.cancelDownload(deck) }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(.borderless)
+            case .installed:
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundStyle(.green)
+                Button("Remove", role: .destructive, action: onRemove)
+                    .buttonStyle(.borderless)
+            case .failed(let msg):
+                Text("Failed")
+                    .font(.caption)
+                    .foregroundStyle(.red)
+                Button("Retry") { packManager.download(deck) }
+                    .buttonStyle(.borderless)
+                    .foregroundStyle(.blue)
+                    .help(msg)
             }
         }
     }

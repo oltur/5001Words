@@ -39,9 +39,22 @@
 		8CFCFF682F2FFCD10024A3C3 /* YetAnotherLearningCards Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YetAnotherLearningCards Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8C9E6B642FED36AD0065701A /* Exceptions for "YetAnotherLearningCards" folder in "YetAnotherLearningCards" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Audio.bundle,
+			);
+			target = 8CFCFF5A2F2FFCCF0024A3C3 /* YetAnotherLearningCards */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8CFCFF5D2F2FFCCF0024A3C3 /* YetAnotherLearningCards */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8C9E6B642FED36AD0065701A /* Exceptions for "YetAnotherLearningCards" folder in "YetAnotherLearningCards" target */,
+			);
 			path = YetAnotherLearningCards;
 			sourceTree = "<group>";
 		};

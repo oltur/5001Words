@@ -45,6 +45,20 @@ class AudioPlayer: ObservableObject {
     func play(audioIndex: Int, subfolder: String = "") {
         let resourceName = subfolder.isEmpty ? "\(audioIndex)" : "\(subfolder)_\(audioIndex)"
         let filename = "\(resourceName).mp3"
+
+        // Check downloaded pack first (applicationSupport/Audio/{subfolder}/)
+        if !subfolder.isEmpty {
+            let downloaded = FileManager.default
+                .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+                .appendingPathComponent("Audio")
+                .appendingPathComponent(subfolder)
+                .appendingPathComponent(filename)
+            if FileManager.default.fileExists(atPath: downloaded.path) {
+                playURL(downloaded); return
+            }
+        }
+
+        // Fall back to Audio.bundle
         let audioBundleURL = Bundle.main.url(forResource: "Audio", withExtension: "bundle")
         let bundledAudioURL = audioBundleURL?
             .appendingPathComponent(subfolder)
@@ -63,13 +77,15 @@ class AudioPlayer: ObservableObject {
         }
 
         guard let audioURL = url else {
-            let path = subfolder.isEmpty ? filename : "\(subfolder)/\(filename)"
-            print("Audio file not found: Audio.bundle/\(path)")
+            print("Audio file not found: \(subfolder.isEmpty ? "" : subfolder + "/")\(filename)")
             return
         }
+        playURL(audioURL)
+    }
 
+    private func playURL(_ url: URL) {
         do {
-            player = try AVAudioPlayer(contentsOf: audioURL)
+            player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {
             print("Error playing audio: \(error)")
