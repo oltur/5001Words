@@ -92,7 +92,7 @@ class CardStore: ObservableObject {
         }
         do {
             let data = try Data(contentsOf: url)
-            cards = try JSONDecoder().decode([FlashCard].self, from: data)
+            cards = try JSONDecoder().decode([FlashCard].self, from: data).shuffled()
             print("Loaded \(cards.count) cards from \(deck.fileName)")
         } catch {
             print("Error loading cards: \(error)")
