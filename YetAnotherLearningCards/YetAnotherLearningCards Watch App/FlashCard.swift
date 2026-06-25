@@ -14,6 +14,7 @@ struct Deck: Identifiable, Hashable {
 let availableDecks: [Deck] = [
     Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "spanish", isBundled: true),
     Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "dutch",   isBundled: false),
+    Deck(id: "german",  name: "German",  fileName: "german_cards",  emoji: "🇩🇪", audioFolder: "german",  isBundled: false),
 ]
 
 struct FlashCard: Identifiable, Codable {

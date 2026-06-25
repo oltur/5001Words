@@ -6,6 +6,7 @@ import Combine
 let packDownloadURLs: [String: String] = [
     "spanish": "https://github.com/oltur/5001Words/releases/download/audio-v1/spanish_audio.pack",
     "dutch":   "https://github.com/oltur/5001Words/releases/download/audio-v1/dutch_audio.pack",
+    "german":  "https://github.com/oltur/5001Words/releases/download/audio-v1/german_audio.pack",
 ]
 
 class PackManager: NSObject, ObservableObject {
