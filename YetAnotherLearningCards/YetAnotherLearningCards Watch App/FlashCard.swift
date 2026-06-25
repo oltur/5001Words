@@ -11,7 +11,7 @@ struct Deck: Identifiable, Hashable {
 }
 
 let availableDecks: [Deck] = [
-    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: ""),
+    Deck(id: "spanish", name: "Spanish", fileName: "spanish_cards", emoji: "🇪🇸", audioFolder: "spanish"),
     Deck(id: "dutch",   name: "Dutch",   fileName: "dutch_cards",   emoji: "🇳🇱", audioFolder: "dutch"),
 ]
 
@@ -43,7 +43,7 @@ class AudioPlayer: ObservableObject {
     private var player: AVAudioPlayer?
 
     func play(audioIndex: Int, subfolder: String = "") {
-        let resourceName = subfolder == "dutch" ? "dutch_\(audioIndex)" : "\(audioIndex)"
+        let resourceName = subfolder.isEmpty ? "\(audioIndex)" : "\(subfolder)_\(audioIndex)"
         let filename = "\(resourceName).mp3"
         let audioBundleURL = Bundle.main.url(forResource: "Audio", withExtension: "bundle")
         let bundledAudioURL = audioBundleURL?
