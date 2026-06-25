@@ -45,6 +45,7 @@ struct ContentView: View {
     @State private var showSettings = false
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
     @AppStorage("selectedDeckId") private var selectedDeckId: String = "spanish"
+    @AppStorage("autoPlay") private var autoPlay: Bool = false
 
     var selectedDeck: Deck {
         availableDecks.first { $0.id == selectedDeckId } ?? availableDecks[0]
@@ -66,8 +67,8 @@ struct ContentView: View {
         return spanishFirst ? card.back : card.front
     }
 
-    var frontLabel: String { spanishFirst ? selectedDeck.emoji : "🇬🇧" }
-    var backLabel: String  { spanishFirst ? "🇬🇧" : selectedDeck.emoji }
+    var frontLabel: String { spanishFirst ? selectedDeck.emoji : selectedDeck.targetEmoji }
+    var backLabel: String  { spanishFirst ? selectedDeck.targetEmoji : selectedDeck.emoji }
 
     var body: some View {
         VStack(spacing: 4) {
@@ -80,10 +81,10 @@ struct ContentView: View {
                     // Direction toggle
                     Button(action: toggleDirection) {
                         HStack(spacing: 2) {
-                            Text(spanishFirst ? selectedDeck.emoji : "🇬🇧")
+                            Text(spanishFirst ? selectedDeck.emoji : selectedDeck.targetEmoji)
                             Image(systemName: "arrow.right")
                                 .font(.caption2)
-                            Text(spanishFirst ? "🇬🇧" : selectedDeck.emoji)
+                            Text(spanishFirst ? selectedDeck.targetEmoji : selectedDeck.emoji)
                         }
                         .font(.caption2)
                     }
@@ -269,35 +270,31 @@ struct ContentView: View {
 
     func switchDeck(_ deck: Deck) {
         selectedDeckId = deck.id
-        currentIndex = 0
-        isFlipped = false
-        spanishFirst = true
+        currentIndex = 0; isFlipped = false; spanishFirst = true
         cardStore.loadCards(from: deck)
+        playCurrentCardAudio()
     }
 
     func previousCard() {
-        if currentIndex > 0 {
-            isFlipped = false
-            currentIndex -= 1
-        }
+        if currentIndex > 0 { isFlipped = false; currentIndex -= 1; playCurrentCardAudio() }
     }
 
     func nextCard() {
-        if currentIndex < cardStore.displayCards.count - 1 {
-            isFlipped = false
-            currentIndex += 1
-        }
+        if currentIndex < cardStore.displayCards.count - 1 { isFlipped = false; currentIndex += 1; playCurrentCardAudio() }
     }
 
     func shuffleCards() {
-        cardStore.cards.shuffle()
-        currentIndex = 0
-        isFlipped = false
+        cardStore.cards.shuffle(); currentIndex = 0; isFlipped = false; playCurrentCardAudio()
     }
 
     func toggleDirection() {
         spanishFirst.toggle()
         isFlipped = false
+    }
+
+    func playCurrentCardAudio() {
+        guard autoPlay, let audioIndex = currentCard?.audioIndex else { return }
+        audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder)
     }
 }
 
@@ -305,12 +302,15 @@ struct WatchSettingsView: View {
     @ObservedObject var cardStore: CardStore
     @Environment(\.dismiss) private var dismiss
     @State private var showResetConfirm = false
+    @AppStorage("autoPlay") private var autoPlay: Bool = false
 
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
                 Text("Settings")
                     .font(.headline)
+
+                Toggle("Auto-play", isOn: $autoPlay)
 
                 Toggle("Focus 20", isOn: Binding(
                     get: { cardStore.isFocusModeOn },

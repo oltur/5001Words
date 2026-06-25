@@ -46,6 +46,7 @@ struct ContentView: View {
     @State private var showSettings = false
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
     @AppStorage("selectedDeckId") private var selectedDeckId: String = "spanish"
+    @AppStorage("autoPlay") private var autoPlay: Bool = false
 
     var selectedDeck: Deck {
         availableDecks.first { $0.id == selectedDeckId } ?? availableDecks[0]
@@ -67,8 +68,8 @@ struct ContentView: View {
         return spanishFirst ? card.back : card.front
     }
 
-    var frontLabel: String { spanishFirst ? selectedDeck.name : "English" }
-    var backLabel: String  { spanishFirst ? "English" : selectedDeck.name }
+    var frontLabel: String { spanishFirst ? selectedDeck.sourceLanguage : selectedDeck.targetLanguage }
+    var backLabel: String  { spanishFirst ? selectedDeck.targetLanguage : selectedDeck.sourceLanguage }
 
     var audioReady: Bool { packManager.isPackDownloaded(selectedDeck) }
 
@@ -88,7 +89,7 @@ struct ContentView: View {
                     ForEach(availableDecks.filter { packManager.isInstalled($0) }) { deck in
                         Button(action: { switchDeck(deck) }) {
                             HStack {
-                                Text("\(deck.emoji) \(deck.name) – English")
+                                Text("\(deck.emoji) \(deck.name)")
                                 if selectedDeckId == deck.id {
                                     Image(systemName: "checkmark")
                                 }
@@ -104,7 +105,7 @@ struct ContentView: View {
                 } label: {
                     HStack(spacing: 4) {
                         Text(selectedDeck.emoji)
-                        Text(selectedDeck.name + " – EN")
+                        Text(selectedDeck.name)
                             .font(.subheadline).fontWeight(.semibold)
                         Image(systemName: "chevron.down")
                             .font(.caption2)
@@ -149,8 +150,8 @@ struct ContentView: View {
                     get: { spanishFirst },
                     set: { spanishFirst = $0; isFlipped = false }
                 )) {
-                    Text("\(selectedDeck.emoji) → 🇬🇧").tag(true)
-                    Text("🇬🇧 → \(selectedDeck.emoji)").tag(false)
+                    Text("\(selectedDeck.emoji) → \(selectedDeck.targetEmoji)").tag(true)
+                    Text("\(selectedDeck.targetEmoji) → \(selectedDeck.emoji)").tag(false)
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
@@ -313,18 +314,24 @@ struct ContentView: View {
         selectedDeckId = deck.id
         currentIndex = 0; isFlipped = false; spanishFirst = true
         cardStore.loadCards(from: deck)
+        playCurrentCardAudio()
     }
 
     func previousCard() {
-        if currentIndex > 0 { isFlipped = false; currentIndex -= 1 }
+        if currentIndex > 0 { isFlipped = false; currentIndex -= 1; playCurrentCardAudio() }
     }
 
     func nextCard() {
-        if currentIndex < cardStore.displayCards.count - 1 { isFlipped = false; currentIndex += 1 }
+        if currentIndex < cardStore.displayCards.count - 1 { isFlipped = false; currentIndex += 1; playCurrentCardAudio() }
     }
 
     func shuffleCards() {
-        cardStore.cards.shuffle(); currentIndex = 0; isFlipped = false
+        cardStore.cards.shuffle(); currentIndex = 0; isFlipped = false; playCurrentCardAudio()
+    }
+
+    func playCurrentCardAudio() {
+        guard autoPlay, audioReady, let audioIndex = currentCard?.audioIndex else { return }
+        audioPlayer.play(audioIndex: audioIndex, subfolder: selectedDeck.audioFolder)
     }
 }
 
@@ -336,10 +343,15 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showResetConfirm = false
     @State private var packToRemove: Deck? = nil
+    @AppStorage("autoPlay") private var autoPlay: Bool = false
 
     var body: some View {
         NavigationStack {
             Form {
+                Section("Audio") {
+                    Toggle("Auto-play word aloud", isOn: $autoPlay)
+                }
+
                 Section("Focus Mode") {
                     Toggle("Focus on 20 words", isOn: Binding(
                         get: { cardStore.isFocusModeOn },
@@ -409,10 +421,12 @@ struct PackRowView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Text("\(deck.emoji) \(deck.name) – English")
+                Text("\(deck.emoji) \(deck.name)")
                     .font(.body)
                 Group {
-                    if case .installed = packManager.states[deck.id] ?? .notDownloaded {
+                    if !deck.hasAudio {
+                        Text("5,001 cards included · No audio")
+                    } else if case .installed = packManager.states[deck.id] ?? .notDownloaded {
                         Text("5,001 cards + audio installed")
                     } else if deck.isBundled {
                         Text("5,001 cards included · Download for audio")
@@ -423,25 +437,29 @@ struct PackRowView: View {
                 .font(.caption).foregroundStyle(.secondary)
             }
             Spacer()
-            switch packManager.states[deck.id] ?? .notDownloaded {
-            case .notDownloaded:
-                Button("Download") { packManager.download(deck) }
-                    .buttonStyle(.borderless).foregroundStyle(.blue)
-            case .downloading(let progress):
-                ProgressView(value: progress).frame(width: 60)
-                Text("\(Int(progress * 100))%")
-                    .font(.caption).foregroundStyle(.secondary).monospacedDigit()
-                Button(action: { packManager.cancelDownload(deck) }) {
-                    Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+            if deck.hasAudio {
+                switch packManager.states[deck.id] ?? .notDownloaded {
+                case .notDownloaded:
+                    Button("Download") { packManager.download(deck) }
+                        .buttonStyle(.borderless).foregroundStyle(.blue)
+                case .downloading(let progress):
+                    ProgressView(value: progress).frame(width: 60)
+                    Text("\(Int(progress * 100))%")
+                        .font(.caption).foregroundStyle(.secondary).monospacedDigit()
+                    Button(action: { packManager.cancelDownload(deck) }) {
+                        Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                    }
+                    .buttonStyle(.borderless)
+                case .installed:
+                    Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                    Button("Remove", role: .destructive, action: onRemove).buttonStyle(.borderless)
+                case .failed(let msg):
+                    Text("Failed").font(.caption).foregroundStyle(.red)
+                    Button("Retry") { packManager.download(deck) }
+                        .buttonStyle(.borderless).foregroundStyle(.blue).help(msg)
                 }
-                .buttonStyle(.borderless)
-            case .installed:
+            } else {
                 Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
-                Button("Remove", role: .destructive, action: onRemove).buttonStyle(.borderless)
-            case .failed(let msg):
-                Text("Failed").font(.caption).foregroundStyle(.red)
-                Button("Retry") { packManager.download(deck) }
-                    .buttonStyle(.borderless).foregroundStyle(.blue).help(msg)
             }
         }
         .padding(.vertical, 2)
