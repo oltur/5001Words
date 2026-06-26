@@ -1,0 +1,41 @@
+5001 o Eiriau — Cardiau Fflach Geirfa Amlieithog
+
+Prif eirfa mewn 8 iaith gyda 5,001 o gardiau fflach fesul dec. Yn gweithio ar iPhone, iPad, ac Apple Watch.
+
+IEITHOEDD WEDI'U CYNNWYS:
+• Sbaeneg – Saesneg 🇪🇸 (wedi'i bwndelu, dim angen ei lawrlwytho)
+• Iddew-Almaeneg – Saesneg ✡️ (bwndelu)
+• Wcreineg – Saesneg 🇺🇦
+• Ffrangeg – Saesneg 🇫🇷
+• Almaeneg – Saesneg 🇩🇪
+• Iseldireg – Saesneg 🇳🇱
+• Hebraeg – Saesneg 🇮🇱 (gyda marciau llafariad niqqud)
+• Sbaeneg – Wcreineg 🇪🇸🇺🇦
+
+NODWEDDION ALLWEDDOL:
+• 5,001 o gardiau fesul dec iaith — geirfa wedi'i churadu'n ofalus
+• Sain o safon siaradwr brodorol — lleisiau Microsoft Neural TTS, heb hawlfraint
+• Chwarae'n awtomatig — mae cardiau'n darllen yn uchel yn awtomatig wrth i chi lithro
+• Dysgu deugyfeiriadol — astudiwch i'r ddau gyfeiriad gydag un tap
+• Modd Ffocws — drilio set o 20 gair heb eu dysgu nes eu bod wedi'u meistroli
+• Marciwch fel y Dysgwyd — yn cuddio geiriau rydych yn eu gwybod, yn olrhain eich cynnydd
+• Pecynnau i'w lawrlwytho — pecynnau iaith i'w llwytho i lawr yn ôl y galw (~30–54 MB yr un)
+• Cefnogaeth lawn Apple Watch - yr un nodweddion ar eich arddwrn
+• Preifatrwydd-yn gyntaf - dim cyfrif, dim olrhain, mae'r holl ddata yn aros ar eich dyfais
+
+SUT MAE'N GWEITHIO:
+1. Dewiswch dec iaith o'r Gosodiadau
+2. Lawrlwythwch y pecyn iaith (yn cynnwys rhestr eiriau + sain)
+3. Cardiau llithro i'r chwith ac i'r dde i lywio
+4. Tapiwch i fflipio a datgelu'r cyfieithiad
+5. Tapiwch ddwywaith i glywed y gair yn cael ei ynganu
+6. Marciwch y geiriau a ddysgwyd i olrhain eich cynnydd
+
+PERFFAITH AR GYFER:
+• Dysgwyr iaith yn adeiladu geirfa graidd
+• Myfyrwyr yn paratoi ar gyfer arholiadau
+• Teithwyr yn dysgu ymadroddion ymarferol
+• Siaradwyr treftadaeth yn ailgysylltu â'u hiaith
+• Unrhyw un sydd eisiau dysgu wrth fynd
+
+Dim tanysgrifiad. Dim hysbysebion. Nid oes angen cyfrif. Dim ond geirfa.

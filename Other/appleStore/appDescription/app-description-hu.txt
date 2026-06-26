@@ -1,0 +1,41 @@
+5001 szó — Többnyelvű szókincs kártyák
+
+Mesterszókincs 8 nyelven 5001 kártyával paklinként. Működik iPhone-on, iPaden és Apple Watchon.
+
+BEFEJEZETT NYELVEK:
+• Spanyol – angol 🇪🇸 (csomagban, letöltés nem szükséges)
+• jiddis – angol ✡️ (csomagban)
+• Ukrán – angol 🇺🇦
+• Francia – angol 🇫🇷
+• Német – angol 🇩🇪
+• holland – angol 🇳🇱
+• Héber – angol 🇮🇱 (niqqud magánhangzójelekkel)
+• Spanyol – ukrán 🇪🇸🇺🇦
+
+FŐBB JELLEMZŐK:
+• 5001 kártya nyelvi paklinként – gondosan válogatott szókincs
+• Natív hangszóró minőségű hang – Microsoft Neural TTS hangok, szerzői jogok nélkül
+• Automatikus lejátszás – a kártyákat automatikusan felolvassák, amikor ellop
+• Kétirányú tanulás – tanuljon mindkét irányban egyetlen érintéssel
+• Fókusz mód — 20 tanulatlan szóból álló készlet fúrása, amíg el nem sajátítod
+• Megjelölés tanultként – elrejti az Ön által ismert szavakat, nyomon követi az előrehaladást
+• Letölthető csomagok – igény szerint letölthető nyelvi csomagok (egyenként ~30–54 MB)
+• Teljes Apple Watch támogatás – ugyanazok a funkciók a csuklóján
+• Az adatvédelem mindenekelőtt – nincs fiók, nincs nyomon követés, minden adat az eszközön marad
+
+HOGYAN MŰKÖDIK:
+1. Válassza ki a nyelvi készletet a Beállítások menüből
+2. Töltse le a nyelvi csomagot (szólistát + hangot tartalmaz)
+3. Csúsztassa a kártyákat balra és jobbra a navigáláshoz
+4. Érintse meg a fordításhoz és a fordítás megjelenítéséhez
+5. Koppintson duplán a szó kiejtésének hallásához
+6. Jelölje meg a szavakat tanultként, hogy nyomon kövesse a fejlődését
+
+TÖKÉLETES:
+• Nyelvtanulók alapvető szókincs kialakítása
+• Vizsgára készülő tanulók
+• Az utazók gyakorlati kifejezéseket tanulnak
+• Az örökség beszélői újra kapcsolatot teremtenek nyelvükkel
+• Bárki, aki útközben szeretne tanulni
+
+Nincs előfizetés. Nincsenek hirdetések. Nincs szükség fiókra. Csak szókincs.

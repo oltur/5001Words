@@ -342,15 +342,61 @@ struct WatchSettingsView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
+
+                Divider()
+
+                NavigationLink("About") { WatchImpressumView() }
+                NavigationLink("Privacy Policy") { WatchPrivacyPolicyView() }
             }
             .padding()
         }
+        .navigationTitle("Settings")
         .confirmationDialog("Reset?", isPresented: $showResetConfirm) {
             Button("Reset", role: .destructive) {
                 cardStore.resetLearned()
                 dismiss()
             }
         }
+    }
+}
+
+struct WatchImpressumView: View {
+    private var appVersion: String {
+        let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        let b = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+        return "\(v) (\(b))"
+    }
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("5001 Words").font(.headline)
+                Text("v\(appVersion)").font(.caption).foregroundStyle(.secondary)
+                Divider()
+                Text("Developer").font(.caption).foregroundStyle(.secondary)
+                Text("Oleksandr Turevskiy").font(.caption)
+                Divider()
+                Link("5001words@turevskiy.com", destination: URL(string: "mailto:5001words@turevskiy.com")!)
+                    .font(.caption2).foregroundStyle(.blue)
+            }
+            .padding()
+        }
+        .navigationTitle("About")
+    }
+}
+
+struct WatchPrivacyPolicyView: View {
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("No data collected.").font(.headline)
+                Text("All progress is stored locally on your device. No servers, no tracking, no ads.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            .padding()
+        }
+        .navigationTitle("Privacy")
     }
 }
 

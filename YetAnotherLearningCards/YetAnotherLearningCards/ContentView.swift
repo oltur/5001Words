@@ -36,6 +36,7 @@ enum AppearanceMode: String, CaseIterable {
 }
 
 struct ContentView: View {
+    @EnvironmentObject private var localizationManager: LocalizationManager
     @StateObject private var cardStore = CardStore()
     @StateObject private var audioPlayer = AudioPlayer()
     @ObservedObject private var packManager = PackManager.shared
@@ -74,52 +75,86 @@ struct ContentView: View {
     var audioReady: Bool { packManager.isPackDownloaded(selectedDeck) }
 
     var body: some View {
-        VStack(spacing: 16) {
-            // Header
-            HStack {
-                Button(action: { showSettings = true }) {
-                    Image(systemName: "line.3.horizontal")
-                        .font(.title3)
+        ZStack {
+            // Background
+            LinearGradient(
+                colors: [Color(red: 0.10, green: 0.42, blue: 0.24).opacity(0.08),
+                         Color(red: 0.18, green: 0.29, blue: 0.54).opacity(0.06)],
+                startPoint: .topLeading, endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
+        VStack(spacing: 12) {
+            // ── Branded header bar ──
+            ZStack {
+                LinearGradient(
+                    colors: [Color(red: 0.10, green: 0.42, blue: 0.24),
+                             Color(red: 0.18, green: 0.29, blue: 0.54)],
+                    startPoint: .leading, endPoint: .trailing
+                )
+
+                HStack {
+                    Button(action: { showSettings = true }) {
+                        Image(systemName: "line.3.horizontal")
+                            .font(.title3)
+                            .foregroundStyle(.white)
+                    }
+
+                    Spacer()
+
+                    HStack(spacing: 8) {
+                        Image("AppIcon")
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                            .clipShape(RoundedRectangle(cornerRadius: 6))
+                        Text("5001 Words")
+                            .font(.headline).fontWeight(.bold)
+                            .foregroundStyle(.white)
+                    }
+
+                    Spacer()
+
+                    Button(action: { appearanceMode = appearanceMode.next }) {
+                        Image(systemName: appearanceMode.icon)
+                            .font(.title3)
+                            .foregroundStyle(.white)
+                    }
                 }
+                .padding(.horizontal)
+            }
+            .frame(height: 52)
 
-                Spacer()
-
-                // Deck picker — only shows installed decks
-                Menu {
-                    ForEach(availableDecks.filter { packManager.isInstalled($0) }) { deck in
-                        Button(action: { switchDeck(deck) }) {
-                            HStack {
-                                Text("\(deck.emoji) \(deck.name)")
-                                if selectedDeckId == deck.id {
-                                    Image(systemName: "checkmark")
-                                }
+            // ── Deck picker ──
+            Menu {
+                ForEach(availableDecks.filter { packManager.isInstalled($0) }) { deck in
+                    Button(action: { switchDeck(deck) }) {
+                        HStack {
+                            Text("\(deck.emoji) \(deck.name)")
+                            if selectedDeckId == deck.id {
+                                Image(systemName: "checkmark")
                             }
                         }
                     }
-                    if availableDecks.contains(where: { !packManager.isInstalled($0) }) {
-                        Divider()
-                        Button(action: { showSettings = true }) {
-                            Label("Get more languages…", systemImage: "plus.circle")
-                        }
-                    }
-                } label: {
-                    HStack(spacing: 4) {
-                        Text(selectedDeck.emoji)
-                        Text(selectedDeck.name)
-                            .font(.subheadline).fontWeight(.semibold)
-                        Image(systemName: "chevron.down")
-                            .font(.caption2)
+                }
+                if availableDecks.contains(where: { !packManager.isInstalled($0) }) {
+                    Divider()
+                    Button(action: { showSettings = true }) {
+                        Label("Get more languages…", systemImage: "plus.circle")
                     }
                 }
-
-                Spacer()
-
-                Button(action: { appearanceMode = appearanceMode.next }) {
-                    Image(systemName: appearanceMode.icon)
-                        .font(.title3)
+            } label: {
+                HStack(spacing: 4) {
+                    Text(selectedDeck.emoji)
+                    Text(selectedDeck.name)
+                        .font(.subheadline).fontWeight(.semibold)
+                    Image(systemName: "chevron.down")
+                        .font(.caption2)
                 }
+                .padding(.vertical, 8)
+                .padding(.horizontal, 14)
+                .background(.ultraThinMaterial, in: Capsule())
             }
-            .padding(.horizontal)
+            .padding(.top, 10)
 
             if cardStore.cards.isEmpty {
                 Spacer()
@@ -224,8 +259,7 @@ struct ContentView: View {
                             }
                             .font(.headline)
                             .padding(.horizontal, 16).padding(.vertical, 10)
-                            .background(Color.orange.opacity(audioReady ? 0.2 : 0.08))
-                            .cornerRadius(10)
+                            .background(Color.orange.opacity(audioReady ? 0.2 : 0.08), in: RoundedRectangle(cornerRadius: 10))
                         }
                         .foregroundStyle(audioReady ? .primary : .secondary)
                     }
@@ -237,8 +271,7 @@ struct ContentView: View {
                         }
                         .font(.headline)
                         .padding(.horizontal, 16).padding(.vertical, 10)
-                        .background(Color.green.opacity(0.2))
-                        .cornerRadius(10)
+                        .background(Color.green.opacity(0.2), in: RoundedRectangle(cornerRadius: 10))
                     }
                 }
 
@@ -264,7 +297,9 @@ struct ContentView: View {
                 .padding(.top, 4)
             }
         }
-        .padding(.vertical)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .padding(.bottom)
+        .id(localizationManager.currentLanguage)
         .preferredColorScheme(appearanceMode.colorScheme)
         .onAppear { cardStore.loadCards(from: selectedDeck) }
         .onChange(of: cardStore.displayCards.count) {
@@ -279,6 +314,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showSettings) {
             SettingsView(cardStore: cardStore, packManager: packManager)
+        }
         }
     }
 
@@ -341,6 +377,7 @@ struct SettingsView: View {
     @ObservedObject var cardStore: CardStore
     @ObservedObject var packManager: PackManager
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var localizationManager: LocalizationManager
     @State private var showResetConfirm = false
     @State private var packToRemove: Deck? = nil
     @AppStorage("autoPlay") private var autoPlay: Bool = false
@@ -380,6 +417,23 @@ struct SettingsView: View {
                         PackRowView(deck: deck, packManager: packManager) {
                             packToRemove = deck
                         }
+                    }
+                }
+
+                Section("Language") {
+                    Picker("Language", selection: $localizationManager.currentLanguage) {
+                        ForEach(AppLanguage.allCases) { lang in
+                            Text(lang.displayName).tag(lang)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                }
+
+                Section("About") {
+                    NavigationLink("About", destination: ImpressumView())
+                    NavigationLink("Privacy Policy", destination: PrivacyPolicyView())
+                    Link(destination: URL(string: "mailto:5001words@turevskiy.com")!) {
+                        Label("Contact / Feedback", systemImage: "envelope")
                     }
                 }
             }
@@ -468,4 +522,5 @@ struct PackRowView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(LocalizationManager.shared)
 }

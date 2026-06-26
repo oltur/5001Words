@@ -1,0 +1,41 @@
+5001 sanaa — monikielisiä sanastokortteja
+
+Hallitse sanastoa 8 kielellä 5 001 muistikortilla per pakka. Toimii iPhonessa, iPadissa ja Apple Watchissa.
+
+MUKANA OLEVAT KIELET:
+• espanja – englanti 🇪🇸 (mukana, latausta ei tarvita)
+• Jiddish – englanti ✡️ (pakkattu)
+• Ukraina – englanti 🇺🇦
+• ranska – englanti 🇫🇷
+• Saksa – englanti 🇩🇪
+• hollanti – englanti 🇳🇱
+• Heprea – englanti 🇮🇱 (niqqud-vokaalimerkit)
+• espanja – ukraina 🇪🇸🇺🇦
+
+KESKEISET OMINAISUUDET:
+• 5 001 korttia per kielipakka – huolellisesti kuratoitu sanasto
+• Natiivikaiutinlaatuinen ääni – Microsoft Neural TTS -äänet, tekijänoikeusvapaa
+• Automaattinen toisto — kortit luetaan ääneen automaattisesti pyyhkäisemällä
+• Kaksisuuntainen oppiminen — opiskele molempiin suuntiin yhdellä napautuksella
+• Tarkennustila — poraa 20 oppimatonta sanaa, kunnes se hallitsee
+• Merkitse opituksi — piilottaa tuntemasi sanat, seuraa edistymistäsi
+• Ladattavat paketit – kielipaketit ladattavissa pyynnöstä (noin 30–54 Mt kukin)
+• Täysi Apple Watch -tuki – samat ominaisuudet ranteessasi
+• Tietosuoja ensin — ei tiliä, ei seurantaa, kaikki tiedot pysyvät laitteessasi
+
+MITEN SE TOIMII:
+1. Valitse kielipaketti Asetuksista
+2. Lataa kielipaketti (sisältää sanaluettelon + äänen)
+3. Pyyhkäise kortteja vasemmalle ja oikealle navigoidaksesi
+4. Napauta kääntääksesi ja paljastaaksesi käännöksen
+5. Kaksoisnapauta kuullaksesi sanan lausuttavana
+6. Merkitse sanat opituiksi seurataksesi edistymistäsi
+
+TÄYDELLINEN:
+• Kieltenoppijat rakentavat ydinsanastoa
+• Tenttiin valmistautuvat opiskelijat
+• Matkailijat oppivat käytännön lauseita
+• Heritage-puhujat yhdistävät uudelleen kielensä
+• Kaikki, jotka haluavat oppia tien päällä
+
+Ei tilausta. Ei mainoksia. Tiliä ei vaadita. Pelkkää sanastoa.

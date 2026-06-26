@@ -1,0 +1,41 @@
+5001 orð — Fjöltyng orðaforðaspjöld
+
+Náðu í orðaforða á 8 tungumálum með 5.001 spjaldtölvu á stokk. Virkar á iPhone, iPad og Apple Watch.
+
+TUNGUMÁL MEÐFALIN:
+• Spænska – enska 🇪🇸 (bundið, ekki þarf að hlaða niður)
+• Jiddíska – enska ✡️ (búnt)
+• úkraínska – enska 🇺🇦
+• Franska – enska 🇫🇷
+• Þýska – enska 🇩🇪
+• Hollenska – enska 🇳🇱
+• Hebreska – enska 🇮🇱 (með niqqud sérhljóðamerkjum)
+• Spænska – úkraínska 🇪🇸🇺🇦
+
+LYKILEIGNIR:
+• 5.001 spil á hvern tungumálastokk — vandlega samsettur orðaforði
+• Hljóð með móðurmáli — Microsoft Neural TTS raddir, án höfundarréttar
+• Sjálfvirk spilun — spil lesin upp sjálfkrafa þegar þú strýkur
+• Tvíátta nám — lærðu í báðar áttir með einum banka
+• Fókusstilling — boraðu saman sett af 20 ólærðum orðum þar til þú nærð tökum á þeim
+• Merkja sem lærð — felur orð sem þú þekkir, fylgist með framförum þínum
+• Niðurhalanlegir pakkar — tungumálapakkar hlaðið niður eftir beiðni (~30–54 MB hver)
+• Fullur Apple Watch stuðningur — sömu eiginleikar á úlnliðnum þínum
+• Friðhelgi fyrst — enginn reikningur, engin rakning, öll gögn verða áfram í tækinu þínu
+
+HVERNIG ÞAÐ VIRKAR:
+1. Veldu tungumálastokk úr Stillingar
+2. Sæktu tungumálapakkann (inniheldur orðalista + hljóð)
+3. Strjúktu spjöld til vinstri og hægri til að fletta
+4. Pikkaðu á til að fletta og sýna þýðinguna
+5. Ýttu tvisvar til að heyra orðið borið fram
+6. Merktu orð sem lærð til að fylgjast með framförum þínum
+
+FULLKOMIN FYRIR:
+• Tungumálanemar byggja upp grunnorðaforða
+• Nemendur undirbúa sig fyrir próf
+• Ferðamenn að læra hagnýtar setningar
+• Arfleifðarmælendur tengjast tungumáli sínu á ný
+• Allir sem vilja læra á ferðinni
+
+Engin áskrift. Engar auglýsingar. Enginn reikningur krafist. Bara orðaforði.
